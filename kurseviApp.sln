@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kurseviApp", "kurseviApp\kurseviApp.csproj", "{918648AE-3613-43F8-B4C7-6A08805D03A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "kurseviApp\Server.csproj", "{918648AE-3613-43F8-B4C7-6A08805D03A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kontroler", "Kontroler\Kontroler.csproj", "{9541E19A-7098-4CA8-8232-CA5DAE114243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbBroker", "DbBroker\DbBroker.csproj", "{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domen", "Domen\Domen.csproj", "{DF446779-4052-442A-AD29-83F0D352C76C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klijent", "Klijent\Klijent.csproj", "{34E329A8-7C75-4A93-A2FA-73FAA8340E5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemskeOperacije", "SistemskeOperacije\SistemskeOperacije.csproj", "{D91AEE34-472C-4094-A267-9006A0A7D69A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{918648AE-3613-43F8-B4C7-6A08805D03A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{918648AE-3613-43F8-B4C7-6A08805D03A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{918648AE-3613-43F8-B4C7-6A08805D03A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9541E19A-7098-4CA8-8232-CA5DAE114243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9541E19A-7098-4CA8-8232-CA5DAE114243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9541E19A-7098-4CA8-8232-CA5DAE114243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9541E19A-7098-4CA8-8232-CA5DAE114243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF446779-4052-442A-AD29-83F0D352C76C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF446779-4052-442A-AD29-83F0D352C76C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF446779-4052-442A-AD29-83F0D352C76C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF446779-4052-442A-AD29-83F0D352C76C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E329A8-7C75-4A93-A2FA-73FAA8340E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E329A8-7C75-4A93-A2FA-73FAA8340E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E329A8-7C75-4A93-A2FA-73FAA8340E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E329A8-7C75-4A93-A2FA-73FAA8340E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D91AEE34-472C-4094-A267-9006A0A7D69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91AEE34-472C-4094-A267-9006A0A7D69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91AEE34-472C-4094-A267-9006A0A7D69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91AEE34-472C-4094-A267-9006A0A7D69A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

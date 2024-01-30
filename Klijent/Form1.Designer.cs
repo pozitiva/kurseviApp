@@ -1,4 +1,4 @@
-﻿namespace kurseviApp
+﻿namespace Klijent
 {
     partial class Form1
     {
