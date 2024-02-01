@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domen;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace DbBroker
 
         public void ZatvoriKonekciju()
         {
-            connection.Open();
+            connection.Close();
         }
 
         public void PokreniTransakciju()
@@ -40,6 +41,16 @@ namespace DbBroker
         public void Rollback()
         {
             transaction?.Rollback();    
+        }
+
+        public List<DomenskiObjekat> Vrati(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"SELECT {domenskiObjekat.PovratneVrednosti} FROM {domenskiObjekat.NazivTabele} {domenskiObjekat.Join}";
+            SqlDataReader reader = command.ExecuteReader();
+            List<DomenskiObjekat> rezultat = domenskiObjekat.VratiListu(reader);
+            reader.Close();
+            return rezultat;
         }
     }
 }

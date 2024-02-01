@@ -28,7 +28,7 @@ namespace Domen
         {
             List<DomenskiObjekat> zaposleni = new List<DomenskiObjekat> ();
 
-            while (reader.Read ())
+            while (reader.Read())
             {
                 Zaposleni zaposlen = new Zaposleni() {
 

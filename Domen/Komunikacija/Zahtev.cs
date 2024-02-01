@@ -10,10 +10,11 @@ namespace Domen
     public class Zahtev
     {
         public Operacija Operacija {  get; set; }
+        public Zaposleni Zaposleni { get; set; }    
     }
 
     public enum Operacija
     {
-
+        UlogujSe
     }
 }

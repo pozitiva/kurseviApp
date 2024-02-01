@@ -46,15 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forme\FrmZaposleni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forme\FrmZaposleni.Designer.cs">
+      <DependentUpon>FrmZaposleni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\FrmPrijavljivanje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\FrmPrijavljivanje.Designer.cs">
+      <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
     </Compile>
     <Compile Include="Komunikacija.cs" />
+    <Compile Include="Kontroleri\GlavniKoordinator.cs" />
+    <Compile Include="Kontroleri\KursKontroler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forme\FrmPrijavljivanje.resx">
+      <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\FrmZaposleni.resx">
+      <DependentUpon>FrmZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,5 +91,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domen\Domen.csproj">
+      <Project>{DF446779-4052-442A-AD29-83F0D352C76C}</Project>
+      <Name>Domen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

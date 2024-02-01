@@ -20,7 +20,7 @@ namespace Domen.Komunikacija
             stream = new NetworkStream(socket);
             formatter = new BinaryFormatter();
         }
-        public T Receive<T>() where T : class
+        public T Primi<T>() where T : class
         {
             return (T)formatter.Deserialize(stream);
         }

@@ -33,7 +33,7 @@ namespace kurseviApp
 
         private void btnPrekini_Click(object sender, EventArgs e)
         {
-            s?.Prekini();
+            s.Prekini();
             btnPrekini.Enabled= false;
             btnPokreni.Enabled = true;
         }
