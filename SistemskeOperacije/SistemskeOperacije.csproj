@@ -41,9 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KreirajKursSO.cs" />
     <Compile Include="OpstaSistemskaOperacija.cs" />
     <Compile Include="PrijaviSeSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VratiSvePredavaceSO.cs" />
     <Compile Include="VratiSveZaposleneSO.cs" />
   </ItemGroup>
   <ItemGroup>

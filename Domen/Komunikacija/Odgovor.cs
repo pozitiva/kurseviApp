@@ -9,16 +9,12 @@ namespace Domen
     [Serializable]
     public class Odgovor
     {
-        public Signal Signal { get; set; }
+        public Operacija Operacija { get; set; }
         public Zaposleni Zaposleni { get; set; }
+        public List<Predavac> Predavaci { get; set; }
         public bool Uspesno { get; set; }
         public string Poruka { get; set; }
         public Exception Greska { get; set; }
     }
 
-    public enum Signal
-    {
-        NeuspesnaPrijava,
-        UspesnaPrijava
-    }
 }

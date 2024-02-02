@@ -26,5 +26,18 @@ namespace Server
 
             return zaposleni;
         }
+
+        public List<Predavac> VratiSvePredavace()
+        {
+            VratiSvePredavaceSO operacija = new VratiSvePredavaceSO();
+            List<Predavac> predavaci = (List<Predavac>)operacija.IzvrsiSO(new Predavac());  
+            return predavaci;
+        }
+
+        public bool KreirajKurs(Kurs kurs)
+        {
+            KreirajKursSO operacija = new KreirajKursSO();
+            return (bool)operacija.IzvrsiSO(kurs);
+        }
     }
 }

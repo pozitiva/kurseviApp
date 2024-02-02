@@ -52,5 +52,12 @@ namespace DbBroker
             reader.Close();
             return rezultat;
         }
+
+        public int Sacuvaj(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"INSERT INTO {domenskiObjekat.NazivTabele} VALUES ({domenskiObjekat.VrednostiZaUnos})";
+            return command.ExecuteNonQuery();
+        }
     }
 }

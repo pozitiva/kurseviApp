@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Komunikacija\Operacija.cs" />
     <Compile Include="Komunikacija\Primalac.cs" />
+    <Compile Include="KorisnickaGreska.cs" />
     <Compile Include="Model\DomenskiObjekat.cs" />
     <Compile Include="Model\Grupa.cs" />
     <Compile Include="Komunikacija\Odgovor.cs" />

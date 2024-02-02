@@ -33,13 +33,15 @@
             this.kurseviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kreirajKursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniKursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlGlavna = new System.Windows.Forms.Panel();
             this.msZaposleni.SuspendLayout();
+            this.pnlGlavna.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblZaposleni
             // 
             this.lblZaposleni.AutoSize = true;
-            this.lblZaposleni.Location = new System.Drawing.Point(717, 90);
+            this.lblZaposleni.Location = new System.Drawing.Point(701, 44);
             this.lblZaposleni.Name = "lblZaposleni";
             this.lblZaposleni.Size = new System.Drawing.Size(0, 20);
             this.lblZaposleni.TabIndex = 0;
@@ -52,7 +54,7 @@
             this.kurseviToolStripMenuItem});
             this.msZaposleni.Location = new System.Drawing.Point(0, 0);
             this.msZaposleni.Name = "msZaposleni";
-            this.msZaposleni.Size = new System.Drawing.Size(800, 33);
+            this.msZaposleni.Size = new System.Drawing.Size(1041, 33);
             this.msZaposleni.TabIndex = 1;
             this.msZaposleni.Text = "menuStrip1";
             // 
@@ -68,26 +70,36 @@
             // kreirajKursToolStripMenuItem
             // 
             this.kreirajKursToolStripMenuItem.Name = "kreirajKursToolStripMenuItem";
-            this.kreirajKursToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.kreirajKursToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
             this.kreirajKursToolStripMenuItem.Text = "Kreiraj kurs";
             // 
             // izmeniKursToolStripMenuItem
             // 
             this.izmeniKursToolStripMenuItem.Name = "izmeniKursToolStripMenuItem";
-            this.izmeniKursToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.izmeniKursToolStripMenuItem.Size = new System.Drawing.Size(204, 34);
             this.izmeniKursToolStripMenuItem.Text = "Izmeni kurs";
+            // 
+            // pnlGlavna
+            // 
+            this.pnlGlavna.Controls.Add(this.lblZaposleni);
+            this.pnlGlavna.Location = new System.Drawing.Point(16, 46);
+            this.pnlGlavna.Name = "pnlGlavna";
+            this.pnlGlavna.Size = new System.Drawing.Size(1001, 534);
+            this.pnlGlavna.TabIndex = 2;
             // 
             // FrmZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblZaposleni);
+            this.ClientSize = new System.Drawing.Size(1041, 586);
+            this.Controls.Add(this.pnlGlavna);
             this.Controls.Add(this.msZaposleni);
             this.Name = "FrmZaposleni";
             this.Text = "FrmGlavna";
             this.msZaposleni.ResumeLayout(false);
             this.msZaposleni.PerformLayout();
+            this.pnlGlavna.ResumeLayout(false);
+            this.pnlGlavna.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +112,6 @@
         private System.Windows.Forms.ToolStripMenuItem kurseviToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kreirajKursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniKursToolStripMenuItem;
+        private System.Windows.Forms.Panel pnlGlavna;
     }
 }

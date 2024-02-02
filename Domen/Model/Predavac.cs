@@ -44,5 +44,10 @@ namespace Domen
             }
             return predavaci;
         }
+
+        public override string ToString()
+        {
+            return Ime + " " + Prezime;
+        }
     }
 }

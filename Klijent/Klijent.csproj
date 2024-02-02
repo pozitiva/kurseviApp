@@ -59,8 +59,16 @@
       <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
     </Compile>
     <Compile Include="Komunikacija.cs" />
+    <Compile Include="FormMode.cs" />
     <Compile Include="Kontroleri\GlavniKoordinator.cs" />
     <Compile Include="Kontroleri\KursKontroler.cs" />
+    <Compile Include="Kontroleri\ZaposleniKontroler.cs" />
+    <Compile Include="KorisnickeKontrole\UcKreirajKurs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcKreirajKurs.Designer.cs">
+      <DependentUpon>UcKreirajKurs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\FrmPrijavljivanje.resx">
@@ -68,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forme\FrmZaposleni.resx">
       <DependentUpon>FrmZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KorisnickeKontrole\UcKreirajKurs.resx">
+      <DependentUpon>UcKreirajKurs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

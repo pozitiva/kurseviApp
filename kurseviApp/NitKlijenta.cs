@@ -46,7 +46,7 @@ namespace kurseviApp
                                 {
                                     if(ulogovani.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme && ulogovani.Sifra == zahtev.Zaposleni.Sifra)
                                     {
-                                        odgovor.Signal = Signal.NeuspesnaPrijava;
+                                        odgovor.Operacija = Operacija.NeuspesnaPrijava;
                                         odgovor.Zaposleni = null;
                                         provera = false;    
                                         break;
@@ -55,15 +55,25 @@ namespace kurseviApp
                                 
                                 if(z.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme && z.Sifra == zahtev.Zaposleni.Sifra && provera)
                                 {
-                                    odgovor.Signal = Signal.UspesnaPrijava;
+                                    odgovor.Operacija = Operacija.UspesnaPrijava;
                                     odgovor.Zaposleni = z;
                                     ulogovaniZaposleni.Add(z);
                                     break;
                                 }
 
-                                odgovor.Signal = Signal.NeuspesnaPrijava;
+                                odgovor.Operacija = Operacija.NeuspesnaPrijava;
                             }
 
+                            posaljilac.Posalji(odgovor);
+                            break;
+
+                        case Operacija.VratiSvePredavace:
+
+                            odgovor.Predavaci= Kontroler.Instance.VratiSvePredavace();
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.KreirajKurs:
+                            odgovor.Operacija = Kontroler.Instance.KreirajKurs(zahtev.Kurs) ? Operacija.KursUspesnoKreiran : Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         default:

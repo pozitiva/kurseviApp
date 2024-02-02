@@ -1,5 +1,6 @@
 ﻿using Domen;
 using Klijent.Forme;
+using Klijent.Kontroleri;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,22 +24,15 @@ namespace Klijent
                 MessageBox.Show("Niste povezani na server!");
             }
 
+            txtKorisnickoIme.Text = "iva";
+            txtSifra.Text = "iva";
+
         }
 
         private void btnPrijaviSe_Click(object sender, EventArgs e)
         {
-            Odgovor odgovor = Komunikacija.Instance.UlogujSe(txtKorisnickoIme.Text, txtSifra.Text);
-            if(odgovor.Signal== Signal.NeuspesnaPrijava)
-            {
-                MessageBox.Show("Neuspesno prijavljivanje na sistem");
-                return;
-            }
 
-            MessageBox.Show("Uspesno ste prijavljeni");
-            FrmZaposleni forma = new FrmZaposleni(odgovor.Zaposleni);
-            this.Visible = false;
-            forma.ShowDialog();
-            this.Visible = true;
+            //GlavniKoordinator.Instance.KreirajPrijavu();
         }
     }
 }

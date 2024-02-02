@@ -23,7 +23,7 @@ namespace Domen
         public string NazivTabele => "Kurs";
 
         [Browsable(false)]
-        public string VrednostiZaUnos => $" '{NazivKursa}','{TrajanjeUMesecima}','{OpisKursa}',' {Predavac.IDPredavaca}', '{Zaposleni.KorisnickoIme}'";
+        public string VrednostiZaUnos => $" '{NazivKursa}','{TrajanjeUMesecima}','{OpisKursa}', '{Zaposleni.KorisnickoIme}', ' {Predavac.IDPredavaca}'";
 
         [Browsable(false)]
         public string PovratneVrednosti => "*";

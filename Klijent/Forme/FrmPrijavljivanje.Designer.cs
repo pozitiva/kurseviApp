@@ -33,6 +33,8 @@
             this.btnPrijaviSe = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblImeGreska = new System.Windows.Forms.Label();
+            this.lblSifraGreska = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtKorisnickoIme
@@ -77,11 +79,33 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Sifra";
             // 
+            // lblImeGreska
+            // 
+            this.lblImeGreska.AutoSize = true;
+            this.lblImeGreska.Location = new System.Drawing.Point(183, 96);
+            this.lblImeGreska.Name = "lblImeGreska";
+            this.lblImeGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblImeGreska.TabIndex = 5;
+            this.lblImeGreska.Text = "Greska";
+            this.lblImeGreska.Visible = false;
+            // 
+            // lblSifraGreska
+            // 
+            this.lblSifraGreska.AutoSize = true;
+            this.lblSifraGreska.Location = new System.Drawing.Point(183, 161);
+            this.lblSifraGreska.Name = "lblSifraGreska";
+            this.lblSifraGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblSifraGreska.TabIndex = 6;
+            this.lblSifraGreska.Text = "Greska";
+            this.lblSifraGreska.Visible = false;
+            // 
             // FrmPrijavljivanje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 336);
+            this.Controls.Add(this.lblSifraGreska);
+            this.Controls.Add(this.lblImeGreska);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrijaviSe);
@@ -95,11 +119,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtKorisnickoIme;
-        private System.Windows.Forms.TextBox txtSifra;
-        private System.Windows.Forms.Button btnPrijaviSe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Button btnPrijaviSe;
+        public System.Windows.Forms.TextBox txtKorisnickoIme;
+        public System.Windows.Forms.TextBox txtSifra;
+        public System.Windows.Forms.Label lblImeGreska;
+        public System.Windows.Forms.Label lblSifraGreska;
     }
 }

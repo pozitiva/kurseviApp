@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Klijent.Kontroleri;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,11 @@ namespace Klijent
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrijavljivanje());
+            //Application.Run(new FrmPrijavljivanje());
+
+            GlavniKoordinator.Instance.frmPrijavljivanje = new FrmPrijavljivanje();
+            GlavniKoordinator.Instance.KreirajPrijavu();
+            Application.Run(GlavniKoordinator.Instance.frmPrijavljivanje);
         }
     }
 }

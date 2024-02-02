@@ -1,4 +1,6 @@
 ﻿using Domen;
+using Klijent.Forme;
+using Klijent.KorisnickeKontrole;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,10 @@ namespace Klijent.Kontroleri
 
         //forme 
         public FrmPrijavljivanje frmPrijavljivanje;
+        public FrmZaposleni frmZaposleni;
 
         //kontroleri
+        public ZaposleniKontroler zaposleniKontroler;
         public KursKontroler kursKontroler;
 
 
@@ -30,12 +34,29 @@ namespace Klijent.Kontroleri
 
         public GlavniKoordinator()
         {
+            zaposleniKontroler = new ZaposleniKontroler();
             kursKontroler = new KursKontroler();
         }
 
-        public void PrikaziKreirajKurs()
+        #region prijava
+        public void KreirajPrijavu()
         {
-            
+            zaposleniKontroler.KreirajFrmPrijavljivanje(this.frmPrijavljivanje);
         }
+
+        public void PrikaziFrmZaposleni()
+        {
+            frmPrijavljivanje.Visible = false;
+            frmZaposleni = new FrmZaposleni(ulogovaniZaposleni);
+            frmZaposleni.ShowDialog();
+            frmPrijavljivanje.Visible = true;
+        }
+
+        #endregion
+        public void PrikaziKreirajKurs(Zaposleni ulogovaniZaposleni)
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcKreirajKurs(FormMode.Dodaj, null, ulogovaniZaposleni));
+        }
+
     }
 }
