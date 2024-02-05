@@ -26,17 +26,17 @@ namespace Klijent.Kontroleri
                 //prazna polja
                 if (frmPrijavljivanje.txtKorisnickoIme.Text == "" && frmPrijavljivanje.txtSifra.Text == "")
                 {
-                    frmPrijavljivanje.lblImeGreska.Text = "Morate uneti email adresu";
+                    frmPrijavljivanje.lblImeGreska.Text = "Morate uneti korisnicko ime";
                     frmPrijavljivanje.lblImeGreska.Visible = true;
                     frmPrijavljivanje.lblSifraGreska.Text = "Morate uneti šifru";
                     frmPrijavljivanje.lblSifraGreska.Visible = true;
-                    throw new KorisnickaGreska("greska >> email i sifra");
+                    throw new KorisnickaGreska("greska >> korisnicko ime i sifra");
                 }
                 if (frmPrijavljivanje.txtKorisnickoIme.Text == "")
                 {
-                    frmPrijavljivanje.lblImeGreska.Text = "Morate uneti email adresu";
+                    frmPrijavljivanje.lblImeGreska.Text = "Morate uneti korisnicko ime";
                     frmPrijavljivanje.lblImeGreska.Visible = true;
-                    throw new KorisnickaGreska("greska >> email");
+                    throw new KorisnickaGreska("greska >> korisnicko ime");
                 }
                 if (frmPrijavljivanje.txtSifra.Text == "")
                 {

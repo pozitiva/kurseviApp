@@ -8,6 +8,11 @@
         VratiSvePredavace,
         KreirajKurs,
         KursUspesnoKreiran,
-        GreskaUZahtevu
+        GreskaUZahtevu,
+        VratiSveKurseve,
+        PretraziKurs,
+        KurseviUspesnoPronadjeni,
+        VratiKurs,
+        KursUspesnoNadjen
     }
 }

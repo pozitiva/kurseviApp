@@ -66,7 +66,6 @@ namespace kurseviApp
 
                             posaljilac.Posalji(odgovor);
                             break;
-
                         case Operacija.VratiSvePredavace:
 
                             odgovor.Predavaci= Kontroler.Instance.VratiSvePredavace();
@@ -74,6 +73,20 @@ namespace kurseviApp
                             break;
                         case Operacija.KreirajKurs:
                             odgovor.Operacija = Kontroler.Instance.KreirajKurs(zahtev.Kurs) ? Operacija.KursUspesnoKreiran : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiSveKurseve:
+                            odgovor.Kursevi = Kontroler.Instance.VratiSveKurseve();
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.PretraziKurs:
+                            odgovor.Kursevi = Kontroler.Instance.PretraziKurseve(zahtev.Kurs);
+                            odgovor.Operacija = Operacija.KurseviUspesnoPronadjeni;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiKurs:
+                            odgovor.Kurs = Kontroler.Instance.VratiKurs(zahtev.Kurs);
+                            odgovor.Operacija = Operacija.KursUspesnoNadjen;
                             posaljilac.Posalji(odgovor);
                             break;
                         default:

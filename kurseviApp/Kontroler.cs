@@ -2,6 +2,7 @@
 using SistemskeOperacije;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,6 @@ namespace Server
         {
             VratiSveZaposleneSO operacija = new VratiSveZaposleneSO();
             List<Zaposleni> zaposleni = (List<Zaposleni>)operacija.IzvrsiSO(new Zaposleni());
-
             return zaposleni;
         }
 
@@ -38,6 +38,27 @@ namespace Server
         {
             KreirajKursSO operacija = new KreirajKursSO();
             return (bool)operacija.IzvrsiSO(kurs);
+        }
+
+        public List<Kurs> VratiSveKurseve()
+        {
+            VratiSveKurseveSO operacija = new VratiSveKurseveSO();
+            List<Kurs> kursevi = (List<Kurs>)operacija.IzvrsiSO(new Kurs());
+            return kursevi;
+        }
+
+        public List<Kurs> PretraziKurseve(Kurs kurs)
+        {
+            PretraziKurseveSO operacija = new PretraziKurseveSO();
+            List<Kurs> kursevi = (List<Kurs>)operacija.IzvrsiSO(kurs);
+            return kursevi;
+        }
+
+        public Kurs VratiKurs(Kurs k)
+        {
+            VratiKursSO operacija = new VratiKursSO();
+            Kurs kurs = (Kurs)operacija.IzvrsiSO(k);
+            return kurs;
         }
     }
 }

@@ -24,6 +24,9 @@ namespace Domen
         public string Join => string.Empty;
 
         [Browsable(false)]
+        public string UslovObrade { get; set; }
+
+        [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)
         {
             List<DomenskiObjekat> zaposleni = new List<DomenskiObjekat> ();
@@ -39,6 +42,11 @@ namespace Domen
                 zaposleni.Add (zaposlen);   
             }
             return zaposleni;
+        }
+
+        public override string ToString()
+        {
+            return KorisnickoIme;
         }
     }
 }

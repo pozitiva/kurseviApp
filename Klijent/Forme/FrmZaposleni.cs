@@ -21,7 +21,8 @@ namespace Klijent.Forme
             ulogovaniZaposleni = zaposleni;
             lblZaposleni.Text = ulogovaniZaposleni.KorisnickoIme;
 
-            this.kreirajKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajKurs(ulogovaniZaposleni);
+            this.kreirajKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajKurs();
+            this.pretragaKursevaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveKurseve();
         }
 
         public void PromeniPanel(Control control)
@@ -30,5 +31,6 @@ namespace Klijent.Forme
             control.Dock = DockStyle.Fill;
             pnlGlavna.Controls.Add(control);
         }
+
     }
 }

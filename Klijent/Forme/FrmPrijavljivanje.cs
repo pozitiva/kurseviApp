@@ -28,11 +28,5 @@ namespace Klijent
             txtSifra.Text = "iva";
 
         }
-
-        private void btnPrijaviSe_Click(object sender, EventArgs e)
-        {
-
-            //GlavniKoordinator.Instance.KreirajPrijavu();
-        }
     }
 }

@@ -59,7 +59,6 @@
             this.btnPrijaviSe.TabIndex = 2;
             this.btnPrijaviSe.Text = "Prijavi se";
             this.btnPrijaviSe.UseVisualStyleBackColor = true;
-            this.btnPrijaviSe.Click += new System.EventHandler(this.btnPrijaviSe_Click);
             // 
             // label1
             // 

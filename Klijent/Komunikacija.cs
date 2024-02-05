@@ -2,6 +2,7 @@
 using Domen.Komunikacija;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace Klijent
             }
         }
 
+        public bool konektovanNaServer = false;
         public bool PoveziSe()
         {
             try
@@ -38,6 +40,7 @@ namespace Klijent
                 primalac = new Primalac(socket);
                 posaljilac = new Posaljilac(socket);
 
+                konektovanNaServer = true;
                 return true;
             }catch(Exception ex)
             {
@@ -104,6 +107,110 @@ namespace Klijent
                 //OtkacilaSeApp();
             }
 
+        }
+
+        public List<Kurs> VratiSveKurseve()
+        {
+            if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.VratiSveKurseve
+            };
+
+            posaljilac.Posalji(z);
+
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+
+            return odgovor.Kursevi;
+        }
+
+        public List<Kurs> PretraziKurs(Kurs k)
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev
+                {
+                    Kurs = k,
+                    Operacija = Operacija.PretraziKurs
+
+                };
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                List<Kurs> pronadjeniKursevi = odgovor.Kursevi;
+
+                if (odgovor.Operacija == Operacija.KurseviUspesnoPronadjeni)
+                {
+                    MessageBox.Show("Sistem je nasao kurseve po zadatoj vrednosti");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da nadje kurseve po zadatoj vrednosti");
+                }
+
+                return pronadjeniKursevi;
+            }
+            catch (IOException ex)
+            {
+                //DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Kurs VratiKurs(Kurs k)
+        {
+            try
+            {
+                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Zahtev zahtev = new Zahtev()
+                {
+                    Kurs=  k,
+                    Operacija = Operacija.VratiKurs
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                Kurs kurs = odgovor.Kurs;
+                if (odgovor.Operacija == Operacija.KursUspesnoNadjen)
+                {
+                    MessageBox.Show("Sistem je ucitao kurs");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da ucita kurs");
+                }
+
+                return kurs;
+            }
+            catch (IOException ex)
+            {
+                //DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool SocketPovezan()
+        {
+            if (!konektovanNaServer) return false;
+            if (socket == null) return false;
+            if (socket.Connected == false) return false;
+            bool part1 = socket.Poll(1000, SelectMode.SelectRead);
+            bool part2 = (socket.Available == 0);
+            if (part1 && part2)
+                return false;
+            else
+                return true;
         }
     }
 }

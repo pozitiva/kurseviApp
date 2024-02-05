@@ -25,7 +25,8 @@ namespace Klijent.Kontroleri
         private static GlavniKoordinator instance;
         public static GlavniKoordinator Instance
         {
-            get {
+            get
+            {
                 if (instance == null)
                     instance = new GlavniKoordinator();
                 return instance;
@@ -53,10 +54,19 @@ namespace Klijent.Kontroleri
         }
 
         #endregion
-        public void PrikaziKreirajKurs(Zaposleni ulogovaniZaposleni)
+        public void PrikaziKreirajKurs()
         {
-            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcKreirajKurs(FormMode.Dodaj, null, ulogovaniZaposleni));
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcKreirajKurs(FormMode.Dodaj, null));
         }
 
+        public void PrikaziSveKurseve()
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve());
+        }
+
+        public void PrikaziPodatkeOKursu(Kurs k)
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurs(k));
+        }
     }
 }

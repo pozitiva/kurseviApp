@@ -13,9 +13,9 @@ namespace Domen
         string VrednostiZaUnos {  get; }
         string PovratneVrednosti { get; }
         string Join {  get; }
+        string UslovObrade {  get; }
         //string KriterijumPretrage { get; }
         //string VrednostiZaIzmenu { get; }
-        //string UslovObrade {  get; }
         List<DomenskiObjekat> VratiListu(SqlDataReader reader);
     }
 }
