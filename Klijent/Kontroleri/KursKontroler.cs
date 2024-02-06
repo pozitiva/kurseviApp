@@ -29,12 +29,10 @@ namespace Klijent.Kontroleri
             {
                 this.kurs = new Kurs();
 
-                ucUpravljajKursem.lblKreiranjeKursa.Visible = true;
                 ucUpravljajKursem.lblIzmeniKurs.Visible = false;
                 ucUpravljajKursem.lblKurs.Visible = false;
                 ucUpravljajKursem.lblObrisiKurs.Visible = false;
 
-                ucUpravljajKursem.btnKreiraj.Visible = true;
                 ucUpravljajKursem.btnIzmeni.Visible = false;
                 ucUpravljajKursem.btnPrikaziSve.Visible = false;
                 ucUpravljajKursem.btnObrisiKurs.Visible = false;
@@ -46,12 +44,10 @@ namespace Klijent.Kontroleri
             if (mode == FormMode.Izmeni)
             {
                 ucUpravljajKursem.lblKreiranjeKursa.Visible = false;
-                ucUpravljajKursem.lblIzmeniKurs.Visible = true;
                 ucUpravljajKursem.lblKurs.Visible = false;
                 ucUpravljajKursem.lblObrisiKurs.Visible = false;
 
                 ucUpravljajKursem.btnKreiraj.Visible = false;
-                ucUpravljajKursem.btnIzmeni.Visible = true;
                 ucUpravljajKursem.btnPrikaziSve.Visible = false;
                 ucUpravljajKursem.btnObrisiKurs.Visible = false;
 
@@ -68,15 +64,12 @@ namespace Klijent.Kontroleri
                 ucUpravljajKursem.lblKreiranjeKursa.Visible = false;
                 ucUpravljajKursem.lblIzmeniKurs.Visible = false;
                 ucUpravljajKursem.lblObrisiKurs.Visible = false;
-                ucUpravljajKursem.lblKurs.Visible = true;
 
                 ucUpravljajKursem.btnKreiraj.Visible = false;
                 ucUpravljajKursem.btnIzmeni.Visible = false;
                 ucUpravljajKursem.btnObrisiKurs.Visible = false;
-                ucUpravljajKursem.btnPrikaziSve.Visible = true;
 
                 ucUpravljajKursem.cmbPredavaci.Visible = false;
-                ucUpravljajKursem.txtPredavac.Visible = true;
 
                 ucUpravljajKursem.txtNazivKursa.Text = kurs.NazivKursa;
                 ucUpravljajKursem.txtTrajanje.Text = kurs.TrajanjeUMesecima.ToString();
@@ -95,12 +88,10 @@ namespace Klijent.Kontroleri
                 ucUpravljajKursem.lblKreiranjeKursa.Visible = false;
                 ucUpravljajKursem.lblIzmeniKurs.Visible = false;
                 ucUpravljajKursem.lblKurs.Visible = false;
-                ucUpravljajKursem.lblObrisiKurs.Visible = true;
 
                 ucUpravljajKursem.btnKreiraj.Visible = false;
                 ucUpravljajKursem.btnIzmeni.Visible = false;
                 ucUpravljajKursem.btnPrikaziSve.Visible = false;
-                ucUpravljajKursem.btnObrisiKurs.Visible = true;
                 ucUpravljajKursem.cmbPredavaci.Visible = false;
                 ucUpravljajKursem.txtPredavac.Visible = true;
 
@@ -297,8 +288,8 @@ namespace Klijent.Kontroleri
             {
                 if (ucPrikaziKurseve.dgvKursevi.SelectedRows.Count != 1)
                 {
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Text = "Morate da odaberete jedan kurs";
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Visible = true;
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Text = "Morate da odaberete jedan kurs";
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Visible = true;
                     throw new KorisnickaGreska("greska >> selektovan kurs");
                 }
 
@@ -323,8 +314,8 @@ namespace Klijent.Kontroleri
             {
                 if (ucPrikaziKurseve.dgvKursevi.SelectedRows.Count != 1)
                 {
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Text = "Morate da odaberete jedan kurs";
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Visible = true;
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Text = "Morate da odaberete jedan kurs";
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Visible = true;
                     throw new KorisnickaGreska("greska >> selektovan kurs");
                 }
 
@@ -349,8 +340,8 @@ namespace Klijent.Kontroleri
 
                 if (ucPrikaziKurseve.dgvKursevi.SelectedRows.Count != 1)
                 {
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Text = "Morate da odaberete jedan kurs";
-                    ucPrikaziKurseve.lblSelektovanKursGreska.Visible = true;
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Text = "Morate da odaberete jedan kurs";
+                    ucPrikaziKurseve.lblSelektovanUcenikGreska.Visible = true;
                     throw new KorisnickaGreska("greska >> selektovan kurs");
                 }
 
@@ -379,7 +370,7 @@ namespace Klijent.Kontroleri
                     {
                         KriterijumPretrage = $" lower(Kurs.nazivkursa) like '%{filter}%' or lower(p.prezime) like '{filter}%' or lower(p.ime) like '{filter}%'"
                     };
-                    List<Kurs> filtriraniKursevi = Komunikacija.Instance.PretraziKurs(k);
+                    List<Kurs> filtriraniKursevi = Komunikacija.Instance.PretraziKurseve(k);
                     ucPrikaziKurseve.dgvKursevi.DataSource = filtriraniKursevi;
                 }
                 else

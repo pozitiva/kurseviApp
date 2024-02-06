@@ -22,22 +22,22 @@ namespace Domen
         public string NazivTabele => "Ucenik";
 
         [Browsable(false)]
-        public string VrednostiZaUnos => $"'{IDUcenika}', '{Ime}', '{Prezime}', '{DatumRodjenja}', '{Zaposleni.KorisnickoIme}'";
+        public string VrednostiZaUnos => $"'{Ime}', '{Prezime}', '{DatumRodjenja.ToString("MM/dd/yyyy")}', '{Zaposleni.KorisnickoIme}'";
 
         [Browsable(false)]
         public string PovratneVrednosti => "*";
 
         [Browsable(false)]
-        public string Join => "join zaposleni z on z.koriscnikoime= kurs.korisnickoime";
+        public string Join => "join zaposleni z on z.korisnickoime= ucenik.korisnickoime";
 
         [Browsable(false)]
         public string KriterijumPretrage { get; set; }
 
         [Browsable(false)]
-        public string VrednostiZaIzmenu => "";
+        public string VrednostiZaIzmenu => $"ime='{Ime}', prezime='{Prezime}', datumRodjenja='{DatumRodjenja.ToString("MM/dd/yyyy")}', korisnickoIme= '{Zaposleni.KorisnickoIme}'";
 
         [Browsable(false)]
-        public string UslovObrade => "";
+        public string UslovObrade => $"idUcenika={IDUcenika}";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

@@ -97,6 +97,32 @@ namespace kurseviApp
                             odgovor.Operacija = Kontroler.Instance.ObrisiKurs(zahtev.Kurs) ? Operacija.KursUspesnoObrisan : Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
+                        case Operacija.KreirajUcenika:
+                            odgovor.Operacija = Kontroler.Instance.KreirajUcenika(zahtev.Ucenik) ? Operacija.UcenikUspesnoKreiran : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiSveUcenike:
+                            odgovor.Ucenici = Kontroler.Instance.VratiSveUcenike();
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.PretraziUcenika:
+                            odgovor.Ucenici = Kontroler.Instance.PretraziUcenike(zahtev.Ucenik);
+                            odgovor.Operacija = Operacija.UceniciUspesnoPronadjeni;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiUcenika:
+                            odgovor.Ucenik = Kontroler.Instance.VratiUcenika(zahtev.Ucenik);
+                            odgovor.Operacija = Operacija.UcenikUspesnoNadjen;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.IzmeniUcenika:
+                            odgovor.Operacija = Kontroler.Instance.IzmeniUcenika(zahtev.Ucenik) ? Operacija.UcenikUspesnoIzmenjen : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.ObrisiUcenika:
+                            odgovor.Operacija = Kontroler.Instance.ObrisiUcenika(zahtev.Ucenik) ? Operacija.UcenikUspesnoObrisan : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
                         default:
                             break;
                     }

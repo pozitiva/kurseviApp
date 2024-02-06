@@ -20,7 +20,7 @@ namespace Klijent.Kontroleri
         //kontroleri
         public ZaposleniKontroler zaposleniKontroler;
         public KursKontroler kursKontroler;
-
+        public UcenikKontroler ucenikKontroler;
 
         private static GlavniKoordinator instance;
         public static GlavniKoordinator Instance
@@ -37,6 +37,7 @@ namespace Klijent.Kontroleri
         {
             zaposleniKontroler = new ZaposleniKontroler();
             kursKontroler = new KursKontroler();
+            ucenikKontroler = new UcenikKontroler();
         }
 
         #region prijava
@@ -87,6 +88,36 @@ namespace Klijent.Kontroleri
         public void PrikaziKursZaBrisanje(Kurs k)
         {
             frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Obrisi,k));
+        }
+
+        public void PrikaziKreirajUcenika()
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Dodaj, null));
+        }
+        public void PrikaziIzmeniUcenike()
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Izmeni));
+        }
+
+        public void PrikaziSveUcenike()
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Prikazi));
+        }
+
+        public void PrikaziObirsiUcenika()
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Obrisi));
+        }
+
+        public void PrikaziUcenikaZaIzmenu(Ucenik u)
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Izmeni, u));
+
+        }
+
+        public void PrikaziUcenikaZaBrisanje(Ucenik u)
+        {
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Obrisi, u));  
         }
     }
 }

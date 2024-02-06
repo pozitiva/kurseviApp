@@ -12,5 +12,6 @@ namespace Domen
         public Operacija Operacija {  get; set; }
         public Zaposleni Zaposleni { get; set; }
         public Kurs Kurs { get; set; }
+        public Ucenik Ucenik { get; set; }
     }
 }

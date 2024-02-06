@@ -66,7 +66,14 @@
     <Compile Include="FormMode.cs" />
     <Compile Include="Kontroleri\GlavniKoordinator.cs" />
     <Compile Include="Kontroleri\KursKontroler.cs" />
+    <Compile Include="Kontroleri\UcenikKontroler.cs" />
     <Compile Include="Kontroleri\ZaposleniKontroler.cs" />
+    <Compile Include="KorisnickeKontrole\UcPrikaziUcenike.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcPrikaziUcenike.Designer.cs">
+      <DependentUpon>UcPrikaziUcenike.cs</DependentUpon>
+    </Compile>
     <Compile Include="KorisnickeKontrole\UcUpravljajKursem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,6 +86,12 @@
     <Compile Include="KorisnickeKontrole\UcPrikaziKurseve.Designer.cs">
       <DependentUpon>UcPrikaziKurseve.cs</DependentUpon>
     </Compile>
+    <Compile Include="KorisnickeKontrole\UcUpravljajUcenikom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcUpravljajUcenikom.Designer.cs">
+      <DependentUpon>UcUpravljajUcenikom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forme\FrmPrijavljivanje.resx">
@@ -87,11 +100,17 @@
     <EmbeddedResource Include="Forme\FrmZaposleni.resx">
       <DependentUpon>FrmZaposleni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziUcenike.resx">
+      <DependentUpon>UcPrikaziUcenike.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajKursem.resx">
       <DependentUpon>UcUpravljajKursem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziKurseve.resx">
       <DependentUpon>UcPrikaziKurseve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajUcenikom.resx">
+      <DependentUpon>UcUpravljajUcenikom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

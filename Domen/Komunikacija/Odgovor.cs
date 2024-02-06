@@ -15,6 +15,8 @@ namespace Domen
         public List<Predavac> Predavaci { get; set; }
         public List<Kurs> Kursevi { get; set; }
         public Kurs Kurs { get; set; }
+        public Ucenik Ucenik { get; set; }
+        public List<Ucenik> Ucenici { get; set; }
         public bool Uspesno { get; set; }
         public string Poruka { get; set; }
         public Exception Greska { get; set; }

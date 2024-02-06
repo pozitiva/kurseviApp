@@ -17,6 +17,17 @@
         IzmeniKurs,
         KursUspesnoIzmenjen,
         ObrisiKurs,
-        KursUspesnoObrisan
+        KursUspesnoObrisan,
+        KreirajUcenika,
+        UcenikUspesnoKreiran,
+        VratiSveUcenike,
+        VratiUcenika,
+        UcenikUspesnoNadjen,
+        UceniciUspesnoPronadjeni,
+        PretraziUcenika,
+        IzmeniUcenika,
+        UcenikUspesnoIzmenjen,
+        ObrisiUcenika,
+        UcenikUspesnoObrisan
     }
 }

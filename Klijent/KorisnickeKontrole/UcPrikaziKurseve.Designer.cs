@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblSelektovanKursGreska = new System.Windows.Forms.Label();
+            this.lblSelektovanUcenikGreska = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnPrikaziSveKurseve = new System.Windows.Forms.Button();
             this.btnIzaberi = new System.Windows.Forms.Button();
@@ -41,19 +41,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKursevi)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblSelektovanKursGreska
+            // lblSelektovanUcenikGreska
             // 
-            this.lblSelektovanKursGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSelektovanKursGreska.AutoSize = true;
-            this.lblSelektovanKursGreska.BackColor = System.Drawing.Color.Transparent;
-            this.lblSelektovanKursGreska.Font = new System.Drawing.Font("Bahnschrift Light", 7.8F);
-            this.lblSelektovanKursGreska.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
-            this.lblSelektovanKursGreska.Location = new System.Drawing.Point(72, 564);
-            this.lblSelektovanKursGreska.Name = "lblSelektovanKursGreska";
-            this.lblSelektovanKursGreska.Size = new System.Drawing.Size(60, 19);
-            this.lblSelektovanKursGreska.TabIndex = 32;
-            this.lblSelektovanKursGreska.Text = "Greska";
-            this.lblSelektovanKursGreska.Visible = false;
+            this.lblSelektovanUcenikGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSelektovanUcenikGreska.AutoSize = true;
+            this.lblSelektovanUcenikGreska.BackColor = System.Drawing.Color.Transparent;
+            this.lblSelektovanUcenikGreska.Font = new System.Drawing.Font("Bahnschrift Light", 7.8F);
+            this.lblSelektovanUcenikGreska.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.lblSelektovanUcenikGreska.Location = new System.Drawing.Point(72, 564);
+            this.lblSelektovanUcenikGreska.Name = "lblSelektovanUcenikGreska";
+            this.lblSelektovanUcenikGreska.Size = new System.Drawing.Size(60, 19);
+            this.lblSelektovanUcenikGreska.TabIndex = 32;
+            this.lblSelektovanUcenikGreska.Text = "Greska";
+            this.lblSelektovanUcenikGreska.Visible = false;
             // 
             // txtFilter
             // 
@@ -152,7 +152,7 @@
             this.lblKursevi.BackColor = System.Drawing.Color.Transparent;
             this.lblKursevi.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblKursevi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
-            this.lblKursevi.Location = new System.Drawing.Point(487, 27);
+            this.lblKursevi.Location = new System.Drawing.Point(478, 27);
             this.lblKursevi.Name = "lblKursevi";
             this.lblKursevi.Size = new System.Drawing.Size(176, 54);
             this.lblKursevi.TabIndex = 27;
@@ -200,7 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeniKurs);
-            this.Controls.Add(this.lblSelektovanKursGreska);
+            this.Controls.Add(this.lblSelektovanUcenikGreska);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnPrikaziSveKurseve);
             this.Controls.Add(this.btnIzaberi);
@@ -216,7 +216,7 @@
 
         #endregion
         private System.Windows.Forms.Label lblKursevi;
-        public System.Windows.Forms.Label lblSelektovanKursGreska;
+        public System.Windows.Forms.Label lblSelektovanUcenikGreska;
         public System.Windows.Forms.TextBox txtFilter;
         public System.Windows.Forms.Button btnPrikaziSveKurseve;
         public System.Windows.Forms.Button btnIzaberi;

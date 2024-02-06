@@ -124,7 +124,7 @@ namespace Klijent
             return odgovor.Kursevi;
         }
 
-        public List<Kurs> PretraziKurs(Kurs k)
+        public List<Kurs> PretraziKurseve(Kurs k)
         {
             try
             {
@@ -258,6 +258,183 @@ namespace Klijent
                 else
                 {
                     MessageBox.Show("Sistem ne moze da obrise kurs");
+                }
+            }
+            catch (IOException ex)
+            {
+
+            }
+        }
+
+        public void KreirajUcenika(Ucenik u)
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.KreirajUcenika,
+                    Ucenik = u
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                if (odgovor.Operacija == Operacija.UcenikUspesnoKreiran)
+                {
+                    MessageBox.Show("Uspesno ste kreirali ucenika");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da kreira ucenika");
+                }
+            }
+            catch (IOException ex)
+            {
+                //OtkacilaSeApp();
+            }
+        }
+
+        public List<Ucenik> VratiSveUcenike()
+        {
+            if(!SocketPovezan()) throw new IOException("Niste konektovani na server");
+            Zahtev z = new Zahtev
+            {
+                Operacija = Operacija.VratiSveUcenike
+            };
+
+            posaljilac.Posalji(z);
+
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+
+            return odgovor.Ucenici;
+        }
+
+        public List<Ucenik> PretraziUcenike(Ucenik u)
+        {
+            try
+            {
+                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Zahtev zahtev = new Zahtev()
+                {
+                    Ucenik = u,
+                    Operacija = Operacija.PretraziUcenika
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                List<Ucenik> pronadjeniUcenici = odgovor.Ucenici;
+
+                if (odgovor.Operacija == Operacija.UceniciUspesnoPronadjeni)
+                {
+                    MessageBox.Show("Sistem je nasao ucenike po zadatoj vrednosti");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da nadje ucenike po zadatoj vrednosti");
+                }
+
+                return pronadjeniUcenici;
+            }
+            catch (IOException ex)
+            {
+                //DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Ucenik VratiUcenika(Ucenik u)
+        {
+            try
+            {
+                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Zahtev zahtev = new Zahtev()
+                {
+                    Ucenik= u,
+                    Operacija = Operacija.VratiUcenika
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                Ucenik ucenik = odgovor.Ucenik;
+                if (odgovor.Operacija == Operacija.UcenikUspesnoNadjen)
+                {
+                    MessageBox.Show("Sistem je ucitao ucenika");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da ucita ucenika");
+                }
+
+                return ucenik;
+            }
+            catch (IOException ex)
+            {
+                //DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void IzmeniUcenika(Ucenik u)
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev
+                {
+                    Ucenik = u,
+                    Operacija = Operacija.IzmeniUcenika
+                };
+
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.UcenikUspesnoIzmenjen)
+                {
+                    MessageBox.Show("Sistem je izmenio podatke o uceniku");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da izmeni ucenika");
+                }
+            }
+            catch (IOException ex)
+            {
+
+            }
+        }
+
+        public void ObrisiUcenika(Ucenik u)
+        {
+            try 
+            { 
+                Zahtev zahtev = new Zahtev 
+                { 
+                    Ucenik = u,
+                    Operacija= Operacija.ObrisiUcenika
+                };
+
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.UcenikUspesnoObrisan)
+                {
+                    MessageBox.Show("Sistem je obrisao ucenika");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da obrise ucenika");
                 }
             }
             catch (IOException ex)

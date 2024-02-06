@@ -57,8 +57,7 @@ namespace Server
         public Kurs VratiKurs(Kurs k)
         {
             VratiKursSO operacija = new VratiKursSO();
-            Kurs kurs = (Kurs)operacija.IzvrsiSO(k);
-            return kurs;
+            return (Kurs)operacija.IzvrsiSO(k);
         }
 
         public bool IzmeniKurs(Kurs k)
@@ -71,6 +70,44 @@ namespace Server
         {
             ObrisiKursSO operacija = new ObrisiKursSO();
             return (bool)operacija.IzvrsiSO(k);
+        }
+
+        public bool KreirajUcenika(Ucenik u)
+        {
+            KreirajUcenikaSO operacija = new KreirajUcenikaSO();
+            return (bool)operacija.IzvrsiSO(u);
+        }
+
+        public List<Ucenik> VratiSveUcenike()
+        {
+            VratiSveUcenikeSO operacija = new VratiSveUcenikeSO();
+            List<Ucenik> ucenici = (List<Ucenik>)operacija.IzvrsiSO(new Ucenik());
+            return ucenici;
+        }
+
+       public List<Ucenik> PretraziUcenike(Ucenik u)
+        {
+            PretraziUcenikeSO operacija = new PretraziUcenikeSO();
+            List<Ucenik> ucenici = (List<Ucenik>)operacija.IzvrsiSO(u);
+            return ucenici;
+        }
+
+       public Ucenik VratiUcenika(Ucenik u)
+       {
+            VratiUcenikaSO operacija = new VratiUcenikaSO();
+            return (Ucenik)operacija.IzvrsiSO(u);
+       }
+
+        public bool IzmeniUcenika(Ucenik u)
+        {
+            IzmeniUcenikaSO operacija = new IzmeniUcenikaSO();
+            return (bool)operacija.IzvrsiSO(u);
+        }
+
+        public bool ObrisiUcenika(Ucenik u)
+        {
+            ObrisiUcenikaSO operacija = new ObrisiUcenikaSO();
+            return (bool)operacija.IzvrsiSO(u);
         }
     }
 }

@@ -331,7 +331,7 @@
             this.btnObrisiKurs.Text = "Obrisi kurs";
             this.btnObrisiKurs.UseVisualStyleBackColor = false;
             // 
-            // UcUpravljajKurs
+            // UcUpravljajKursem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -356,7 +356,7 @@
             this.Controls.Add(this.lblNazivKursa);
             this.Controls.Add(this.lblIzmeniKurs);
             this.Controls.Add(this.lblKreiranjeKursa);
-            this.Name = "UcUpravljajKurs";
+            this.Name = "UcUpravljajKursem";
             this.Size = new System.Drawing.Size(1145, 659);
             this.ResumeLayout(false);
             this.PerformLayout();
