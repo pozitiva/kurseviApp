@@ -67,17 +67,11 @@
     <Compile Include="Kontroleri\GlavniKoordinator.cs" />
     <Compile Include="Kontroleri\KursKontroler.cs" />
     <Compile Include="Kontroleri\ZaposleniKontroler.cs" />
-    <Compile Include="KorisnickeKontrole\UcKreirajKurs.cs">
+    <Compile Include="KorisnickeKontrole\UcUpravljajKursem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KorisnickeKontrole\UcKreirajKurs.Designer.cs">
-      <DependentUpon>UcKreirajKurs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="KorisnickeKontrole\UcPrikaziKurs.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="KorisnickeKontrole\UcPrikaziKurs.Designer.cs">
-      <DependentUpon>UcPrikaziKurs.cs</DependentUpon>
+    <Compile Include="KorisnickeKontrole\UcUpravljajKursem.Designer.cs">
+      <DependentUpon>UcUpravljajKursem.cs</DependentUpon>
     </Compile>
     <Compile Include="KorisnickeKontrole\UcPrikaziKurseve.cs">
       <SubType>UserControl</SubType>
@@ -93,11 +87,8 @@
     <EmbeddedResource Include="Forme\FrmZaposleni.resx">
       <DependentUpon>FrmZaposleni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KorisnickeKontrole\UcKreirajKurs.resx">
-      <DependentUpon>UcKreirajKurs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziKurs.resx">
-      <DependentUpon>UcPrikaziKurs.cs</DependentUpon>
+    <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajKursem.resx">
+      <DependentUpon>UcUpravljajKursem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziKurseve.resx">
       <DependentUpon>UcPrikaziKurseve.cs</DependentUpon>

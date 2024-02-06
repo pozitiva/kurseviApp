@@ -24,7 +24,13 @@ namespace Domen
         public string Join => string.Empty;
 
         [Browsable(false)]
-        public string UslovObrade { get; set; }
+        public string KriterijumPretrage { get; set; }
+
+        [Browsable(false)]
+        public string VrednostiZaIzmenu => "";
+
+        [Browsable(false)]
+        public string UslovObrade => "";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

@@ -34,10 +34,10 @@ namespace Server
             return predavaci;
         }
 
-        public bool KreirajKurs(Kurs kurs)
+        public bool KreirajKurs(Kurs k)
         {
             KreirajKursSO operacija = new KreirajKursSO();
-            return (bool)operacija.IzvrsiSO(kurs);
+            return (bool)operacija.IzvrsiSO(k);
         }
 
         public List<Kurs> VratiSveKurseve()
@@ -47,10 +47,10 @@ namespace Server
             return kursevi;
         }
 
-        public List<Kurs> PretraziKurseve(Kurs kurs)
+        public List<Kurs> PretraziKurseve(Kurs k)
         {
             PretraziKurseveSO operacija = new PretraziKurseveSO();
-            List<Kurs> kursevi = (List<Kurs>)operacija.IzvrsiSO(kurs);
+            List<Kurs> kursevi = (List<Kurs>)operacija.IzvrsiSO(k);
             return kursevi;
         }
 
@@ -59,6 +59,18 @@ namespace Server
             VratiKursSO operacija = new VratiKursSO();
             Kurs kurs = (Kurs)operacija.IzvrsiSO(k);
             return kurs;
+        }
+
+        public bool IzmeniKurs(Kurs k)
+        {
+            IzmeniKursSO operacija = new IzmeniKursSO();
+            return (bool)operacija.IzvrsiSO(k);
+        }
+
+        public bool ObrisiKurs(Kurs k)
+        {
+            ObrisiKursSO operacija = new ObrisiKursSO();
+            return (bool)operacija.IzvrsiSO(k);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Klijent.KorisnickeKontrole
 {
-    partial class UcKreirajKurs
+    partial class UcUpravljajKursem
     {
         /// <summary> 
         /// Required designer variable.
@@ -44,6 +44,11 @@
             this.lblTrajanjeGreska = new System.Windows.Forms.Label();
             this.lblPredavacGreska = new System.Windows.Forms.Label();
             this.lblOpisGreska = new System.Windows.Forms.Label();
+            this.lblKurs = new System.Windows.Forms.Label();
+            this.btnPrikaziSve = new System.Windows.Forms.Button();
+            this.txtPredavac = new System.Windows.Forms.TextBox();
+            this.lblObrisiKurs = new System.Windows.Forms.Label();
+            this.btnObrisiKurs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnKreiraj
@@ -192,7 +197,7 @@
             this.lblIzmeniKurs.BackColor = System.Drawing.Color.Transparent;
             this.lblIzmeniKurs.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIzmeniKurs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
-            this.lblIzmeniKurs.Location = new System.Drawing.Point(459, 51);
+            this.lblIzmeniKurs.Location = new System.Drawing.Point(454, 51);
             this.lblIzmeniKurs.Name = "lblIzmeniKurs";
             this.lblIzmeniKurs.Size = new System.Drawing.Size(259, 54);
             this.lblIzmeniKurs.TabIndex = 60;
@@ -251,10 +256,90 @@
             this.lblOpisGreska.Text = "Greska";
             this.lblOpisGreska.Visible = false;
             // 
-            // UcKreirajKurs
+            // lblKurs
+            // 
+            this.lblKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblKurs.AutoSize = true;
+            this.lblKurs.BackColor = System.Drawing.Color.Transparent;
+            this.lblKurs.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblKurs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.lblKurs.Location = new System.Drawing.Point(526, 51);
+            this.lblKurs.Name = "lblKurs";
+            this.lblKurs.Size = new System.Drawing.Size(119, 54);
+            this.lblKurs.TabIndex = 80;
+            this.lblKurs.Text = "Kurs";
+            // 
+            // btnPrikaziSve
+            // 
+            this.btnPrikaziSve.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnPrikaziSve.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrikaziSve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrikaziSve.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnPrikaziSve.FlatAppearance.BorderSize = 0;
+            this.btnPrikaziSve.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrikaziSve.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPrikaziSve.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnPrikaziSve.Location = new System.Drawing.Point(768, 140);
+            this.btnPrikaziSve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnPrikaziSve.Name = "btnPrikaziSve";
+            this.btnPrikaziSve.Size = new System.Drawing.Size(180, 82);
+            this.btnPrikaziSve.TabIndex = 82;
+            this.btnPrikaziSve.Text = "Prikaži sve kurseve";
+            this.btnPrikaziSve.UseVisualStyleBackColor = false;
+            // 
+            // txtPredavac
+            // 
+            this.txtPredavac.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPredavac.BackColor = System.Drawing.Color.SeaShell;
+            this.txtPredavac.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.txtPredavac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.txtPredavac.Location = new System.Drawing.Point(442, 304);
+            this.txtPredavac.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPredavac.Name = "txtPredavac";
+            this.txtPredavac.ReadOnly = true;
+            this.txtPredavac.Size = new System.Drawing.Size(282, 32);
+            this.txtPredavac.TabIndex = 83;
+            // 
+            // lblObrisiKurs
+            // 
+            this.lblObrisiKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblObrisiKurs.AutoSize = true;
+            this.lblObrisiKurs.BackColor = System.Drawing.Color.Transparent;
+            this.lblObrisiKurs.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblObrisiKurs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.lblObrisiKurs.Location = new System.Drawing.Point(454, 51);
+            this.lblObrisiKurs.Name = "lblObrisiKurs";
+            this.lblObrisiKurs.Size = new System.Drawing.Size(243, 54);
+            this.lblObrisiKurs.TabIndex = 84;
+            this.lblObrisiKurs.Text = "Obrisi kurs";
+            // 
+            // btnObrisiKurs
+            // 
+            this.btnObrisiKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnObrisiKurs.BackColor = System.Drawing.Color.Transparent;
+            this.btnObrisiKurs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnObrisiKurs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnObrisiKurs.FlatAppearance.BorderSize = 0;
+            this.btnObrisiKurs.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnObrisiKurs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObrisiKurs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnObrisiKurs.Location = new System.Drawing.Point(768, 140);
+            this.btnObrisiKurs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnObrisiKurs.Name = "btnObrisiKurs";
+            this.btnObrisiKurs.Size = new System.Drawing.Size(180, 82);
+            this.btnObrisiKurs.TabIndex = 85;
+            this.btnObrisiKurs.Text = "Obrisi kurs";
+            this.btnObrisiKurs.UseVisualStyleBackColor = false;
+            // 
+            // UcUpravljajKurs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnObrisiKurs);
+            this.Controls.Add(this.lblObrisiKurs);
+            this.Controls.Add(this.txtPredavac);
+            this.Controls.Add(this.btnPrikaziSve);
+            this.Controls.Add(this.lblKurs);
             this.Controls.Add(this.lblOpisGreska);
             this.Controls.Add(this.lblPredavacGreska);
             this.Controls.Add(this.lblTrajanjeGreska);
@@ -271,7 +356,7 @@
             this.Controls.Add(this.lblNazivKursa);
             this.Controls.Add(this.lblIzmeniKurs);
             this.Controls.Add(this.lblKreiranjeKursa);
-            this.Name = "UcKreirajKurs";
+            this.Name = "UcUpravljajKurs";
             this.Size = new System.Drawing.Size(1145, 659);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,5 +380,10 @@
         public System.Windows.Forms.Label lblTrajanjeGreska;
         public System.Windows.Forms.Label lblPredavacGreska;
         public System.Windows.Forms.Label lblOpisGreska;
+        public System.Windows.Forms.Label lblKurs;
+        public System.Windows.Forms.Button btnPrikaziSve;
+        public System.Windows.Forms.TextBox txtPredavac;
+        public System.Windows.Forms.Label lblObrisiKurs;
+        public System.Windows.Forms.Button btnObrisiKurs;
     }
 }

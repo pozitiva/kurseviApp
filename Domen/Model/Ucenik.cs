@@ -31,7 +31,13 @@ namespace Domen
         public string Join => "join zaposleni z on z.koriscnikoime= kurs.korisnickoime";
 
         [Browsable(false)]
-        public string UslovObrade { get; set; }
+        public string KriterijumPretrage { get; set; }
+
+        [Browsable(false)]
+        public string VrednostiZaIzmenu => "";
+
+        [Browsable(false)]
+        public string UslovObrade => "";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

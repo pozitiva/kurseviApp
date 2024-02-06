@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class VratiKursSO : OpstaSistemskaOperacija
+    public class ObrisiKursSO : OpstaSistemskaOperacija
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            return (Kurs)broker.Vrati(domenskiObjekat);
+            return broker.Obrisi(domenskiObjekat)>0;
         }
     }
 }

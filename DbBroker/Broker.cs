@@ -61,25 +61,39 @@ namespace DbBroker
             return command.ExecuteNonQuery();
         }
 
-        public List<DomenskiObjekat> Pretrazi(DomenskiObjekat domenskiObjekat, string uslovObrade)
+        public List<DomenskiObjekat> Pretrazi(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection,transaction);
-            command.CommandText= $"select * from {domenskiObjekat.NazivTabele} {domenskiObjekat.Join} where {uslovObrade} ";
+            command.CommandText= $"select * from {domenskiObjekat.NazivTabele} {domenskiObjekat.Join} where {domenskiObjekat.KriterijumPretrage} ";
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.VratiListu(reader);
             reader.Close();
             return rezultat;
         }
 
-        public DomenskiObjekat Vrati(DomenskiObjekat domenskiObjekat, string uslovObrade)
+        public DomenskiObjekat Vrati(DomenskiObjekat domenskiObjekat)
         {
             SqlCommand command = new SqlCommand("", connection, transaction);
-            command.CommandText = $"select * from {domenskiObjekat.NazivTabele} {domenskiObjekat.Join} where {uslovObrade}";
+            command.CommandText = $"select * from {domenskiObjekat.NazivTabele} {domenskiObjekat.Join} where {domenskiObjekat.UslovObrade}";
             SqlDataReader reader = command.ExecuteReader();
             List<DomenskiObjekat> rezultat = domenskiObjekat.VratiListu(reader);
             reader.Close();
             if (rezultat.Count > 0) return rezultat[0];
             return null;
+        }
+
+        public int Izmeni(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"UPDATE {domenskiObjekat.NazivTabele} SET {domenskiObjekat.VrednostiZaIzmenu} WHERE {domenskiObjekat.UslovObrade}";
+            return command.ExecuteNonQuery();
+        }
+
+        public int Obrisi(DomenskiObjekat domenskiObjekat)
+        {
+            SqlCommand command = new SqlCommand("", connection, transaction);
+            command.CommandText = $"DELETE FROM {domenskiObjekat.NazivTabele} WHERE {domenskiObjekat.UslovObrade}";
+            return command.ExecuteNonQuery();
         }
     }
 }

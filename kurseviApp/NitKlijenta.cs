@@ -89,6 +89,14 @@ namespace kurseviApp
                             odgovor.Operacija = Operacija.KursUspesnoNadjen;
                             posaljilac.Posalji(odgovor);
                             break;
+                        case Operacija.IzmeniKurs:
+                            odgovor.Operacija = Kontroler.Instance.IzmeniKurs(zahtev.Kurs) ? Operacija.KursUspesnoIzmenjen : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.ObrisiKurs:
+                            odgovor.Operacija = Kontroler.Instance.ObrisiKurs(zahtev.Kurs) ? Operacija.KursUspesnoObrisan : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
                         default:
                             break;
                     }

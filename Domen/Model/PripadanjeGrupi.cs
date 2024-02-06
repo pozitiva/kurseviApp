@@ -29,7 +29,13 @@ namespace Domen
         public string Join => "join grupa g on pripadanjegrupi.idGrupe= g.idGrupe join zaposleni z on g.korisnickoIme= z.korisnickoIme join kurs k on g.idKursa= k.idKursa join predavac p on k.idPredavaca=p.idPredavaca join zaposleni z1 on z1.korisnickoIme= k.korisnickoIme join ucenik u on u.idUcenika=pripadanjegrupi.idUcenika join zaposleni z2 on u.korisnickoIme= z2.korisnickoIme";
 
         [Browsable(false)]
-        public string UslovObrade { get; set; }
+        public string KriterijumPretrage { get; set; }
+
+        [Browsable(false)]
+        public string VrednostiZaIzmenu => $" idgrupe='{Grupa.IDGrupe}'";
+
+        [Browsable(false)]
+        public string UslovObrade => "";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

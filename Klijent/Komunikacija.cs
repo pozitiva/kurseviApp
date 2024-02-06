@@ -212,5 +212,58 @@ namespace Klijent
             else
                 return true;
         }
+
+        public void IzmeniKurs(Kurs kurs)
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.IzmeniKurs,
+                    Kurs = kurs
+                };
+
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.KursUspesnoIzmenjen)
+                {
+                    MessageBox.Show("Sistem je izmenio podatke o kursu");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da izmeni kurs");
+                }
+            }catch (IOException ex)
+            {
+
+            }
+        }
+
+        public void ObrisiKurs(Kurs kurs)
+        {
+            try
+            {
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.ObrisiKurs,
+                    Kurs = kurs
+                };
+
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.KursUspesnoObrisan)
+                {
+                    MessageBox.Show("Sistem je obrisao kurs");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da obrise kurs");
+                }
+            }
+            catch (IOException ex)
+            {
+
+            }
+        }
     }
 }

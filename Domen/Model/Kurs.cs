@@ -31,9 +31,14 @@ namespace Domen
         [Browsable(false)]
         public string Join => " join predavac p on p.idpredavaca= kurs.idpredavaca join zaposleni z on z.korisnickoime = kurs.korisnickoime";
 
+        [Browsable(false)]
+        public string KriterijumPretrage { get; set; }
 
         [Browsable(false)]
-        public string UslovObrade { get; set; }
+        public string VrednostiZaIzmenu => $"nazivkursa='{NazivKursa}', trajanjeumesecima='{TrajanjeUMesecima}', opiskursa='{OpisKursa}',  idpredavaca='{Predavac.IDPredavaca}', korisnickoIme= '{Zaposleni.KorisnickoIme}'";
+
+        [Browsable(false)]
+        public string UslovObrade => $"idkursa='{IDKursa}'";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

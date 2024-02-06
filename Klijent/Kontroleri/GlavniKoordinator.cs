@@ -56,17 +56,37 @@ namespace Klijent.Kontroleri
         #endregion
         public void PrikaziKreirajKurs()
         {
-            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcKreirajKurs(FormMode.Dodaj, null));
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Dodaj, null));
         }
 
         public void PrikaziSveKurseve()
         {
-            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve());
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve(FormMode.Prikazi));
         }
 
         public void PrikaziPodatkeOKursu(Kurs k)
         {
-            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurs(k));
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Prikazi ,k));
+        }
+
+        public void PrikaziIzmeniKurs()
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve(FormMode.Izmeni));
+        }
+
+        public void PrikaziKursZaIzmenu(Kurs k)
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Izmeni,k));
+        }
+
+        public void PrikaziObrisiKurs()
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve(FormMode.Obrisi));
+        }
+
+        public void PrikaziKursZaBrisanje(Kurs k)
+        {
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Obrisi,k));
         }
     }
 }

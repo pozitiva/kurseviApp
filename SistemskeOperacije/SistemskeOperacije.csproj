@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IzmeniKursSO.cs" />
     <Compile Include="KreirajKursSO.cs" />
+    <Compile Include="ObrisiKursSO.cs" />
     <Compile Include="OpstaSistemskaOperacija.cs" />
     <Compile Include="PretraziKurseveSO.cs" />
     <Compile Include="PrijaviSeSO.cs" />

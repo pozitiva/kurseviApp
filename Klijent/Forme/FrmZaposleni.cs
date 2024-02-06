@@ -23,6 +23,8 @@ namespace Klijent.Forme
 
             this.kreirajKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajKurs();
             this.pretragaKursevaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveKurseve();
+            this.izmeniKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziIzmeniKurs();
+            this.obrisiKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziObrisiKurs();
         }
 
         public void PromeniPanel(Control control)

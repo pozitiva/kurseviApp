@@ -31,7 +31,13 @@ namespace Domen
         public string Join => "join zaposleni z on z.korisnickoime=grupa.korisnickoime join kurs k on k.idkursa=grupa.idkursa join zaposleni z1 on z1.korisnickoIme = k.korisnickoIme join predavac p on p.idPredavaca= k.idPredavaca";
 
         [Browsable(false)]
-        public string UslovObrade { get; set; }
+        public string KriterijumPretrage { get; set; }
+
+        [Browsable(false)]
+        public string VrednostiZaIzmenu => $" nazivgrupe='{NazivGrupe}', datumpocetkakursa='{DatumPocetkaKursa.ToString("yyyy-MM-dd HH:mm:ss")}', idkursa='{Kurs.IDKursa}', korisnickoime= '{Zaposleni.KorisnickoIme}'";
+        
+        [Browsable(false)]
+        public string UslovObrade => "";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

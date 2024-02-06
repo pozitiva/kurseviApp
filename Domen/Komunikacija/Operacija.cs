@@ -13,6 +13,10 @@
         PretraziKurs,
         KurseviUspesnoPronadjeni,
         VratiKurs,
-        KursUspesnoNadjen
+        KursUspesnoNadjen,
+        IzmeniKurs,
+        KursUspesnoIzmenjen,
+        ObrisiKurs,
+        KursUspesnoObrisan
     }
 }

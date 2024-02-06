@@ -36,6 +36,8 @@
             this.btnIzaberi = new System.Windows.Forms.Button();
             this.dgvKursevi = new System.Windows.Forms.DataGridView();
             this.lblKursevi = new System.Windows.Forms.Label();
+            this.btnIzmeniKurs = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKursevi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,10 +158,48 @@
             this.lblKursevi.TabIndex = 27;
             this.lblKursevi.Text = "Kursevi";
             // 
+            // btnIzmeniKurs
+            // 
+            this.btnIzmeniKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIzmeniKurs.BackColor = System.Drawing.Color.Transparent;
+            this.btnIzmeniKurs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIzmeniKurs.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnIzmeniKurs.FlatAppearance.BorderSize = 0;
+            this.btnIzmeniKurs.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIzmeniKurs.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzmeniKurs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnIzmeniKurs.Location = new System.Drawing.Point(917, 528);
+            this.btnIzmeniKurs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnIzmeniKurs.Name = "btnIzmeniKurs";
+            this.btnIzmeniKurs.Size = new System.Drawing.Size(146, 64);
+            this.btnIzmeniKurs.TabIndex = 33;
+            this.btnIzmeniKurs.Text = "Izmeni";
+            this.btnIzmeniKurs.UseVisualStyleBackColor = false;
+            // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnObrisi.BackColor = System.Drawing.Color.Transparent;
+            this.btnObrisi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnObrisi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnObrisi.FlatAppearance.BorderSize = 0;
+            this.btnObrisi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnObrisi.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObrisi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnObrisi.Location = new System.Drawing.Point(917, 528);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(146, 64);
+            this.btnObrisi.TabIndex = 34;
+            this.btnObrisi.Text = "Obrisi";
+            this.btnObrisi.UseVisualStyleBackColor = false;
+            // 
             // UcPrikaziKurseve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnObrisi);
+            this.Controls.Add(this.btnIzmeniKurs);
             this.Controls.Add(this.lblSelektovanKursGreska);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnPrikaziSveKurseve);
@@ -181,5 +221,7 @@
         public System.Windows.Forms.Button btnPrikaziSveKurseve;
         public System.Windows.Forms.Button btnIzaberi;
         public System.Windows.Forms.DataGridView dgvKursevi;
+        public System.Windows.Forms.Button btnIzmeniKurs;
+        public System.Windows.Forms.Button btnObrisi;
     }
 }

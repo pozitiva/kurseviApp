@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Klijent.KorisnickeKontrole
 {
-    public partial class UcKreirajKurs : UserControl
+    public partial class UcUpravljajKursem : UserControl
     {
-        public UcKreirajKurs()
+        public UcUpravljajKursem()
         {
             InitializeComponent();
         }
