@@ -131,7 +131,7 @@ namespace Klijent
                 Zahtev zahtev = new Zahtev
                 {
                     Kurs = k,
-                    Operacija = Operacija.PretraziKurs
+                    Operacija = Operacija.PretraziKurseve
 
                 };
                 posaljilac.Posalji(zahtev);
@@ -319,7 +319,7 @@ namespace Klijent
                 Zahtev zahtev = new Zahtev()
                 {
                     Ucenik = u,
-                    Operacija = Operacija.PretraziUcenika
+                    Operacija = Operacija.PretraziUcenike
                 };
 
                 posaljilac.Posalji(zahtev);
@@ -441,6 +441,128 @@ namespace Klijent
             {
 
             }
+        }
+
+        public void KreirajGrupu(Grupa grupa)
+        {
+            try 
+            { 
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.KreirajGrupu,
+                    Grupa = grupa
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                if (odgovor.Operacija == Operacija.GrupaUspesnoKreirana)
+                {
+                    MessageBox.Show("Uspesno ste kreirali grupu");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da kreira grupu");
+                }
+            }
+            catch (IOException ex)
+            {
+                //OtkacilaSeApp();
+            }
+        }
+
+        public List<Grupa> VratiSveGrupe()
+        {
+            Zahtev zahtev = new Zahtev
+            {
+                Operacija = Operacija.VratiSveGrupe
+            };
+
+            posaljilac.Posalji(zahtev);
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+            return odgovor.Grupe;
+        }
+
+        public List<Grupa> PretraziGrupe(Grupa g)
+        {
+            try
+            {
+                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Zahtev zahtev = new Zahtev()
+                {
+                    Grupa = g,
+                    Operacija = Operacija.PretraziGrupe
+                };
+
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+
+                List<Grupa> pronadjeneGrupe = odgovor.Grupe;
+
+                if (odgovor.Operacija == Operacija.GrupeUspesnoPronadjene)
+                {
+                    MessageBox.Show("Sistem je nasao grupe za slusanje kurseva po zadatoj vrednosti");
+                }
+                else
+                {
+                    MessageBox.Show("Sistem ne moze da nadje grupe za slusanje kurseva po zadatoj vrednosti");
+                }
+
+                return pronadjeneGrupe;
+            }
+            catch (IOException ex)
+            {
+                //DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public Grupa VratiGrupu(Grupa grupa)
+        {
+            Zahtev zahtev = new Zahtev
+            {
+                Grupa = grupa,
+                Operacija = Operacija.VratiGrupu
+            };
+            posaljilac.Posalji(zahtev);
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+            if(odgovor.Operacija == Operacija.GrupaUspesnoNadjena)
+            {
+                MessageBox.Show("Sistem je ucitao grupu za slusanje kursa");
+            }
+            else
+            {
+                MessageBox.Show("Sistem ne moze da ucita grupu za slusanje kursa");
+            }
+            return odgovor.Grupa;
+        }
+
+        public void IzmeniGrupu(Grupa grupa)
+        {
+            Zahtev zahtev = new Zahtev { 
+                
+               Grupa = grupa,
+               Operacija= Operacija.IzmeniGrupu
+            };
+            posaljilac.Posalji(zahtev);
+
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+            if(odgovor.Operacija== Operacija.GrupaUspesnoIzmenjena)
+            {
+                MessageBox.Show("Sistem je izmenio podatke o grupi za slusanje kursa");
+            }
+            else
+            {
+                MessageBox.Show("Sistem ne moze da izmeni grupu za slusanje kursa");
+            }
+
         }
     }
 }

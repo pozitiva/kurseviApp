@@ -29,6 +29,9 @@ namespace Klijent.Forme
             this.kreirajUcenikaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajUcenika();
             this.izmeniUcenikaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziIzmeniUcenike();
             this.obrisiUcenikaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziObirsiUcenika();
+
+            this.kreirajGrupuToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajGrupu();
+            this.izmeniGrupuToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziIzmeniGrupu();
         }
 
         public void PromeniPanel(Control control)

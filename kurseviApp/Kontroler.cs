@@ -43,8 +43,7 @@ namespace Server
         public List<Kurs> VratiSveKurseve()
         {
             VratiSveKurseveSO operacija = new VratiSveKurseveSO();
-            List<Kurs> kursevi = (List<Kurs>)operacija.IzvrsiSO(new Kurs());
-            return kursevi;
+            return (List<Kurs>)operacija.IzvrsiSO(new Kurs());
         }
 
         public List<Kurs> PretraziKurseve(Kurs k)
@@ -81,15 +80,13 @@ namespace Server
         public List<Ucenik> VratiSveUcenike()
         {
             VratiSveUcenikeSO operacija = new VratiSveUcenikeSO();
-            List<Ucenik> ucenici = (List<Ucenik>)operacija.IzvrsiSO(new Ucenik());
-            return ucenici;
+            return (List<Ucenik>)operacija.IzvrsiSO(new Ucenik());
         }
 
        public List<Ucenik> PretraziUcenike(Ucenik u)
         {
             PretraziUcenikeSO operacija = new PretraziUcenikeSO();
-            List<Ucenik> ucenici = (List<Ucenik>)operacija.IzvrsiSO(u);
-            return ucenici;
+            return (List<Ucenik>)operacija.IzvrsiSO(u);
         }
 
        public Ucenik VratiUcenika(Ucenik u)
@@ -108,6 +105,36 @@ namespace Server
         {
             ObrisiUcenikaSO operacija = new ObrisiUcenikaSO();
             return (bool)operacija.IzvrsiSO(u);
+        }
+
+        public bool KreirajGrupu(Grupa g)
+        {
+            KreirajGrupuSO operacija = new KreirajGrupuSO();
+            return (bool)operacija.IzvrsiSO(g);
+        }
+
+        public List<Grupa> VratiSveGrupe()
+        {
+            VratiSveGrupeSO operacija = new VratiSveGrupeSO();
+            return (List<Grupa>)operacija.IzvrsiSO(new Grupa());
+        }
+
+        public List<Grupa> PretraziGrupe(Grupa grupa)
+        {
+            PretraziGrupeSO operacija = new PretraziGrupeSO();
+            return (List<Grupa>)operacija.IzvrsiSO(grupa);
+        }
+
+        public Grupa VratiGrupu(Grupa grupa)
+        {
+            VratiGrupuSO operacija = new VratiGrupuSO();
+            return (Grupa)operacija.IzvrsiSO(grupa);
+        }
+
+        public bool IzmeniGrupu(Grupa grupa)
+        {
+            IzmeniGrupuSO operacija = new IzmeniGrupuSO();
+            return (bool)operacija.IzvrsiSO(grupa);
         }
     }
 }

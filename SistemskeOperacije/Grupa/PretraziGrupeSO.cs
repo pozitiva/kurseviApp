@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SistemskeOperacije
 {
-    public class VratiSveUcenikeSO : OpstaSistemskaOperacija
+    public class PretraziGrupeSO : OpstaSistemskaOperacija
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            return broker.VratiSve(domenskiObjekat).OfType<Ucenik>().ToList();
+            return broker.Pretrazi(domenskiObjekat).Cast<Grupa>().ToList();
         }
     }
 }

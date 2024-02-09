@@ -63,5 +63,11 @@ namespace Domen
             }
             return ucenici;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Ucenik ucenik &&
+                   IDUcenika == ucenik.IDUcenika;
+        }
     }
 }

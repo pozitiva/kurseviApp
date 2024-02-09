@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Klijent.KorisnickeKontrole
 {
-    public partial class UcPrikaziUcenike : UserControl
+    public partial class UcPrikaziGrupe : UserControl
     {
-        public UcPrikaziUcenike()
+        public UcPrikaziGrupe()
         {
             InitializeComponent();
         }
-
     }
 }

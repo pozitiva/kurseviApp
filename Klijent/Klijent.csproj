@@ -65,14 +65,27 @@
     <Compile Include="Komunikacija.cs" />
     <Compile Include="FormMode.cs" />
     <Compile Include="Kontroleri\GlavniKoordinator.cs" />
+    <Compile Include="Kontroleri\GrupaKontroler.cs" />
     <Compile Include="Kontroleri\KursKontroler.cs" />
     <Compile Include="Kontroleri\UcenikKontroler.cs" />
     <Compile Include="Kontroleri\ZaposleniKontroler.cs" />
+    <Compile Include="KorisnickeKontrole\UcPrikaziGrupe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcPrikaziGrupe.Designer.cs">
+      <DependentUpon>UcPrikaziGrupe.cs</DependentUpon>
+    </Compile>
     <Compile Include="KorisnickeKontrole\UcPrikaziUcenike.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="KorisnickeKontrole\UcPrikaziUcenike.Designer.cs">
       <DependentUpon>UcPrikaziUcenike.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcUpravljajGrupom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KorisnickeKontrole\UcUpravljajGrupom.Designer.cs">
+      <DependentUpon>UcUpravljajGrupom.cs</DependentUpon>
     </Compile>
     <Compile Include="KorisnickeKontrole\UcUpravljajKursem.cs">
       <SubType>UserControl</SubType>
@@ -100,8 +113,14 @@
     <EmbeddedResource Include="Forme\FrmZaposleni.resx">
       <DependentUpon>FrmZaposleni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziGrupe.resx">
+      <DependentUpon>UcPrikaziGrupe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziUcenike.resx">
       <DependentUpon>UcPrikaziUcenike.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajGrupom.resx">
+      <DependentUpon>UcUpravljajGrupom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajKursem.resx">
       <DependentUpon>UcUpravljajKursem.cs</DependentUpon>

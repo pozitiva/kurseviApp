@@ -48,8 +48,8 @@
             this.btnObrisi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.btnObrisi.FlatAppearance.BorderSize = 0;
             this.btnObrisi.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnObrisi.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnObrisi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnObrisi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnObrisi.Location = new System.Drawing.Point(925, 548);
             this.btnObrisi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnObrisi.Name = "btnObrisi";
@@ -66,8 +66,8 @@
             this.btnIzmeni.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.btnIzmeni.FlatAppearance.BorderSize = 0;
             this.btnIzmeni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIzmeni.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIzmeni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.btnIzmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnIzmeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIzmeni.Location = new System.Drawing.Point(925, 548);
             this.btnIzmeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIzmeni.Name = "btnIzmeni";
@@ -82,7 +82,7 @@
             this.lblSelektovanUcenikGreska.AutoSize = true;
             this.lblSelektovanUcenikGreska.BackColor = System.Drawing.Color.Transparent;
             this.lblSelektovanUcenikGreska.Font = new System.Drawing.Font("Bahnschrift Light", 7.8F);
-            this.lblSelektovanUcenikGreska.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.lblSelektovanUcenikGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblSelektovanUcenikGreska.Location = new System.Drawing.Point(80, 584);
             this.lblSelektovanUcenikGreska.Name = "lblSelektovanUcenikGreska";
             this.lblSelektovanUcenikGreska.Size = new System.Drawing.Size(60, 19);
@@ -93,7 +93,7 @@
             // txtFilter
             // 
             this.txtFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFilter.BackColor = System.Drawing.Color.SeaShell;
+            this.txtFilter.BackColor = System.Drawing.SystemColors.Window;
             this.txtFilter.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
             this.txtFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.txtFilter.Location = new System.Drawing.Point(74, 548);
@@ -110,9 +110,9 @@
             this.btnPrikaziSveUcenike.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.btnPrikaziSveUcenike.FlatAppearance.BorderSize = 0;
             this.btnPrikaziSveUcenike.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrikaziSveUcenike.Font = new System.Drawing.Font("Bahnschrift SemiBold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPrikaziSveUcenike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
-            this.btnPrikaziSveUcenike.Location = new System.Drawing.Point(752, 548);
+            this.btnPrikaziSveUcenike.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnPrikaziSveUcenike.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPrikaziSveUcenike.Location = new System.Drawing.Point(749, 548);
             this.btnPrikaziSveUcenike.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrikaziSveUcenike.Name = "btnPrikaziSveUcenike";
             this.btnPrikaziSveUcenike.Size = new System.Drawing.Size(146, 64);
@@ -126,7 +126,6 @@
             this.dgvUcenici.AllowUserToDeleteRows = false;
             this.dgvUcenici.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvUcenici.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUcenici.BackgroundColor = System.Drawing.Color.SeaShell;
             this.dgvUcenici.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUcenici.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvUcenici.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -167,11 +166,11 @@
             this.lblUcenici.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUcenici.AutoSize = true;
             this.lblUcenici.BackColor = System.Drawing.Color.Transparent;
-            this.lblUcenici.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUcenici.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
+            this.lblUcenici.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.lblUcenici.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblUcenici.Location = new System.Drawing.Point(485, 46);
             this.lblUcenici.Name = "lblUcenici";
-            this.lblUcenici.Size = new System.Drawing.Size(167, 54);
+            this.lblUcenici.Size = new System.Drawing.Size(153, 46);
             this.lblUcenici.TabIndex = 35;
             this.lblUcenici.Text = "Ucenici";
             // 

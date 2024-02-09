@@ -13,5 +13,6 @@ namespace Domen
         public Zaposleni Zaposleni { get; set; }
         public Kurs Kurs { get; set; }
         public Ucenik Ucenik { get; set; }
+        public Grupa Grupa { get; set; }
     }
 }

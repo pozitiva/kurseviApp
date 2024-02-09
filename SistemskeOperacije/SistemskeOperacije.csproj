@@ -41,11 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Grupa\IzmeniGrupuSO.cs" />
+    <Compile Include="Grupa\KreirajGrupuSO.cs" />
     <Compile Include="Kurs\IzmeniKursSO.cs" />
     <Compile Include="Kurs\KreirajKursSO.cs" />
     <Compile Include="Kurs\ObrisiKursSO.cs" />
     <Compile Include="OpstaSistemskaOperacija.cs" />
     <Compile Include="Kurs\PretraziKurseveSO.cs" />
+    <Compile Include="Grupa\PretraziGrupeSO.cs" />
     <Compile Include="PrijaviSeSO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Kurs\VratiKursSO.cs" />
@@ -56,6 +59,8 @@
     <Compile Include="Ucenik\PretraziUcenikeSO.cs" />
     <Compile Include="Ucenik\VratiSveUcenikeSO.cs" />
     <Compile Include="Ucenik\VratiUcenikaSO.cs" />
+    <Compile Include="Grupa\VratiGrupuSO.cs" />
+    <Compile Include="Grupa\VratiSveGrupeSO.cs" />
     <Compile Include="VratiSvePredavaceSO.cs" />
     <Compile Include="VratiSveZaposleneSO.cs" />
   </ItemGroup>

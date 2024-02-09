@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Klijent.KorisnickeKontrole
 {
-    public partial class UcPrikaziUcenike : UserControl
+    public partial class UcUpravljajGrupom : UserControl
     {
-        public UcPrikaziUcenike()
+        public UcUpravljajGrupom()
         {
             InitializeComponent();
         }
+
 
     }
 }

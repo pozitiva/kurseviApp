@@ -9,27 +9,51 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace kurseviApp
 {
     public class Server
     {
         private Socket serverskiSocket;
+        public bool pokrenutServer = false;
         static List<NitKlijenta> klijenti = new List<NitKlijenta>();
+
+        private static Server instance;
+        public static Server Instance
+        {
+            get { 
+                if(instance == null)
+                    instance = new Server();
+                return instance; 
+            }
+        }
         public void Pokreni()
         {
-            serverskiSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
-            serverskiSocket.Bind(endPoint);
-            serverskiSocket.Listen(10);
-            Osluskuj();
+            try
+            {
+                serverskiSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+                serverskiSocket.Bind(endPoint);
+                serverskiSocket.Listen(10);
+
+                pokrenutServer = true;
+
+                Thread nit = new Thread(Osluskuj);
+                nit.IsBackground = true;
+                nit.Start();
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
         }
 
         public void Osluskuj()
         {
             try
             {
-                while (true)
+                while (pokrenutServer)
                 {
                     Socket klijentskiSocket = serverskiSocket.Accept();
                     NitKlijenta klijent = new NitKlijenta(klijentskiSocket);
@@ -40,23 +64,30 @@ namespace kurseviApp
                     nit.Start();
                 }
             }
-            catch (IOException e)
+            catch (Exception ex)
             {
-                serverskiSocket.Close();
-                Debug.WriteLine(e.Message);
+                MessageBox.Show(ex.Message);
             }
-            catch (SocketException e)
-            {
-                serverskiSocket.Close();
-                Debug.WriteLine(e.Message);
 
-            }
         }
 
         public void Prekini()
         {
-             serverskiSocket.Close();
-             klijenti.Clear();
+            try
+            {
+                serverskiSocket.Close();
+                pokrenutServer = false;
+
+                foreach (NitKlijenta klijent in klijenti)
+                {
+                    klijent.ZatvoriSocket();
+                }
+
+                klijenti.Clear();
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

@@ -41,6 +41,7 @@ namespace Klijent.Kontroleri
             {
                 ucUpravljajUcenikom.lblKreiranjeUcenika.Visible = false;
                 ucUpravljajUcenikom.lblObrisiUcenika.Visible = false;
+              
 
                 ucUpravljajUcenikom.btnKreiraj.Visible = false;
                 ucUpravljajUcenikom.btnPrikaziSve.Visible = false;

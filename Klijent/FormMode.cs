@@ -5,10 +5,6 @@
         Dodaj,
         Izmeni,
         Prikazi,
-        Obrisi,
-        //Edit,
-        //ChooseAdmin,
-        //ChooseKorisnik,
-        //ReadOnly
+        Obrisi
     }
 }

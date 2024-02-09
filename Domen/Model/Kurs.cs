@@ -75,5 +75,16 @@ namespace Domen
 
             return kursevi;
         }
+
+        public override string ToString()
+        {
+            return NazivKursa;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Kurs kurs &&
+                   IDKursa == kurs.IDKursa;
+        }
     }
 }

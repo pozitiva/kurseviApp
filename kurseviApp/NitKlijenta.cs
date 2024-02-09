@@ -79,7 +79,7 @@ namespace kurseviApp
                             odgovor.Kursevi = Kontroler.Instance.VratiSveKurseve();
                             posaljilac.Posalji(odgovor);
                             break;
-                        case Operacija.PretraziKurs:
+                        case Operacija.PretraziKurseve:
                             odgovor.Kursevi = Kontroler.Instance.PretraziKurseve(zahtev.Kurs);
                             odgovor.Operacija = Operacija.KurseviUspesnoPronadjeni;
                             posaljilac.Posalji(odgovor);
@@ -105,7 +105,7 @@ namespace kurseviApp
                             odgovor.Ucenici = Kontroler.Instance.VratiSveUcenike();
                             posaljilac.Posalji(odgovor);
                             break;
-                        case Operacija.PretraziUcenika:
+                        case Operacija.PretraziUcenike:
                             odgovor.Ucenici = Kontroler.Instance.PretraziUcenike(zahtev.Ucenik);
                             odgovor.Operacija = Operacija.UceniciUspesnoPronadjeni;
                             posaljilac.Posalji(odgovor);
@@ -123,6 +123,29 @@ namespace kurseviApp
                             odgovor.Operacija = Kontroler.Instance.ObrisiUcenika(zahtev.Ucenik) ? Operacija.UcenikUspesnoObrisan : Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
+                        case Operacija.KreirajGrupu:
+                            odgovor.Operacija = Kontroler.Instance.KreirajGrupu(zahtev.Grupa) ? Operacija.GrupaUspesnoKreirana : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiSveGrupe:
+                            odgovor.Grupe = Kontroler.Instance.VratiSveGrupe();
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.PretraziGrupe:
+                            odgovor.Grupe = Kontroler.Instance.PretraziGrupe(zahtev.Grupa);
+                            odgovor.Operacija = Operacija.GrupeUspesnoPronadjene;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.VratiGrupu:
+                            odgovor.Grupa = Kontroler.Instance.VratiGrupu(zahtev.Grupa);
+                            if (odgovor.Grupa != null) odgovor.Operacija = Operacija.GrupaUspesnoNadjena;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
+                        case Operacija.IzmeniGrupu:
+                            odgovor.Operacija = Kontroler.Instance.IzmeniGrupu(zahtev.Grupa) ? Operacija.GrupaUspesnoIzmenjena : Operacija.GreskaUZahtevu;
+                            posaljilac.Posalji(odgovor);
+                            break;
                         default:
                             break;
                     }
@@ -132,6 +155,11 @@ namespace kurseviApp
 
                 }
             }
+        }
+
+        public void ZatvoriSocket()
+        {
+            klijentskiSocket.Close();
         }
     }
 }

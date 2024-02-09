@@ -21,6 +21,7 @@ namespace Klijent.Kontroleri
         public ZaposleniKontroler zaposleniKontroler;
         public KursKontroler kursKontroler;
         public UcenikKontroler ucenikKontroler;
+        public GrupaKontroler grupaKontroler;
 
         private static GlavniKoordinator instance;
         public static GlavniKoordinator Instance
@@ -38,6 +39,7 @@ namespace Klijent.Kontroleri
             zaposleniKontroler = new ZaposleniKontroler();
             kursKontroler = new KursKontroler();
             ucenikKontroler = new UcenikKontroler();
+            grupaKontroler = new GrupaKontroler();
         }
 
         #region prijava
@@ -118,6 +120,26 @@ namespace Klijent.Kontroleri
         public void PrikaziUcenikaZaBrisanje(Ucenik u)
         {
             frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Obrisi, u));  
+        }
+
+        public void PrikaziKreirajGrupu()
+        {
+            frmZaposleni.PromeniPanel(grupaKontroler.KreirajUcUpravljajGrupom(FormMode.Dodaj, null));
+        }
+
+        public void PrikaziIzmeniGrupu()
+        {
+            frmZaposleni.PromeniPanel(grupaKontroler.KreirajUcPrikaziGrupe());
+        }
+
+        public void PrikaziGrupuZaIzmenu(Grupa g)
+        {
+            frmZaposleni.PromeniPanel(grupaKontroler.KreirajUcUpravljajGrupom(FormMode.Izmeni, g));
+        }
+
+        public void PrikaziSveGrupe()
+        {
+            frmZaposleni.PromeniPanel(grupaKontroler.KreirajUcPrikaziGrupe());
         }
     }
 }

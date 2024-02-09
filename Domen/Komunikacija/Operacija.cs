@@ -6,11 +6,12 @@
         NeuspesnaPrijava,
         UspesnaPrijava,
         VratiSvePredavace,
+        GreskaUZahtevu,
+        //kurs
         KreirajKurs,
         KursUspesnoKreiran,
-        GreskaUZahtevu,
         VratiSveKurseve,
-        PretraziKurs,
+        PretraziKurseve,
         KurseviUspesnoPronadjeni,
         VratiKurs,
         KursUspesnoNadjen,
@@ -18,16 +19,27 @@
         KursUspesnoIzmenjen,
         ObrisiKurs,
         KursUspesnoObrisan,
+        //ucenik
         KreirajUcenika,
         UcenikUspesnoKreiran,
         VratiSveUcenike,
         VratiUcenika,
         UcenikUspesnoNadjen,
         UceniciUspesnoPronadjeni,
-        PretraziUcenika,
+        PretraziUcenike,
         IzmeniUcenika,
         UcenikUspesnoIzmenjen,
         ObrisiUcenika,
-        UcenikUspesnoObrisan
+        //grupa
+        UcenikUspesnoObrisan,
+        KreirajGrupu,
+        GrupaUspesnoKreirana,
+        VratiSveGrupe,
+        PretraziGrupe,
+        GrupeUspesnoPronadjene,
+        VratiGrupu,
+        GrupaUspesnoNadjena,
+        IzmeniGrupu,
+        GrupaUspesnoIzmenjena
     }
 }

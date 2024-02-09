@@ -13,29 +13,36 @@ namespace kurseviApp
 {
     public partial class FrmServer : Form
     {
-        private Server s;
         public FrmServer()
         {
-            InitializeComponent();
-            s= new Server();    
+            InitializeComponent();   
             btnPrekini.Enabled = false;
         }
 
         private void btnPokreni_Click(object sender, EventArgs e)
         {
-            Thread nit = new Thread(s.Pokreni);
-            nit.IsBackground = true;
-            nit.Start();
-
-            btnPrekini.Enabled = true;
-            btnPokreni.Enabled = false;
+            try
+            {
+                if (!Server.Instance.pokrenutServer) Server.Instance.Pokreni();
+                btnPrekini.Enabled = true;
+                btnPokreni.Enabled = false;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnPrekini_Click(object sender, EventArgs e)
         {
-            s.Prekini();
-            btnPrekini.Enabled= false;
-            btnPokreni.Enabled = true;
+            try
+            {
+                if (Server.Instance.pokrenutServer) Server.Instance.Prekini();
+                btnPrekini.Enabled = false;
+                btnPokreni.Enabled = true;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

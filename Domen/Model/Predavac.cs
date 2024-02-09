@@ -58,5 +58,11 @@ namespace Domen
         {
             return Ime + " " + Prezime;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Predavac predavac &&
+                   IDPredavaca == predavac.IDPredavaca;
+        }
     }
 }

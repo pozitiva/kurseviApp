@@ -19,10 +19,13 @@ namespace Domen
         public Kurs Kurs { get; set; }
 
         [Browsable(false)]
+        public List<PripadanjeGrupi> Pripadanja {  get; set; }
+
+        [Browsable(false)]
         public string NazivTabele => "Grupa";
 
         [Browsable(false)]
-        public string VrednostiZaUnos => $"'{IDGrupe}', '{NazivGrupe}', '{DatumPocetkaKursa}', '{Zaposleni.KorisnickoIme}', '{Kurs.IDKursa}'";
+        public string VrednostiZaUnos => $"'{NazivGrupe}', '{DatumPocetkaKursa.ToString("yyyy-MM-dd HH:mm:ss")}', '{Zaposleni.KorisnickoIme}', '{Kurs.IDKursa}'";
 
         [Browsable(false)]
         public string PovratneVrednosti => "*";
@@ -37,7 +40,7 @@ namespace Domen
         public string VrednostiZaIzmenu => $" nazivgrupe='{NazivGrupe}', datumpocetkakursa='{DatumPocetkaKursa.ToString("yyyy-MM-dd HH:mm:ss")}', idkursa='{Kurs.IDKursa}', korisnickoime= '{Zaposleni.KorisnickoIme}'";
         
         [Browsable(false)]
-        public string UslovObrade => "";
+        public string UslovObrade => $"idgrupe={IDGrupe}";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)
