@@ -1,6 +1,7 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,6 +16,12 @@ namespace SistemskeOperacije
             bool signal= broker.Izmeni(domenskiObjekat)>0;
             
             Grupa grupa = (Grupa)domenskiObjekat;
+
+            foreach(PripadanjeGrupi pg in grupa.IzbacenaPripadanja)
+            {
+                pg.Grupa = grupa;
+                signal = signal && broker.Obrisi(pg)>0;
+            }
             //List<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
             //foreach (PripadanjeGrupi pg in pripadanja)
             //{
@@ -23,12 +30,20 @@ namespace SistemskeOperacije
             //    signal = signal && broker.Obrisi(pg) > 0;
             //}
 
-            List<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
-            foreach (PripadanjeGrupi pg in pripadanja)
+            PripadanjeGrupi pripadanje = new PripadanjeGrupi
             {
-                pg.Grupa = grupa;
+                KriterijumPretrage = $"pripadanjegrupi.idgrupe='{grupa.IDGrupe}'",
+                Grupa = grupa,
 
-                signal = signal && broker.Sacuvaj(pg) > 0;
+            };
+            BindingList<PripadanjeGrupi> staraPripadanja = new BindingList<PripadanjeGrupi>(broker.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
+
+            BindingList<PripadanjeGrupi> novaPripadanja = ((Grupa)domenskiObjekat).Pripadanja;
+            for (int i = staraPripadanja.Count;i<novaPripadanja.Count ;i++)
+            {
+                novaPripadanja[i].Grupa = grupa;
+
+                signal = signal && broker.Sacuvaj(novaPripadanja[i]) > 0;
             }
 
             return signal;

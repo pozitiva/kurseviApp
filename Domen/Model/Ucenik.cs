@@ -69,5 +69,10 @@ namespace Domen
             return obj is Ucenik ucenik &&
                    IDUcenika == ucenik.IDUcenika;
         }
+
+        public override string ToString()
+        {
+            return Ime + " " + Prezime;
+        }
     }
 }

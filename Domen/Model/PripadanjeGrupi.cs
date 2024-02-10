@@ -98,5 +98,10 @@ namespace Domen
 
             return pripadanjaGrupi;
         }
+
+        public override string ToString()
+        {
+            return Ucenik.Ime + Ucenik.Prezime;
+        }
     }
 }

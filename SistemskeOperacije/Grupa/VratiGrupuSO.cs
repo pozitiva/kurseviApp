@@ -1,6 +1,7 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace SistemskeOperacije
                 Grupa = grupa,
                
             };
-            List<PripadanjeGrupi> pripadanja = broker.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList();
+            BindingList<PripadanjeGrupi> pripadanja = new BindingList<PripadanjeGrupi>(broker.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
 
             grupa.Pripadanja = pripadanja;
 

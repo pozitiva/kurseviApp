@@ -1,6 +1,7 @@
 ﻿using Domen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SistemskeOperacije
             List<Grupa> grupe = broker.VratiSve(domenskiObjekat).OfType<Grupa>().ToList();
             Grupa grupa = grupe[grupe.Count - 1];
 
-            List<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
+            BindingList<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
             foreach (PripadanjeGrupi pg in pripadanja)
             {
                 pg.Grupa = grupa;

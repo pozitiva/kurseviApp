@@ -136,5 +136,11 @@ namespace Server
             IzmeniGrupuSO operacija = new IzmeniGrupuSO();
             return (bool)operacija.IzvrsiSO(grupa);
         }
+
+        public Zaposleni UlogujSe(Zaposleni zaposleni)
+        {
+            PrijaviSeSO operacija = new PrijaviSeSO();
+            return (Zaposleni)operacija.IzvrsiSO(zaposleni);
+        }
     }
 }

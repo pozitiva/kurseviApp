@@ -107,7 +107,7 @@
             this.lblKursevi.BackColor = System.Drawing.SystemColors.Control;
             this.lblKursevi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblKursevi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKursevi.Location = new System.Drawing.Point(462, 23);
+            this.lblKursevi.Location = new System.Drawing.Point(470, 40);
             this.lblKursevi.Name = "lblKursevi";
             this.lblKursevi.Size = new System.Drawing.Size(151, 46);
             this.lblKursevi.TabIndex = 27;
@@ -152,12 +152,12 @@
             // dgvKursevi
             // 
             this.dgvKursevi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKursevi.Location = new System.Drawing.Point(157, 103);
+            this.dgvKursevi.Location = new System.Drawing.Point(157, 89);
             this.dgvKursevi.Name = "dgvKursevi";
             this.dgvKursevi.RowHeadersWidth = 62;
             this.dgvKursevi.RowTemplate.Height = 28;
             this.dgvKursevi.Size = new System.Drawing.Size(753, 276);
-            this.dgvKursevi.TabIndex = 35;
+            this.dgvKursevi.TabIndex = 36;
             // 
             // UcPrikaziKurseve
             // 

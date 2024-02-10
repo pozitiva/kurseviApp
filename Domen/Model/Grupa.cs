@@ -19,7 +19,10 @@ namespace Domen
         public Kurs Kurs { get; set; }
 
         [Browsable(false)]
-        public List<PripadanjeGrupi> Pripadanja {  get; set; }
+        public BindingList<PripadanjeGrupi> Pripadanja {  get; set; }
+
+        [Browsable(false)]
+        public List<PripadanjeGrupi> IzbacenaPripadanja { get; set; }
 
         [Browsable(false)]
         public string NazivTabele => "Grupa";
@@ -87,7 +90,12 @@ namespace Domen
 
             return grupe;
         }
+        public override string ToString()
+        {
+            return NazivGrupe;
+        }
     }
+  
 
 }
 

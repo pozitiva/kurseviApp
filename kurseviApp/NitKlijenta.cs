@@ -38,32 +38,16 @@ namespace kurseviApp
                     switch (zahtev.Operacija)
                     {
                         case Operacija.UlogujSe:
-
                             bool provera = true;
-                            foreach(Zaposleni z in zaposleni)
+                            Zaposleni z =Kontroler.Instance.UlogujSe(zahtev.Zaposleni);
+                            if (odgovor.Zaposleni == null)
                             {
-                                foreach(Zaposleni ulogovani in ulogovaniZaposleni)
-                                {
-                                    if(ulogovani.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme && ulogovani.Sifra == zahtev.Zaposleni.Sifra)
-                                    {
-                                        odgovor.Operacija = Operacija.NeuspesnaPrijava;
-                                        odgovor.Zaposleni = null;
-                                        provera = false;    
-                                        break;
-                                    }
-                                }  
-                                
-                                if(z.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme && z.Sifra == zahtev.Zaposleni.Sifra && provera)
-                                {
-                                    odgovor.Operacija = Operacija.UspesnaPrijava;
-                                    odgovor.Zaposleni = z;
-                                    ulogovaniZaposleni.Add(z);
-                                    break;
-                                }
-
                                 odgovor.Operacija = Operacija.NeuspesnaPrijava;
+                                provera = false;
                             }
-
+                            odgovor.Operacija = Operacija.UspesnaPrijava;
+                            odgovor.Zaposleni = z;
+                            ulogovaniZaposleni.Add(z);
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiSvePredavace:

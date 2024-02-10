@@ -11,7 +11,8 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            throw new NotImplementedException();
+            Zaposleni z = (Zaposleni)broker.Vrati(domenskiObjekat);
+            return z;
         }
 
     }

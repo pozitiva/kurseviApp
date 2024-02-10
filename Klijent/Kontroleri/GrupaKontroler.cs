@@ -16,6 +16,8 @@ namespace Klijent.Kontroleri
         UcPrikaziGrupe ucPrikaziGrupe;
         FormMode mode;
         Grupa grupa;
+        public List<PripadanjeGrupi> izbacena = new List<PripadanjeGrupi>();
+
 
         public UcUpravljajGrupom KreirajUcUpravljajGrupom(FormMode mode, Grupa grupa)
         {
@@ -27,12 +29,16 @@ namespace Klijent.Kontroleri
             ucUpravljajGrupom.dgvKurs.DataSource = kursevi;
 
             //napuni ucenike
-            List<Ucenik> ucenici = Komunikacija.Instance.VratiSveUcenike();
-            ucUpravljajGrupom.dgvUcenici.DataSource = ucenici;
+            //List<Ucenik> ucenici = Komunikacija.Instance.VratiSveUcenike();
+            ucUpravljajGrupom.dgvUcenici.DataSource = new BindingList<PripadanjeGrupi>();
+            ucUpravljajGrupom.cmbUcenici.DataSource = Komunikacija.Instance.VratiSveUcenike();
+            ucUpravljajGrupom.cmbUcenici.SelectedIndex = -1;
+            ucUpravljajGrupom.dgvUcenici.ReadOnly = true;
 
             if (mode == FormMode.Dodaj)
             {
                 this.grupa = new Grupa();
+                this.grupa.Pripadanja = new BindingList<PripadanjeGrupi>();  
                 ucUpravljajGrupom.lblIzmeniGrupu.Visible = false;
                 ucUpravljajGrupom.btnIzmeni.Visible = false;
             }
@@ -40,6 +46,7 @@ namespace Klijent.Kontroleri
             if (mode == FormMode.Izmeni)
             {
                 this.grupa = grupa;
+
                 ucUpravljajGrupom.lblKreirajGrupu.Visible = false;
                 ucUpravljajGrupom.lblIzmeniGrupu.Visible = true;
                 ucUpravljajGrupom.btnKreiraj.Visible = false;
@@ -47,32 +54,81 @@ namespace Klijent.Kontroleri
 
                 ucUpravljajGrupom.txtNazivGrupe.Text = grupa.NazivGrupe;
                 ucUpravljajGrupom.dtpDatumPocetka.Text = grupa.DatumPocetkaKursa.ToString();
+                ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
                 ucUpravljajGrupom.dgvKurs.DataBindingComplete += SelektujIzabraniKurs;
-                ucUpravljajGrupom.dgvUcenici.DataBindingComplete += SelektujIzabraneUcenike;
+                //ucUpravljajGrupom.dgvUcenici.DataBindingComplete += SelektujIzabraneUcenike;
             }
 
             //dogadjaji
             ucUpravljajGrupom.btnKreiraj.Click += KreirajGrupu;
             ucUpravljajGrupom.btnIzmeni.Click += IzmeniGrupu;
+            ucUpravljajGrupom.btnDodaj.Click += DodajUcenika;
+            ucUpravljajGrupom.btnIzbaci.Click += IzbaciUcenika;
             return ucUpravljajGrupom;
         }
 
-        private void SelektujIzabraneUcenike(object sender, DataGridViewBindingCompleteEventArgs e)
+        private void IzbaciUcenika(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow red in ucUpravljajGrupom.dgvUcenici.Rows)
-            {
-                Ucenik ucenik = (Ucenik)red.DataBoundItem;
-                foreach (PripadanjeGrupi pg in this.grupa.Pripadanja)
+                if (ucUpravljajGrupom.dgvUcenici.SelectedRows.Count != 1)
                 {
-                    if (ucenik.Equals(pg.Ucenik))
+                    ucUpravljajGrupom.lblUceniciGreska.Text = "Morate da odaberete jednog po jednog ucenika";
+                    ucUpravljajGrupom.lblUceniciGreska.Visible = true;
+                    throw new KorisnickaGreska("greska >> selektovan ucenik");
+                }
+
+                PripadanjeGrupi pripadanje = (PripadanjeGrupi)ucUpravljajGrupom.dgvUcenici.SelectedRows[0].DataBoundItem;
+                grupa.Pripadanja.Remove(pripadanje);
+                izbacena.Add(pripadanje);
+                ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
+        }
+
+        private void DodajUcenika(object sender, EventArgs e)
+        {
+            PripadanjeGrupi novoPripadanje = new PripadanjeGrupi();
+            if (mode == FormMode.Dodaj)
+            {
+                novoPripadanje.Ucenik = (Ucenik)ucUpravljajGrupom.cmbUcenici.SelectedItem;
+                    //Grupa = grupa,
+                novoPripadanje.DatumPrijave = System.DateTime.Now;
+            }
+
+            if (mode == FormMode.Izmeni)
+            {
+                novoPripadanje.Ucenik = (Ucenik)ucUpravljajGrupom.cmbUcenici.SelectedItem;
+                novoPripadanje.Grupa = grupa;
+                novoPripadanje.DatumPrijave = System.DateTime.Now;
+            }
+
+            if (grupa.Pripadanja != null)
+            {
+                foreach (PripadanjeGrupi pg in grupa.Pripadanja)
+                {
+                    if (pg.Ucenik.Equals(novoPripadanje.Ucenik))
                     {
-                        red.Selected= true; 
-                        break;
+                        return;
                     }
                 }
- 
             }
+            grupa.Pripadanja.Add(novoPripadanje);
+            ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
         }
+
+        //private void SelektujIzabraneUcenike(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    foreach(DataGridViewRow red in ucUpravljajGrupom.dgvUcenici.Rows)
+        //    {
+        //        Ucenik ucenik = (Ucenik)red.DataBoundItem;
+        //        foreach (PripadanjeGrupi pg in this.grupa.Pripadanja)
+        //        {
+        //            if (ucenik.Equals(pg.Ucenik))
+        //            {
+        //                red.Selected= true; 
+        //                break;
+        //            }
+        //        }
+ 
+        //    }
+        //}
 
         private void SelektujIzabraniKurs(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -221,7 +277,7 @@ namespace Klijent.Kontroleri
             }
 
             if (ucUpravljajGrupom.dgvKurs.SelectedRows.Count != 1)
-            {`21
+            {
                 ucUpravljajGrupom.lblKursGreska.Visible = true;
                 throw new KorisnickaGreska("greska >> selektovan kurs");
             }
@@ -230,19 +286,7 @@ namespace Klijent.Kontroleri
             grupa.DatumPocetkaKursa = ucUpravljajGrupom.dtpDatumPocetka.Value;
             grupa.Kurs = (Kurs)ucUpravljajGrupom.dgvKurs.SelectedRows[0].DataBoundItem;
             grupa.Zaposleni = GlavniKoordinator.Instance.ulogovaniZaposleni;
-
-            if (grupa.Pripadanja == null)
-            {
-                grupa.Pripadanja = new List<PripadanjeGrupi>();
-            }
-            foreach (DataGridViewRow r in ucUpravljajGrupom.dgvUcenici.SelectedRows)
-            {
-                grupa.Pripadanja.Add(new PripadanjeGrupi
-                {
-                    DatumPrijave = System.DateTime.Now,
-                    Ucenik = (Ucenik)r.DataBoundItem
-                });
-            }
+            grupa.IzbacenaPripadanja = izbacena;
 
         }
     }

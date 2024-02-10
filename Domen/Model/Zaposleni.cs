@@ -30,7 +30,7 @@ namespace Domen
         public string VrednostiZaIzmenu => "";
 
         [Browsable(false)]
-        public string UslovObrade => "";
+        public string UslovObrade => $" korisnickoime='{KorisnickoIme}' and sifra='{Sifra}'";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

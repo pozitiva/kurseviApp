@@ -44,6 +44,9 @@
             this.lblUceniciGreska = new System.Windows.Forms.Label();
             this.dgvKurs = new System.Windows.Forms.DataGridView();
             this.dgvUcenici = new System.Windows.Forms.DataGridView();
+            this.cmbUcenici = new System.Windows.Forms.ComboBox();
+            this.btnDodaj = new System.Windows.Forms.Button();
+            this.btnIzbaci = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKurs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +58,7 @@
             this.lblKursGreska.BackColor = System.Drawing.Color.Transparent;
             this.lblKursGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblKursGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKursGreska.Location = new System.Drawing.Point(134, 404);
+            this.lblKursGreska.Location = new System.Drawing.Point(39, 514);
             this.lblKursGreska.Name = "lblKursGreska";
             this.lblKursGreska.Size = new System.Drawing.Size(61, 20);
             this.lblKursGreska.TabIndex = 49;
@@ -69,7 +72,7 @@
             this.lblDatumGreska.BackColor = System.Drawing.Color.Transparent;
             this.lblDatumGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblDatumGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDatumGreska.Location = new System.Drawing.Point(630, 77);
+            this.lblDatumGreska.Location = new System.Drawing.Point(632, 189);
             this.lblDatumGreska.Name = "lblDatumGreska";
             this.lblDatumGreska.Size = new System.Drawing.Size(61, 20);
             this.lblDatumGreska.TabIndex = 48;
@@ -83,7 +86,7 @@
             this.lblNazivGreska.BackColor = System.Drawing.Color.Transparent;
             this.lblNazivGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblNazivGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNazivGreska.Location = new System.Drawing.Point(270, 73);
+            this.lblNazivGreska.Location = new System.Drawing.Point(272, 185);
             this.lblNazivGreska.Name = "lblNazivGreska";
             this.lblNazivGreska.Size = new System.Drawing.Size(61, 20);
             this.lblNazivGreska.TabIndex = 47;
@@ -100,7 +103,7 @@
             this.btnIzmeni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIzmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnIzmeni.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzmeni.Location = new System.Drawing.Point(811, 239);
+            this.btnIzmeni.Location = new System.Drawing.Point(813, 351);
             this.btnIzmeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIzmeni.Name = "btnIzmeni";
             this.btnIzmeni.Size = new System.Drawing.Size(180, 82);
@@ -118,7 +121,7 @@
             this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnKreiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnKreiraj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnKreiraj.Location = new System.Drawing.Point(811, 239);
+            this.btnKreiraj.Location = new System.Drawing.Point(813, 351);
             this.btnKreiraj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKreiraj.Name = "btnKreiraj";
             this.btnKreiraj.Size = new System.Drawing.Size(180, 82);
@@ -133,7 +136,7 @@
             this.lblKurs.BackColor = System.Drawing.Color.Transparent;
             this.lblKurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblKurs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKurs.Location = new System.Drawing.Point(133, 87);
+            this.lblKurs.Location = new System.Drawing.Point(38, 199);
             this.lblKurs.Name = "lblKurs";
             this.lblKurs.Size = new System.Drawing.Size(53, 25);
             this.lblKurs.TabIndex = 43;
@@ -149,7 +152,7 @@
             this.dtpDatumPocetka.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.dtpDatumPocetka.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
             this.dtpDatumPocetka.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatumPocetka.Location = new System.Drawing.Point(623, 41);
+            this.dtpDatumPocetka.Location = new System.Drawing.Point(625, 153);
             this.dtpDatumPocetka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDatumPocetka.Name = "dtpDatumPocetka";
             this.dtpDatumPocetka.Size = new System.Drawing.Size(239, 32);
@@ -162,7 +165,7 @@
             this.lblDatumPocetka.BackColor = System.Drawing.Color.Transparent;
             this.lblDatumPocetka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblDatumPocetka.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDatumPocetka.Location = new System.Drawing.Point(671, 0);
+            this.lblDatumPocetka.Location = new System.Drawing.Point(673, 112);
             this.lblDatumPocetka.Name = "lblDatumPocetka";
             this.lblDatumPocetka.Size = new System.Drawing.Size(143, 25);
             this.lblDatumPocetka.TabIndex = 42;
@@ -172,7 +175,7 @@
             // 
             this.txtNazivGrupe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNazivGrupe.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNazivGrupe.Location = new System.Drawing.Point(275, 41);
+            this.txtNazivGrupe.Location = new System.Drawing.Point(277, 153);
             this.txtNazivGrupe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNazivGrupe.Name = "txtNazivGrupe";
             this.txtNazivGrupe.Size = new System.Drawing.Size(217, 26);
@@ -185,7 +188,7 @@
             this.lblNazivGrupe.BackColor = System.Drawing.Color.Transparent;
             this.lblNazivGrupe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblNazivGrupe.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNazivGrupe.Location = new System.Drawing.Point(324, 0);
+            this.lblNazivGrupe.Location = new System.Drawing.Point(326, 112);
             this.lblNazivGrupe.Name = "lblNazivGrupe";
             this.lblNazivGrupe.Size = new System.Drawing.Size(116, 25);
             this.lblNazivGrupe.TabIndex = 41;
@@ -198,7 +201,7 @@
             this.lblIzmeniGrupu.BackColor = System.Drawing.Color.Transparent;
             this.lblIzmeniGrupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblIzmeniGrupu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIzmeniGrupu.Location = new System.Drawing.Point(423, -63);
+            this.lblIzmeniGrupu.Location = new System.Drawing.Point(425, 49);
             this.lblIzmeniGrupu.Name = "lblIzmeniGrupu";
             this.lblIzmeniGrupu.Size = new System.Drawing.Size(248, 46);
             this.lblIzmeniGrupu.TabIndex = 39;
@@ -211,7 +214,7 @@
             this.lblKreirajGrupu.BackColor = System.Drawing.Color.Transparent;
             this.lblKreirajGrupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblKreirajGrupu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKreirajGrupu.Location = new System.Drawing.Point(434, -63);
+            this.lblKreirajGrupu.Location = new System.Drawing.Point(436, 49);
             this.lblKreirajGrupu.Name = "lblKreirajGrupu";
             this.lblKreirajGrupu.Size = new System.Drawing.Size(247, 46);
             this.lblKreirajGrupu.TabIndex = 40;
@@ -224,7 +227,7 @@
             this.lblUcenici.BackColor = System.Drawing.Color.Transparent;
             this.lblUcenici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblUcenici.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUcenici.Location = new System.Drawing.Point(137, 428);
+            this.lblUcenici.Location = new System.Drawing.Point(38, 535);
             this.lblUcenici.Name = "lblUcenici";
             this.lblUcenici.Size = new System.Drawing.Size(76, 25);
             this.lblUcenici.TabIndex = 52;
@@ -237,7 +240,7 @@
             this.lblUceniciGreska.BackColor = System.Drawing.Color.Transparent;
             this.lblUceniciGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.lblUceniciGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUceniciGreska.Location = new System.Drawing.Point(134, 745);
+            this.lblUceniciGreska.Location = new System.Drawing.Point(39, 851);
             this.lblUceniciGreska.Name = "lblUceniciGreska";
             this.lblUceniciGreska.Size = new System.Drawing.Size(61, 20);
             this.lblUceniciGreska.TabIndex = 53;
@@ -248,31 +251,59 @@
             // 
             this.dgvKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvKurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKurs.Location = new System.Drawing.Point(138, 115);
+            this.dgvKurs.Location = new System.Drawing.Point(33, 227);
             this.dgvKurs.MultiSelect = false;
             this.dgvKurs.Name = "dgvKurs";
-            this.dgvKurs.RowHeadersVisible = false;
             this.dgvKurs.RowHeadersWidth = 62;
             this.dgvKurs.RowTemplate.Height = 28;
-            this.dgvKurs.Size = new System.Drawing.Size(622, 284);
+            this.dgvKurs.Size = new System.Drawing.Size(729, 284);
             this.dgvKurs.TabIndex = 54;
             // 
             // dgvUcenici
             // 
             this.dgvUcenici.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvUcenici.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUcenici.Location = new System.Drawing.Point(141, 451);
+            this.dgvUcenici.Location = new System.Drawing.Point(33, 563);
+            this.dgvUcenici.MultiSelect = false;
             this.dgvUcenici.Name = "dgvUcenici";
-            this.dgvUcenici.RowHeadersVisible = false;
             this.dgvUcenici.RowHeadersWidth = 62;
             this.dgvUcenici.RowTemplate.Height = 28;
-            this.dgvUcenici.Size = new System.Drawing.Size(619, 285);
+            this.dgvUcenici.Size = new System.Drawing.Size(729, 285);
             this.dgvUcenici.TabIndex = 55;
+            // 
+            // cmbUcenici
+            // 
+            this.cmbUcenici.FormattingEnabled = true;
+            this.cmbUcenici.Location = new System.Drawing.Point(919, 604);
+            this.cmbUcenici.Name = "cmbUcenici";
+            this.cmbUcenici.Size = new System.Drawing.Size(166, 28);
+            this.cmbUcenici.TabIndex = 56;
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(788, 600);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(90, 34);
+            this.btnDodaj.TabIndex = 57;
+            this.btnDodaj.Text = "Dodaj";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            // 
+            // btnIzbaci
+            // 
+            this.btnIzbaci.Location = new System.Drawing.Point(788, 670);
+            this.btnIzbaci.Name = "btnIzbaci";
+            this.btnIzbaci.Size = new System.Drawing.Size(90, 36);
+            this.btnIzbaci.TabIndex = 58;
+            this.btnIzbaci.Text = "Izbaci";
+            this.btnIzbaci.UseVisualStyleBackColor = true;
             // 
             // UcUpravljajGrupom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnIzbaci);
+            this.Controls.Add(this.btnDodaj);
+            this.Controls.Add(this.cmbUcenici);
             this.Controls.Add(this.dgvUcenici);
             this.Controls.Add(this.dgvKurs);
             this.Controls.Add(this.lblUceniciGreska);
@@ -290,7 +321,7 @@
             this.Controls.Add(this.lblIzmeniGrupu);
             this.Controls.Add(this.lblKreirajGrupu);
             this.Name = "UcUpravljajGrupom";
-            this.Size = new System.Drawing.Size(1115, 777);
+            this.Size = new System.Drawing.Size(1115, 861);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKurs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).EndInit();
             this.ResumeLayout(false);
@@ -315,5 +346,8 @@
         public System.Windows.Forms.Label lblUceniciGreska;
         public System.Windows.Forms.DataGridView dgvKurs;
         public System.Windows.Forms.DataGridView dgvUcenici;
+        public System.Windows.Forms.ComboBox cmbUcenici;
+        public System.Windows.Forms.Button btnDodaj;
+        public System.Windows.Forms.Button btnIzbaci;
     }
 }
