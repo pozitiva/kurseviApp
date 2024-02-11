@@ -12,7 +12,7 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            List<Kurs> kursevi = broker.VratiSve(domenskiObjekat).OfType<Kurs>().ToList();
+            List<Kurs> kursevi = repozitorijum.VratiSve(domenskiObjekat).OfType<Kurs>().ToList();
             return kursevi;
         }
     }

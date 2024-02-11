@@ -11,7 +11,7 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            List<Zaposleni> zaposleni = broker.VratiSve(domenskiObjekat).OfType<Zaposleni>().ToList(); 
+            List<Zaposleni> zaposleni = repozitorijum.VratiSve(domenskiObjekat).OfType<Zaposleni>().ToList(); 
             return zaposleni;
         }
     }

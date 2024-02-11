@@ -11,7 +11,7 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            return broker.Obrisi(domenskiObjekat)>0;
+            return repozitorijum.Obrisi(domenskiObjekat)>0;
         }
     }
 }
