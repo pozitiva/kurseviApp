@@ -20,18 +20,10 @@ namespace Server
             } 
         }
 
-        public List<Zaposleni> VratiSveZaposlene()
-        {
-            VratiSveZaposleneSO operacija = new VratiSveZaposleneSO();
-            List<Zaposleni> zaposleni = (List<Zaposleni>)operacija.IzvrsiSO(new Zaposleni());
-            return zaposleni;
-        }
-
         public List<Predavac> VratiSvePredavace()
         {
             VratiSvePredavaceSO operacija = new VratiSvePredavaceSO();
-            List<Predavac> predavaci = (List<Predavac>)operacija.IzvrsiSO(new Predavac());  
-            return predavaci;
+            return (List<Predavac>)operacija.IzvrsiSO(new Predavac());  
         }
 
         public bool KreirajKurs(Kurs k)

@@ -34,31 +34,42 @@
             // 
             // btnPokreni
             // 
-            this.btnPokreni.Location = new System.Drawing.Point(123, 73);
+            this.btnPokreni.BackColor = System.Drawing.Color.SeaShell;
+            this.btnPokreni.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.btnPokreni.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPokreni.Location = new System.Drawing.Point(157, 92);
+            this.btnPokreni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPokreni.Name = "btnPokreni";
-            this.btnPokreni.Size = new System.Drawing.Size(139, 61);
+            this.btnPokreni.Size = new System.Drawing.Size(170, 73);
             this.btnPokreni.TabIndex = 0;
             this.btnPokreni.Text = "Pokreni server";
-            this.btnPokreni.UseVisualStyleBackColor = true;
+            this.btnPokreni.UseVisualStyleBackColor = false;
             this.btnPokreni.Click += new System.EventHandler(this.btnPokreni_Click);
             // 
             // btnPrekini
             // 
-            this.btnPrekini.Location = new System.Drawing.Point(123, 205);
+            this.btnPrekini.BackColor = System.Drawing.Color.SeaShell;
+            this.btnPrekini.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.btnPrekini.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPrekini.Location = new System.Drawing.Point(157, 250);
+            this.btnPrekini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrekini.Name = "btnPrekini";
-            this.btnPrekini.Size = new System.Drawing.Size(139, 61);
+            this.btnPrekini.Size = new System.Drawing.Size(170, 73);
             this.btnPrekini.TabIndex = 1;
             this.btnPrekini.Text = "Prekini server";
-            this.btnPrekini.UseVisualStyleBackColor = true;
+            this.btnPrekini.UseVisualStyleBackColor = false;
             this.btnPrekini.Click += new System.EventHandler(this.btnPrekini_Click);
             // 
             // FrmServer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 383);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(506, 460);
             this.Controls.Add(this.btnPrekini);
             this.Controls.Add(this.btnPokreni);
+            this.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmServer";
             this.Text = "Server";
             this.ResumeLayout(false);

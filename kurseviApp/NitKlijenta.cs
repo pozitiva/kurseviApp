@@ -16,8 +16,6 @@ namespace kurseviApp
         private Socket klijentskiSocket;
         private Primalac primalac;
         private Posaljilac posaljilac;
-        private List<Zaposleni> zaposleni = Kontroler.Instance.VratiSveZaposlene();
-        private static List<Zaposleni> ulogovaniZaposleni = new List<Zaposleni>();
 
         public NitKlijenta(Socket klijentskiSocket)
         {
@@ -47,7 +45,6 @@ namespace kurseviApp
                             }
                             odgovor.Operacija = Operacija.UspesnaPrijava;
                             odgovor.Zaposleni = z;
-                            ulogovaniZaposleni.Add(z);
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiSvePredavace:

@@ -87,11 +87,11 @@
     <Compile Include="KorisnickeKontrole\UcUpravljajGrupom.Designer.cs">
       <DependentUpon>UcUpravljajGrupom.cs</DependentUpon>
     </Compile>
-    <Compile Include="KorisnickeKontrole\UcUpravljajKursem.cs">
+    <Compile Include="KorisnickeKontrole\UcUpravljajKursom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="KorisnickeKontrole\UcUpravljajKursem.Designer.cs">
-      <DependentUpon>UcUpravljajKursem.cs</DependentUpon>
+    <Compile Include="KorisnickeKontrole\UcUpravljajKursom.Designer.cs">
+      <DependentUpon>UcUpravljajKursom.cs</DependentUpon>
     </Compile>
     <Compile Include="KorisnickeKontrole\UcPrikaziKurseve.cs">
       <SubType>UserControl</SubType>
@@ -122,8 +122,8 @@
     <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajGrupom.resx">
       <DependentUpon>UcUpravljajGrupom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajKursem.resx">
-      <DependentUpon>UcUpravljajKursem.cs</DependentUpon>
+    <EmbeddedResource Include="KorisnickeKontrole\UcUpravljajKursom.resx">
+      <DependentUpon>UcUpravljajKursom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KorisnickeKontrole\UcPrikaziKurseve.resx">
       <DependentUpon>UcPrikaziKurseve.cs</DependentUpon>
@@ -158,6 +158,9 @@
       <Project>{DF446779-4052-442A-AD29-83F0D352C76C}</Project>
       <Name>Domen</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resursi\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

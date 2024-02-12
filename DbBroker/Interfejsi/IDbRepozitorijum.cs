@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbBroker
+namespace Repozitorijum
 {
     public interface IDbRepozitorijum<TDomenskiObjekat> : IRepozitorijum<TDomenskiObjekat> where TDomenskiObjekat : class
     {

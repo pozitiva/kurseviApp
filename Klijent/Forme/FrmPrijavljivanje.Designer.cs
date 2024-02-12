@@ -39,51 +39,66 @@
             // 
             // txtKorisnickoIme
             // 
-            this.txtKorisnickoIme.Location = new System.Drawing.Point(187, 67);
+            this.txtKorisnickoIme.BackColor = System.Drawing.Color.SeaShell;
+            this.txtKorisnickoIme.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.txtKorisnickoIme.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtKorisnickoIme.Location = new System.Drawing.Point(226, 67);
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
-            this.txtKorisnickoIme.Size = new System.Drawing.Size(164, 26);
+            this.txtKorisnickoIme.Size = new System.Drawing.Size(164, 32);
             this.txtKorisnickoIme.TabIndex = 0;
             // 
             // txtSifra
             // 
-            this.txtSifra.Location = new System.Drawing.Point(187, 132);
+            this.txtSifra.BackColor = System.Drawing.Color.SeaShell;
+            this.txtSifra.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.txtSifra.ForeColor = System.Drawing.Color.Firebrick;
+            this.txtSifra.Location = new System.Drawing.Point(226, 132);
             this.txtSifra.Name = "txtSifra";
-            this.txtSifra.Size = new System.Drawing.Size(164, 26);
+            this.txtSifra.Size = new System.Drawing.Size(164, 32);
             this.txtSifra.TabIndex = 1;
             // 
             // btnPrijaviSe
             // 
-            this.btnPrijaviSe.Location = new System.Drawing.Point(187, 211);
+            this.btnPrijaviSe.BackColor = System.Drawing.Color.SeaShell;
+            this.btnPrijaviSe.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.btnPrijaviSe.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnPrijaviSe.Location = new System.Drawing.Point(136, 246);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
             this.btnPrijaviSe.Size = new System.Drawing.Size(164, 40);
             this.btnPrijaviSe.TabIndex = 2;
             this.btnPrijaviSe.Text = "Prijavi se";
-            this.btnPrijaviSe.UseVisualStyleBackColor = true;
+            this.btnPrijaviSe.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(28, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Korisnicko ime";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
             this.label2.Location = new System.Drawing.Point(28, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
+            this.label2.Size = new System.Drawing.Size(57, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Sifra";
             // 
             // lblImeGreska
             // 
             this.lblImeGreska.AutoSize = true;
-            this.lblImeGreska.Location = new System.Drawing.Point(183, 96);
+            this.lblImeGreska.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.lblImeGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblImeGreska.Location = new System.Drawing.Point(221, 102);
             this.lblImeGreska.Name = "lblImeGreska";
-            this.lblImeGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblImeGreska.Size = new System.Drawing.Size(79, 25);
             this.lblImeGreska.TabIndex = 5;
             this.lblImeGreska.Text = "Greska";
             this.lblImeGreska.Visible = false;
@@ -91,9 +106,11 @@
             // lblSifraGreska
             // 
             this.lblSifraGreska.AutoSize = true;
-            this.lblSifraGreska.Location = new System.Drawing.Point(183, 161);
+            this.lblSifraGreska.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.lblSifraGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblSifraGreska.Location = new System.Drawing.Point(222, 167);
             this.lblSifraGreska.Name = "lblSifraGreska";
-            this.lblSifraGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblSifraGreska.Size = new System.Drawing.Size(79, 25);
             this.lblSifraGreska.TabIndex = 6;
             this.lblSifraGreska.Text = "Greska";
             this.lblSifraGreska.Visible = false;
@@ -102,7 +119,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 336);
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(558, 374);
             this.Controls.Add(this.lblSifraGreska);
             this.Controls.Add(this.lblImeGreska);
             this.Controls.Add(this.label2);

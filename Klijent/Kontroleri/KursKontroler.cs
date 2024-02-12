@@ -10,16 +10,16 @@ namespace Klijent.Kontroleri
 {
     public class KursKontroler
     {
-        private UcUpravljajKursem ucUpravljajKursem;
+        private UcUpravljajKursom ucUpravljajKursem;
         private UcPrikaziKurseve ucPrikaziKurseve;
         private FormMode mode;
         private Kurs kurs;
 
-        public UcUpravljajKursem KreirajUcUpravljajKurs(FormMode mode, Kurs kurs)
+        public UcUpravljajKursom KreirajUcUpravljajKurs(FormMode mode, Kurs kurs)
         {
             this.mode = mode;
             this.kurs = kurs;
-            ucUpravljajKursem = new UcUpravljajKursem();
+            ucUpravljajKursem = new UcUpravljajKursom();
 
             //napuni predavace
             List<Predavac> predavaci = Komunikacija.Instance.VratiSvePredavace();

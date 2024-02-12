@@ -22,13 +22,6 @@ namespace SistemskeOperacije
                 pg.Grupa = grupa;
                 signal = signal && repozitorijum.Obrisi(pg)>0;
             }
-            //List<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
-            //foreach (PripadanjeGrupi pg in pripadanja)
-            //{
-            //    pg.Grupa = grupa;
-
-            //    signal = signal && broker.Obrisi(pg) > 0;
-            //}
 
             PripadanjeGrupi pripadanje = new PripadanjeGrupi
             {

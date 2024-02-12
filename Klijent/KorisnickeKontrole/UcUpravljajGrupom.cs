@@ -15,8 +15,8 @@ namespace Klijent.KorisnickeKontrole
         public UcUpravljajGrupom()
         {
             InitializeComponent();
-        }
 
+        }
 
     }
 }

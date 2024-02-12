@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "kurseviApp\Server.csproj", "{918648AE-3613-43F8-B4C7-6A08805D03A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbBroker", "DbBroker\DbBroker.csproj", "{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repozitorijum", "DbBroker\Repozitorijum.csproj", "{8B1EF7F8-7DC1-497F-827B-1154D1BDF91C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domen", "Domen\Domen.csproj", "{DF446779-4052-442A-AD29-83F0D352C76C}"
 EndProject

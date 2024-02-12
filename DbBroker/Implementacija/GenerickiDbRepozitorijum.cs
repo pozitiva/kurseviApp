@@ -7,7 +7,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbBroker
+namespace Repozitorijum
 {
     public class GenerickiDbRepozitorijum:IDbRepozitorijum<DomenskiObjekat>
     {
