@@ -38,7 +38,7 @@
             this.btnPokreni.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
             this.btnPokreni.ForeColor = System.Drawing.Color.Firebrick;
             this.btnPokreni.Location = new System.Drawing.Point(157, 92);
-            this.btnPokreni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPokreni.Margin = new System.Windows.Forms.Padding(4);
             this.btnPokreni.Name = "btnPokreni";
             this.btnPokreni.Size = new System.Drawing.Size(170, 73);
             this.btnPokreni.TabIndex = 0;
@@ -52,7 +52,7 @@
             this.btnPrekini.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
             this.btnPrekini.ForeColor = System.Drawing.Color.Firebrick;
             this.btnPrekini.Location = new System.Drawing.Point(157, 250);
-            this.btnPrekini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrekini.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrekini.Name = "btnPrekini";
             this.btnPrekini.Size = new System.Drawing.Size(170, 73);
             this.btnPrekini.TabIndex = 1;
@@ -69,8 +69,9 @@
             this.Controls.Add(this.btnPrekini);
             this.Controls.Add(this.btnPokreni);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmServer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Server";
             this.ResumeLayout(false);
 

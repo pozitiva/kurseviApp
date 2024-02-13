@@ -43,17 +43,17 @@
             this.kreirajGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniGrupuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlGlavna = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.msZaposleni.SuspendLayout();
-            this.pnlGlavna.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblZaposleni
             // 
-            this.lblZaposleni.AutoSize = true;
-            this.lblZaposleni.Location = new System.Drawing.Point(857, 53);
-            this.lblZaposleni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblZaposleni.BackColor = System.Drawing.Color.MistyRose;
+            this.lblZaposleni.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblZaposleni.Location = new System.Drawing.Point(785, 2);
             this.lblZaposleni.Name = "lblZaposleni";
-            this.lblZaposleni.Size = new System.Drawing.Size(0, 25);
+            this.lblZaposleni.Size = new System.Drawing.Size(100, 23);
             this.lblZaposleni.TabIndex = 0;
             // 
             // msZaposleni
@@ -181,31 +181,44 @@
             // 
             // pnlGlavna
             // 
+            this.pnlGlavna.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlGlavna.AutoScroll = true;
+            this.pnlGlavna.AutoSize = true;
             this.pnlGlavna.BackColor = System.Drawing.Color.MistyRose;
-            this.pnlGlavna.Controls.Add(this.lblZaposleni);
             this.pnlGlavna.ForeColor = System.Drawing.Color.Maroon;
-            this.pnlGlavna.Location = new System.Drawing.Point(0, 28);
+            this.pnlGlavna.Location = new System.Drawing.Point(0, 31);
             this.pnlGlavna.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGlavna.Name = "pnlGlavna";
-            this.pnlGlavna.Size = new System.Drawing.Size(920, 490);
+            this.pnlGlavna.Size = new System.Drawing.Size(926, 487);
             this.pnlGlavna.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.MistyRose;
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
+            this.label1.Location = new System.Drawing.Point(572, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Ulogovani zaposleni";
             // 
             // FrmZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(926, 518);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblZaposleni);
             this.Controls.Add(this.pnlGlavna);
             this.Controls.Add(this.msZaposleni);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmZaposleni";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel zaposlenog";
             this.msZaposleni.ResumeLayout(false);
             this.msZaposleni.PerformLayout();
-            this.pnlGlavna.ResumeLayout(false);
-            this.pnlGlavna.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +241,6 @@
         private System.Windows.Forms.ToolStripMenuItem grupaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kreirajGrupuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniGrupuToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }

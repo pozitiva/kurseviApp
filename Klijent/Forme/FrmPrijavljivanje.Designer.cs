@@ -129,6 +129,7 @@
             this.Controls.Add(this.txtSifra);
             this.Controls.Add(this.txtKorisnickoIme);
             this.Name = "FrmPrijavljivanje";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prijavi se ";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -60,12 +60,11 @@
             this.lblKursGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblKursGreska.AutoSize = true;
             this.lblKursGreska.BackColor = System.Drawing.Color.Transparent;
-            this.lblKursGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblKursGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKursGreska.Location = new System.Drawing.Point(48, 479);
-            this.lblKursGreska.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKursGreska.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblKursGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblKursGreska.Location = new System.Drawing.Point(24, 276);
             this.lblKursGreska.Name = "lblKursGreska";
-            this.lblKursGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblKursGreska.Size = new System.Drawing.Size(60, 19);
             this.lblKursGreska.TabIndex = 49;
             this.lblKursGreska.Text = "Greska";
             this.lblKursGreska.Visible = false;
@@ -75,12 +74,11 @@
             this.lblDatumGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDatumGreska.AutoSize = true;
             this.lblDatumGreska.BackColor = System.Drawing.Color.Transparent;
-            this.lblDatumGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblDatumGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDatumGreska.Location = new System.Drawing.Point(772, 169);
-            this.lblDatumGreska.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatumGreska.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblDatumGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblDatumGreska.Location = new System.Drawing.Point(602, 90);
             this.lblDatumGreska.Name = "lblDatumGreska";
-            this.lblDatumGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblDatumGreska.Size = new System.Drawing.Size(60, 19);
             this.lblDatumGreska.TabIndex = 48;
             this.lblDatumGreska.Text = "Greska";
             this.lblDatumGreska.Visible = false;
@@ -90,12 +88,11 @@
             this.lblNazivGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNazivGreska.AutoSize = true;
             this.lblNazivGreska.BackColor = System.Drawing.Color.Transparent;
-            this.lblNazivGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblNazivGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNazivGreska.Location = new System.Drawing.Point(332, 164);
-            this.lblNazivGreska.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNazivGreska.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblNazivGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblNazivGreska.Location = new System.Drawing.Point(324, 86);
             this.lblNazivGreska.Name = "lblNazivGreska";
-            this.lblNazivGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblNazivGreska.Size = new System.Drawing.Size(60, 19);
             this.lblNazivGreska.TabIndex = 47;
             this.lblNazivGreska.Text = "Greska";
             this.lblNazivGreska.Visible = false;
@@ -110,10 +107,10 @@
             this.btnIzmeni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIzmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnIzmeni.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnIzmeni.Location = new System.Drawing.Point(994, 364);
-            this.btnIzmeni.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnIzmeni.Location = new System.Drawing.Point(642, 191);
+            this.btnIzmeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnIzmeni.Name = "btnIzmeni";
-            this.btnIzmeni.Size = new System.Drawing.Size(220, 98);
+            this.btnIzmeni.Size = new System.Drawing.Size(180, 82);
             this.btnIzmeni.TabIndex = 44;
             this.btnIzmeni.Text = "Izmeni";
             this.btnIzmeni.UseVisualStyleBackColor = false;
@@ -128,10 +125,10 @@
             this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnKreiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.btnKreiraj.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnKreiraj.Location = new System.Drawing.Point(994, 364);
-            this.btnKreiraj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKreiraj.Location = new System.Drawing.Point(642, 191);
+            this.btnKreiraj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKreiraj.Name = "btnKreiraj";
-            this.btnKreiraj.Size = new System.Drawing.Size(220, 98);
+            this.btnKreiraj.Size = new System.Drawing.Size(180, 82);
             this.btnKreiraj.TabIndex = 45;
             this.btnKreiraj.Text = "Kreiraj";
             this.btnKreiraj.UseVisualStyleBackColor = false;
@@ -141,12 +138,11 @@
             this.lblKurs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblKurs.AutoSize = true;
             this.lblKurs.BackColor = System.Drawing.Color.Transparent;
-            this.lblKurs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblKurs.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKurs.Location = new System.Drawing.Point(46, 181);
-            this.lblKurs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKurs.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.lblKurs.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblKurs.Location = new System.Drawing.Point(23, 101);
             this.lblKurs.Name = "lblKurs";
-            this.lblKurs.Size = new System.Drawing.Size(53, 25);
+            this.lblKurs.Size = new System.Drawing.Size(53, 24);
             this.lblKurs.TabIndex = 43;
             this.lblKurs.Text = "Kurs";
             // 
@@ -158,12 +154,12 @@
             this.dtpDatumPocetka.CalendarTitleBackColor = System.Drawing.Color.SeaShell;
             this.dtpDatumPocetka.CalendarTitleForeColor = System.Drawing.Color.Firebrick;
             this.dtpDatumPocetka.CalendarTrailingForeColor = System.Drawing.Color.Firebrick;
-            this.dtpDatumPocetka.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            this.dtpDatumPocetka.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.dtpDatumPocetka.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDatumPocetka.Location = new System.Drawing.Point(764, 126);
-            this.dtpDatumPocetka.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpDatumPocetka.Location = new System.Drawing.Point(595, 54);
+            this.dtpDatumPocetka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDatumPocetka.Name = "dtpDatumPocetka";
-            this.dtpDatumPocetka.Size = new System.Drawing.Size(291, 32);
+            this.dtpDatumPocetka.Size = new System.Drawing.Size(239, 27);
             this.dtpDatumPocetka.TabIndex = 38;
             // 
             // lblDatumPocetka
@@ -171,12 +167,11 @@
             this.lblDatumPocetka.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDatumPocetka.AutoSize = true;
             this.lblDatumPocetka.BackColor = System.Drawing.Color.Transparent;
-            this.lblDatumPocetka.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblDatumPocetka.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblDatumPocetka.Location = new System.Drawing.Point(759, 96);
-            this.lblDatumPocetka.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatumPocetka.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.lblDatumPocetka.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblDatumPocetka.Location = new System.Drawing.Point(591, 29);
             this.lblDatumPocetka.Name = "lblDatumPocetka";
-            this.lblDatumPocetka.Size = new System.Drawing.Size(143, 25);
+            this.lblDatumPocetka.Size = new System.Drawing.Size(146, 24);
             this.lblDatumPocetka.TabIndex = 42;
             this.lblDatumPocetka.Text = "Datum početka";
             // 
@@ -184,10 +179,11 @@
             // 
             this.txtNazivGrupe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNazivGrupe.BackColor = System.Drawing.Color.SeaShell;
-            this.txtNazivGrupe.Location = new System.Drawing.Point(339, 126);
-            this.txtNazivGrupe.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNazivGrupe.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.txtNazivGrupe.Location = new System.Drawing.Point(329, 54);
+            this.txtNazivGrupe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNazivGrupe.Name = "txtNazivGrupe";
-            this.txtNazivGrupe.Size = new System.Drawing.Size(264, 32);
+            this.txtNazivGrupe.Size = new System.Drawing.Size(217, 27);
             this.txtNazivGrupe.TabIndex = 37;
             // 
             // lblNazivGrupe
@@ -195,12 +191,11 @@
             this.lblNazivGrupe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNazivGrupe.AutoSize = true;
             this.lblNazivGrupe.BackColor = System.Drawing.Color.Transparent;
-            this.lblNazivGrupe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblNazivGrupe.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNazivGrupe.Location = new System.Drawing.Point(343, 96);
-            this.lblNazivGrupe.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNazivGrupe.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.lblNazivGrupe.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblNazivGrupe.Location = new System.Drawing.Point(333, 29);
             this.lblNazivGrupe.Name = "lblNazivGrupe";
-            this.lblNazivGrupe.Size = new System.Drawing.Size(116, 25);
+            this.lblNazivGrupe.Size = new System.Drawing.Size(118, 24);
             this.lblNazivGrupe.TabIndex = 41;
             this.lblNazivGrupe.Text = "Naziv grupe";
             // 
@@ -208,13 +203,12 @@
             // 
             this.lblIzmeniGrupu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIzmeniGrupu.AutoSize = true;
-            this.lblIzmeniGrupu.BackColor = System.Drawing.Color.Transparent;
-            this.lblIzmeniGrupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblIzmeniGrupu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblIzmeniGrupu.Location = new System.Drawing.Point(528, 22);
-            this.lblIzmeniGrupu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIzmeniGrupu.BackColor = System.Drawing.Color.MistyRose;
+            this.lblIzmeniGrupu.Font = new System.Drawing.Font("Bahnschrift Light", 20F);
+            this.lblIzmeniGrupu.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblIzmeniGrupu.Location = new System.Drawing.Point(19, 36);
             this.lblIzmeniGrupu.Name = "lblIzmeniGrupu";
-            this.lblIzmeniGrupu.Size = new System.Drawing.Size(202, 37);
+            this.lblIzmeniGrupu.Size = new System.Drawing.Size(254, 48);
             this.lblIzmeniGrupu.TabIndex = 39;
             this.lblIzmeniGrupu.Text = "Izmeni grupu";
             // 
@@ -223,12 +217,11 @@
             this.lblKreirajGrupu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblKreirajGrupu.AutoSize = true;
             this.lblKreirajGrupu.BackColor = System.Drawing.Color.Transparent;
-            this.lblKreirajGrupu.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lblKreirajGrupu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblKreirajGrupu.Location = new System.Drawing.Point(528, 22);
-            this.lblKreirajGrupu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKreirajGrupu.Font = new System.Drawing.Font("Bahnschrift Light", 20F);
+            this.lblKreirajGrupu.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblKreirajGrupu.Location = new System.Drawing.Point(19, 36);
             this.lblKreirajGrupu.Name = "lblKreirajGrupu";
-            this.lblKreirajGrupu.Size = new System.Drawing.Size(201, 37);
+            this.lblKreirajGrupu.Size = new System.Drawing.Size(259, 48);
             this.lblKreirajGrupu.TabIndex = 40;
             this.lblKreirajGrupu.Text = "Kreiraj grupu";
             // 
@@ -237,12 +230,11 @@
             this.lblUcenici.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUcenici.AutoSize = true;
             this.lblUcenici.BackColor = System.Drawing.Color.Transparent;
-            this.lblUcenici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblUcenici.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUcenici.Location = new System.Drawing.Point(46, 538);
-            this.lblUcenici.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUcenici.Font = new System.Drawing.Font("Bahnschrift Light", 10F);
+            this.lblUcenici.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblUcenici.Location = new System.Drawing.Point(23, 295);
             this.lblUcenici.Name = "lblUcenici";
-            this.lblUcenici.Size = new System.Drawing.Size(76, 25);
+            this.lblUcenici.Size = new System.Drawing.Size(75, 24);
             this.lblUcenici.TabIndex = 52;
             this.lblUcenici.Text = "Ucenici";
             // 
@@ -251,12 +243,11 @@
             this.lblUceniciGreska.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUceniciGreska.AutoSize = true;
             this.lblUceniciGreska.BackColor = System.Drawing.Color.Transparent;
-            this.lblUceniciGreska.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.lblUceniciGreska.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblUceniciGreska.Location = new System.Drawing.Point(48, 1000);
-            this.lblUceniciGreska.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUceniciGreska.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblUceniciGreska.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblUceniciGreska.Location = new System.Drawing.Point(24, 469);
             this.lblUceniciGreska.Name = "lblUceniciGreska";
-            this.lblUceniciGreska.Size = new System.Drawing.Size(61, 20);
+            this.lblUceniciGreska.Size = new System.Drawing.Size(60, 19);
             this.lblUceniciGreska.TabIndex = 53;
             this.lblUceniciGreska.Text = "Greska";
             this.lblUceniciGreska.Visible = false;
@@ -267,10 +258,9 @@
             this.cmbUcenici.BackColor = System.Drawing.Color.SeaShell;
             this.cmbUcenici.FormattingEnabled = true;
             this.cmbUcenici.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbUcenici.Location = new System.Drawing.Point(1089, 630);
-            this.cmbUcenici.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbUcenici.Location = new System.Drawing.Point(729, 390);
             this.cmbUcenici.Name = "cmbUcenici";
-            this.cmbUcenici.Size = new System.Drawing.Size(202, 32);
+            this.cmbUcenici.Size = new System.Drawing.Size(166, 28);
             this.cmbUcenici.TabIndex = 56;
             // 
             // btnDodaj
@@ -278,10 +268,9 @@
             this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDodaj.BackColor = System.Drawing.Color.SeaShell;
             this.btnDodaj.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnDodaj.Location = new System.Drawing.Point(959, 591);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDodaj.Location = new System.Drawing.Point(623, 357);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(110, 41);
+            this.btnDodaj.Size = new System.Drawing.Size(90, 34);
             this.btnDodaj.TabIndex = 57;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
@@ -291,10 +280,9 @@
             this.btnIzbaci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIzbaci.BackColor = System.Drawing.Color.SeaShell;
             this.btnIzbaci.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnIzbaci.Location = new System.Drawing.Point(959, 650);
-            this.btnIzbaci.Margin = new System.Windows.Forms.Padding(4);
+            this.btnIzbaci.Location = new System.Drawing.Point(623, 407);
             this.btnIzbaci.Name = "btnIzbaci";
-            this.btnIzbaci.Size = new System.Drawing.Size(110, 43);
+            this.btnIzbaci.Size = new System.Drawing.Size(90, 36);
             this.btnIzbaci.TabIndex = 58;
             this.btnIzbaci.Text = "Izbaci";
             this.btnIzbaci.UseVisualStyleBackColor = false;
@@ -311,7 +299,7 @@
             this.dgvKurs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
@@ -322,23 +310,23 @@
             this.dgvKurs.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvKurs.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKurs.EnableHeadersVisualStyles = false;
-            this.dgvKurs.Location = new System.Drawing.Point(52, 215);
-            this.dgvKurs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvKurs.Location = new System.Drawing.Point(28, 129);
+            this.dgvKurs.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvKurs.MultiSelect = false;
             this.dgvKurs.Name = "dgvKurs";
             this.dgvKurs.ReadOnly = true;
             this.dgvKurs.RowHeadersVisible = false;
-            this.dgvKurs.RowHeadersWidth = 51;
+            this.dgvKurs.RowHeadersWidth = 40;
             this.dgvKurs.RowTemplate.Height = 35;
             this.dgvKurs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKurs.Size = new System.Drawing.Size(891, 260);
+            this.dgvKurs.Size = new System.Drawing.Size(572, 144);
             this.dgvKurs.TabIndex = 59;
             // 
             // dgvUcenici
@@ -353,7 +341,7 @@
             this.dgvUcenici.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
@@ -364,28 +352,28 @@
             this.dgvUcenici.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SeaShell;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUcenici.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvUcenici.EnableHeadersVisualStyles = false;
-            this.dgvUcenici.Location = new System.Drawing.Point(52, 578);
-            this.dgvUcenici.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvUcenici.Location = new System.Drawing.Point(27, 322);
+            this.dgvUcenici.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgvUcenici.MultiSelect = false;
             this.dgvUcenici.Name = "dgvUcenici";
             this.dgvUcenici.ReadOnly = true;
             this.dgvUcenici.RowHeadersVisible = false;
-            this.dgvUcenici.RowHeadersWidth = 51;
+            this.dgvUcenici.RowHeadersWidth = 40;
             this.dgvUcenici.RowTemplate.Height = 35;
             this.dgvUcenici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUcenici.Size = new System.Drawing.Size(891, 260);
+            this.dgvUcenici.Size = new System.Drawing.Size(573, 144);
             this.dgvUcenici.TabIndex = 60;
             // 
             // UcUpravljajGrupom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.Controls.Add(this.dgvUcenici);
@@ -407,10 +395,9 @@
             this.Controls.Add(this.lblNazivGrupe);
             this.Controls.Add(this.lblIzmeniGrupu);
             this.Controls.Add(this.lblKreirajGrupu);
-            this.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UcUpravljajGrupom";
-            this.Size = new System.Drawing.Size(1354, 851);
+            this.Size = new System.Drawing.Size(920, 490);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKurs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).EndInit();
             this.ResumeLayout(false);

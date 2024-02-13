@@ -3,11 +3,13 @@ using Domen.Komunikacija;
 using Server;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace kurseviApp
 {
@@ -48,7 +50,6 @@ namespace kurseviApp
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiSvePredavace:
-
                             odgovor.Predavaci= Kontroler.Instance.VratiSvePredavace();
                             posaljilac.Posalji(odgovor);
                             break;
@@ -62,12 +63,14 @@ namespace kurseviApp
                             break;
                         case Operacija.PretraziKurseve:
                             odgovor.Kursevi = Kontroler.Instance.PretraziKurseve(zahtev.Kurs);
-                            odgovor.Operacija = Operacija.KurseviUspesnoPronadjeni;
+                            if (odgovor.Kursevi != null) odgovor.Operacija = Operacija.KurseviUspesnoPronadjeni;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiKurs:
                             odgovor.Kurs = Kontroler.Instance.VratiKurs(zahtev.Kurs);
-                            odgovor.Operacija = Operacija.KursUspesnoNadjen;
+                            if (odgovor.Kurs != null) odgovor.Operacija = Operacija.KursUspesnoNadjen;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.IzmeniKurs:
@@ -88,12 +91,14 @@ namespace kurseviApp
                             break;
                         case Operacija.PretraziUcenike:
                             odgovor.Ucenici = Kontroler.Instance.PretraziUcenike(zahtev.Ucenik);
-                            odgovor.Operacija = Operacija.UceniciUspesnoPronadjeni;
+                            if (odgovor.Ucenici != null) odgovor.Operacija = Operacija.UceniciUspesnoPronadjeni;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiUcenika:
                             odgovor.Ucenik = Kontroler.Instance.VratiUcenika(zahtev.Ucenik);
-                            odgovor.Operacija = Operacija.UcenikUspesnoNadjen;
+                            if (odgovor.Ucenik != null) odgovor.Operacija = Operacija.UcenikUspesnoNadjen;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.IzmeniUcenika:
@@ -114,7 +119,8 @@ namespace kurseviApp
                             break;
                         case Operacija.PretraziGrupe:
                             odgovor.Grupe = Kontroler.Instance.PretraziGrupe(zahtev.Grupa);
-                            odgovor.Operacija = Operacija.GrupeUspesnoPronadjene;
+                            if (odgovor.Grupe != null) odgovor.Operacija = Operacija.GrupeUspesnoPronadjene;
+                            else odgovor.Operacija = Operacija.GreskaUZahtevu;
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiGrupu:
@@ -131,9 +137,10 @@ namespace kurseviApp
                             break;
                     }
                 }
-                catch (Exception ex)
+                catch (IOException ex)
                 {
-
+                    MessageBox.Show("Greska prilikom primanja poruke");
+                    return; 
                 }
             }
         }
