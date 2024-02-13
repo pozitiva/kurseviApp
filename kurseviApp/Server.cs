@@ -87,7 +87,8 @@ namespace kurseviApp
                 klijenti.Clear();
             }catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw ex;
+                //MessageBox.Show(ex.Message);
             }
 
         }

@@ -29,11 +29,11 @@ namespace Klijent.Kontroleri
             ucUpravljajGrupom.dgvKurs.DataSource = kursevi;
 
             //napuni ucenike
-            //List<Ucenik> ucenici = Komunikacija.Instance.VratiSveUcenike();
             ucUpravljajGrupom.dgvUcenici.DataSource = new BindingList<PripadanjeGrupi>();
             ucUpravljajGrupom.cmbUcenici.DataSource = Komunikacija.Instance.VratiSveUcenike();
             ucUpravljajGrupom.cmbUcenici.SelectedIndex = -1;
             ucUpravljajGrupom.dgvUcenici.ReadOnly = true;
+            ucUpravljajGrupom.cmbUcenici.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (mode == FormMode.Dodaj)
             {
@@ -41,6 +41,7 @@ namespace Klijent.Kontroleri
                 this.grupa.Pripadanja = new BindingList<PripadanjeGrupi>();  
                 ucUpravljajGrupom.lblIzmeniGrupu.Visible = false;
                 ucUpravljajGrupom.btnIzmeni.Visible = false;
+                ucUpravljajGrupom.dgvUcenici.Columns["Grupa"].Visible=false;
             }
 
             if (mode == FormMode.Izmeni)
@@ -56,7 +57,6 @@ namespace Klijent.Kontroleri
                 ucUpravljajGrupom.dtpDatumPocetka.Text = grupa.DatumPocetkaKursa.ToString();
                 ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
                 ucUpravljajGrupom.dgvKurs.DataBindingComplete += SelektujIzabraniKurs;
-                //ucUpravljajGrupom.dgvUcenici.DataBindingComplete += SelektujIzabraneUcenike;
             }
 
             //dogadjaji
@@ -69,6 +69,8 @@ namespace Klijent.Kontroleri
 
         private void IzbaciUcenika(object sender, EventArgs e)
         {
+            try
+            {
                 if (ucUpravljajGrupom.dgvUcenici.SelectedRows.Count != 1)
                 {
                     ucUpravljajGrupom.lblUceniciGreska.Text = "Morate da odaberete jednog po jednog ucenika";
@@ -80,23 +82,33 @@ namespace Klijent.Kontroleri
                 grupa.Pripadanja.Remove(pripadanje);
                 izbacena.Add(pripadanje);
                 ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
+            }catch(KorisnickaGreska ex)
+            {
+                Console.WriteLine(ex.Poruka);
+            }
+            catch(Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DodajUcenika(object sender, EventArgs e)
         {
+            if(ucUpravljajGrupom.cmbUcenici.SelectedIndex == -1)
+            {
+                return;
+            }
             PripadanjeGrupi novoPripadanje = new PripadanjeGrupi();
             if (mode == FormMode.Dodaj)
             {
                 novoPripadanje.Ucenik = (Ucenik)ucUpravljajGrupom.cmbUcenici.SelectedItem;
-                    //Grupa = grupa,
-                novoPripadanje.DatumPrijave = System.DateTime.Now;
+                novoPripadanje.DatumPrijave = DateTime.Now;
             }
 
             if (mode == FormMode.Izmeni)
             {
                 novoPripadanje.Ucenik = (Ucenik)ucUpravljajGrupom.cmbUcenici.SelectedItem;
                 novoPripadanje.Grupa = grupa;
-                novoPripadanje.DatumPrijave = System.DateTime.Now;
+                novoPripadanje.DatumPrijave = DateTime.Now;
             }
 
             if (grupa.Pripadanja != null)
@@ -113,23 +125,6 @@ namespace Klijent.Kontroleri
             ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
         }
 
-        //private void SelektujIzabraneUcenike(object sender, DataGridViewBindingCompleteEventArgs e)
-        //{
-        //    foreach(DataGridViewRow red in ucUpravljajGrupom.dgvUcenici.Rows)
-        //    {
-        //        Ucenik ucenik = (Ucenik)red.DataBoundItem;
-        //        foreach (PripadanjeGrupi pg in this.grupa.Pripadanja)
-        //        {
-        //            if (ucenik.Equals(pg.Ucenik))
-        //            {
-        //                red.Selected= true; 
-        //                break;
-        //            }
-        //        }
- 
-        //    }
-        //}
-
         private void SelektujIzabraniKurs(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             foreach (DataGridViewRow red in ucUpravljajGrupom.dgvKurs.Rows)
@@ -144,17 +139,29 @@ namespace Klijent.Kontroleri
 
         public UcPrikaziGrupe KreirajUcPrikaziGrupe()
         {
-            ucPrikaziGrupe = new UcPrikaziGrupe();
-            ucPrikaziGrupe.dgvGrupe.DataSource = new BindingList<Grupa>(Komunikacija.Instance.VratiSveGrupe());
-            ucPrikaziGrupe.dgvGrupe.Columns["nazivgrupe"].HeaderText = "Naziv grupe";
-            ucPrikaziGrupe.dgvGrupe.Columns["datumpocetkakursa"].HeaderText = "Datum početka kursa";
+                ucPrikaziGrupe = new UcPrikaziGrupe();
+                ucPrikaziGrupe.dgvGrupe.DataSource = new BindingList<Grupa>(Komunikacija.Instance.VratiSveGrupe());
+                ucPrikaziGrupe.dgvGrupe.Columns["nazivgrupe"].HeaderText = "Naziv grupe";
+                ucPrikaziGrupe.dgvGrupe.Columns["datumpocetkakursa"].HeaderText = "Datum početka kursa";
 
-            //dogadjaji
-            ucPrikaziGrupe.txtFilter.TextChanged += TxtFilterPretrazi;
-            ucPrikaziGrupe.btnIzaberi.Click += IzaberiGrupuZaIzmenu;
+                //dogadjaji
+                ucPrikaziGrupe.txtFilter.TextChanged += TxtFilterPretrazi;
+                ucPrikaziGrupe.btnIzaberi.Click += IzaberiGrupuZaIzmenu;
+                ucPrikaziGrupe.btnPrikaziSve.Click += PrikaziSveGrupe;
 
-            return ucPrikaziGrupe;
-            
+                return ucPrikaziGrupe;
+        }
+
+        private void PrikaziSveGrupe(object sender, EventArgs e)
+        {
+            try
+            {
+                ucPrikaziGrupe.dgvGrupe.DataSource = Komunikacija.Instance.VratiSveGrupe();
+            }
+            catch(Exception ex) {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void IzaberiGrupuZaIzmenu(object sender, EventArgs e)
@@ -175,7 +182,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -227,7 +234,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -246,10 +253,13 @@ namespace Klijent.Kontroleri
                 ucUpravljajGrupom.Dispose();
 
             }
+            catch(KorisnickaGreska ex)
+            {
+                Console.WriteLine(ex.Poruka);
+            }
             catch (Exception ex)
             {
-
-
+                MessageBox.Show(ex.Message);
             }
         }
 

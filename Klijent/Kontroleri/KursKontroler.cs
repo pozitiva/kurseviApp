@@ -133,7 +133,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -158,7 +158,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -177,10 +177,13 @@ namespace Klijent.Kontroleri
                 ucUpravljajKursem.Dispose();
 
             }
+            catch(KorisnickaGreska ex)
+            {
+                Console.WriteLine(ex.Poruka);
+            }
             catch (Exception ex)
             {
-
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -277,8 +280,6 @@ namespace Klijent.Kontroleri
             ucPrikaziKurseve.btnIzmeniKurs.Click += IzaberiKursZaIzmenu;
             ucPrikaziKurseve.btnObrisi.Click += IzaberiKursZaBrisanje;
 
-
-
             return ucPrikaziKurseve;
         }
 
@@ -300,7 +301,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -325,7 +326,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -351,7 +352,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -381,7 +382,6 @@ namespace Klijent.Kontroleri
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -394,7 +394,6 @@ namespace Klijent.Kontroleri
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

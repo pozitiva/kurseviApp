@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSelektovanaGrupaGreska = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnPrikaziSve = new System.Windows.Forms.Button();
             this.btnIzaberi = new System.Windows.Forms.Button();
             this.lblGrupe = new System.Windows.Forms.Label();
             this.dgvGrupe = new System.Windows.Forms.DataGridView();
+            this.lblFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrupe)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.lblSelektovanaGrupaGreska.BackColor = System.Drawing.Color.MistyRose;
             this.lblSelektovanaGrupaGreska.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.lblSelektovanaGrupaGreska.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblSelektovanaGrupaGreska.Location = new System.Drawing.Point(105, 487);
+            this.lblSelektovanaGrupaGreska.Location = new System.Drawing.Point(105, 473);
             this.lblSelektovanaGrupaGreska.Name = "lblSelektovanaGrupaGreska";
             this.lblSelektovanaGrupaGreska.Size = new System.Drawing.Size(60, 19);
             this.lblSelektovanaGrupaGreska.TabIndex = 40;
@@ -126,25 +127,25 @@
             this.dgvGrupe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvGrupe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvGrupe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGrupe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGrupe.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGrupe.ColumnHeadersHeight = 40;
             this.dgvGrupe.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGrupe.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGrupe.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGrupe.EnableHeadersVisualStyles = false;
             this.dgvGrupe.Location = new System.Drawing.Point(109, 180);
             this.dgvGrupe.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -158,11 +159,23 @@
             this.dgvGrupe.Size = new System.Drawing.Size(840, 289);
             this.dgvGrupe.TabIndex = 45;
             // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblFilter.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblFilter.Location = new System.Drawing.Point(105, 503);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(88, 19);
+            this.lblFilter.TabIndex = 46;
+            this.lblFilter.Text = "Unesi filter";
+            // 
             // UcPrikaziGrupe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.dgvGrupe);
             this.Controls.Add(this.lblSelektovanaGrupaGreska);
             this.Controls.Add(this.txtFilter);
@@ -186,5 +199,6 @@
         public System.Windows.Forms.Button btnIzaberi;
         private System.Windows.Forms.Label lblGrupe;
         public System.Windows.Forms.DataGridView dgvGrupe;
+        private System.Windows.Forms.Label lblFilter;
     }
 }

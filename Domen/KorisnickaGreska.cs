@@ -10,9 +10,9 @@ namespace Domen
     {
         public string Poruka {  get; set; }
 
-        public KorisnickaGreska(string message)
+        public KorisnickaGreska(string poruka)
         {
-            Poruka = message;
+            Poruka = poruka;
         }
     }
 }

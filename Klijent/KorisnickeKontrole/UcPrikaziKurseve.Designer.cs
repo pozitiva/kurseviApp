@@ -39,6 +39,7 @@
             this.btnIzmeniKurs = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.dgvKursevi = new System.Windows.Forms.DataGridView();
+            this.lblFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKursevi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,11 +206,23 @@
             this.dgvKursevi.Size = new System.Drawing.Size(840, 275);
             this.dgvKursevi.TabIndex = 43;
             // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblFilter.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblFilter.Location = new System.Drawing.Point(111, 495);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(88, 19);
+            this.lblFilter.TabIndex = 47;
+            this.lblFilter.Text = "Unesi filter";
+            // 
             // UcPrikaziKurseve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.dgvKursevi);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeniKurs);
@@ -237,5 +250,6 @@
         public System.Windows.Forms.Button btnIzmeniKurs;
         public System.Windows.Forms.Button btnObrisi;
         public System.Windows.Forms.DataGridView dgvKursevi;
+        private System.Windows.Forms.Label lblFilter;
     }
 }

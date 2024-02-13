@@ -45,22 +45,6 @@ namespace Klijent.Kontroleri
                     throw new KorisnickaGreska("greska >> sifra");
                 }
 
-                //tekstualna polja
-                //if (frmPrijavljivanje.txtKorisnickoIme.GetType() != typeof(string))
-                //{
-                //    frmPrijavljivanje.lblImeGreska.Text = "Korisnicko ime mora biti tekst";
-                //    frmPrijavljivanje.lblImeGreska.Visible = true;
-                //    throw new KorisnickaGreska("greska >> korisnicko ime tekst");
-                //}
-
-                //if (frmPrijavljivanje.txtSifra.GetType() != typeof(string))
-                //{
-                //    frmPrijavljivanje.lblSifraGreska.Text = "Sifra mora biti tekst";
-                //    frmPrijavljivanje.lblSifraGreska.Visible = true;
-                //    throw new KorisnickaGreska("greska >> sifra tekst");
-                //}
-
-
                 Zaposleni zaposleni = PreuzmiPodatkeZaposlenog();
                 zaposleni = Komunikacija.Instance.UlogujSe(zaposleni);
                 GlavniKoordinator.Instance.ulogovaniZaposleni = zaposleni;
@@ -68,7 +52,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {

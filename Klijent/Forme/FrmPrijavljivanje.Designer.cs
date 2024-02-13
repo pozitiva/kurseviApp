@@ -56,6 +56,7 @@
             this.txtSifra.Name = "txtSifra";
             this.txtSifra.Size = new System.Drawing.Size(164, 32);
             this.txtSifra.TabIndex = 1;
+            this.txtSifra.UseSystemPasswordChar = true;
             // 
             // btnPrijaviSe
             // 

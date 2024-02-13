@@ -101,7 +101,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -125,7 +125,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -143,11 +143,13 @@ namespace Klijent.Kontroleri
 
                 ucUpravljajUcenikom.Dispose();
 
+            }catch(KorisnickaGreska ex)
+            {
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
-
-
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -234,7 +236,6 @@ namespace Klijent.Kontroleri
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -256,7 +257,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -282,7 +283,7 @@ namespace Klijent.Kontroleri
             }
             catch (KorisnickaGreska ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Poruka);
             }
             catch (Exception ex)
             {
@@ -312,7 +313,6 @@ namespace Klijent.Kontroleri
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

@@ -37,6 +37,7 @@
             this.btnPrikaziSveUcenike = new System.Windows.Forms.Button();
             this.lblUcenici = new System.Windows.Forms.Label();
             this.dgvUcenici = new System.Windows.Forms.DataGridView();
+            this.lblFilter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +159,7 @@
             this.dgvUcenici.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SeaShell;
@@ -177,11 +178,23 @@
             this.dgvUcenici.Size = new System.Drawing.Size(840, 275);
             this.dgvUcenici.TabIndex = 45;
             // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.lblFilter.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblFilter.Location = new System.Drawing.Point(104, 483);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(88, 19);
+            this.lblFilter.TabIndex = 47;
+            this.lblFilter.Text = "Unesi filter";
+            // 
             // UcPrikaziUcenike
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.dgvUcenici);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnIzmeni);
@@ -208,5 +221,6 @@
         public System.Windows.Forms.Button btnPrikaziSveUcenike;
         private System.Windows.Forms.Label lblUcenici;
         public System.Windows.Forms.DataGridView dgvUcenici;
+        private System.Windows.Forms.Label lblFilter;
     }
 }

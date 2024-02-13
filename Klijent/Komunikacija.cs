@@ -1,5 +1,6 @@
 ﻿using Domen;
 using Domen.Komunikacija;
+using Klijent.Kontroleri;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,38 +52,63 @@ namespace Klijent
 
         public Zaposleni UlogujSe(Zaposleni z)
         {
-            Zahtev zahtev = new Zahtev
+            try
             {
-                Operacija = Operacija.UlogujSe,
-                Zaposleni = z
-            };
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.UlogujSe,
+                    Zaposleni = z
+                };
 
-            posaljilac.Posalji(zahtev);
+                posaljilac.Posalji(zahtev);
 
-            Odgovor odgovor = primalac.Primi<Odgovor>();
+                Odgovor odgovor = primalac.Primi<Odgovor>();
 
-            return odgovor.Zaposleni;
+                return odgovor.Zaposleni;
+            }catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
     
         }
 
         public List<Predavac> VratiSvePredavace()
         {
-            Zahtev zahtev = new Zahtev
+            try
             {
-                Operacija = Operacija.VratiSvePredavace
-            };
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.VratiSvePredavace
+                };
 
-            posaljilac.Posalji(zahtev);
+                posaljilac.Posalji(zahtev);
 
-            Odgovor odgovor = primalac.Primi<Odgovor>();
+                Odgovor odgovor = primalac.Primi<Odgovor>();
 
-            return odgovor.Predavaci;
+                return odgovor.Predavaci;
+            }
+            catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public void KreirajKurs(Kurs kurs)
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Operacija = Operacija.KreirajKurs,
@@ -99,35 +125,53 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da kreira kurs");
+                    throw new Exception("Sistem ne moze da kreira kurs");
                 }
             }
             catch (IOException ex)
             {
-                //OtkacilaSeApp();
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
         }
 
         public List<Kurs> VratiSveKurseve()
         {
-            if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
-            Zahtev z = new Zahtev
+            try
             {
-                Operacija = Operacija.VratiSveKurseve
-            };
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev z = new Zahtev
+                {
+                    Operacija = Operacija.VratiSveKurseve
+                };
 
-            posaljilac.Posalji(z);
+                posaljilac.Posalji(z);
 
-            Odgovor odgovor = primalac.Primi<Odgovor>();
+                Odgovor odgovor = primalac.Primi<Odgovor>();
 
-            return odgovor.Kursevi;
+                return odgovor.Kursevi;
+            }
+            catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Kurs> PretraziKurseve(Kurs k)
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Kurs = k,
@@ -146,14 +190,14 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da nadje kurseve po zadatoj vrednosti");
+                    throw new Exception("Sistem ne moze da nadje kurseve po zadatoj vrednosti");
                 }
 
                 return pronadjeniKursevi;
             }
             catch (IOException ex)
             {
-                //DisconnectedCloseApp();
+                OtkacilaSeApp();
                 throw ex;
             }
             catch (Exception ex)
@@ -166,8 +210,7 @@ namespace Klijent
         {
             try
             {
-                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
-
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev()
                 {
                     Kurs=  k,
@@ -185,14 +228,14 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da ucita kurs");
+                    throw new Exception("Sistem ne moze da ucita kurs");
                 }
 
                 return kurs;
             }
             catch (IOException ex)
             {
-                //DisconnectedCloseApp();
+                OtkacilaSeApp();
                 throw ex;
             }
             catch (Exception ex)
@@ -200,23 +243,12 @@ namespace Klijent
                 throw ex;
             }
         }
-        public bool SocketPovezan()
-        {
-            if (!konektovanNaServer) return false;
-            if (socket == null) return false;
-            if (socket.Connected == false) return false;
-            bool part1 = socket.Poll(1000, SelectMode.SelectRead);
-            bool part2 = (socket.Available == 0);
-            if (part1 && part2)
-                return false;
-            else
-                return true;
-        }
 
         public void IzmeniKurs(Kurs kurs)
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Operacija = Operacija.IzmeniKurs,
@@ -231,11 +263,17 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da izmeni kurs");
+                    throw new Exception("Sistem ne moze da izmeni kurs");
                 }
-            }catch (IOException ex)
+            }
+            catch (IOException ex)
             {
-
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -243,6 +281,7 @@ namespace Klijent
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Operacija = Operacija.ObrisiKurs,
@@ -257,12 +296,17 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da obrise kurs");
+                    throw new Exception("Sistem ne moze da obrise kurs");
                 }
             }
             catch (IOException ex)
             {
-
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
@@ -270,6 +314,7 @@ namespace Klijent
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Operacija = Operacija.KreirajUcenika,
@@ -286,36 +331,52 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da kreira ucenika");
+                    throw new Exception("Sistem ne moze da kreira ucenika");
                 }
             }
             catch (IOException ex)
             {
-                //OtkacilaSeApp();
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
         public List<Ucenik> VratiSveUcenike()
         {
-            if(!SocketPovezan()) throw new IOException("Niste konektovani na server");
-            Zahtev z = new Zahtev
+            try
             {
-                Operacija = Operacija.VratiSveUcenike
-            };
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev z = new Zahtev
+                {
+                    Operacija = Operacija.VratiSveUcenike
+                };
 
-            posaljilac.Posalji(z);
+                posaljilac.Posalji(z);
 
-            Odgovor odgovor = primalac.Primi<Odgovor>();
+                Odgovor odgovor = primalac.Primi<Odgovor>();
 
-            return odgovor.Ucenici;
+                return odgovor.Ucenici;
+            }
+            catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Ucenik> PretraziUcenike(Ucenik u)
         {
             try
             {
-                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
-
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev()
                 {
                     Ucenik = u,
@@ -334,14 +395,14 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da nadje ucenike po zadatoj vrednosti");
+                    throw new Exception("Sistem ne moze da nadje ucenike po zadatoj vrednosti");
                 }
 
                 return pronadjeniUcenici;
             }
             catch (IOException ex)
             {
-                //DisconnectedCloseApp();
+                OtkacilaSeApp();
                 throw ex;
             }
             catch (Exception ex)
@@ -354,8 +415,7 @@ namespace Klijent
         {
             try
             {
-                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
-
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev()
                 {
                     Ucenik= u,
@@ -373,14 +433,14 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da ucita ucenika");
+                    throw new Exception("Sistem ne moze da ucita ucenika");
                 }
 
                 return ucenik;
             }
             catch (IOException ex)
             {
-                //DisconnectedCloseApp();
+                OtkacilaSeApp();
                 throw ex;
             }
             catch (Exception ex)
@@ -393,6 +453,7 @@ namespace Klijent
         {
             try
             {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Ucenik = u,
@@ -407,19 +468,25 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da izmeni ucenika");
+                    throw new Exception("Sistem ne moze da izmeni ucenika");
                 }
             }
             catch (IOException ex)
             {
-
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
         public void ObrisiUcenika(Ucenik u)
         {
             try 
-            { 
+            {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev 
                 { 
                     Ucenik = u,
@@ -434,19 +501,25 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da obrise ucenika");
+                    throw new Exception("Sistem ne moze da obrise ucenika");
                 }
             }
             catch (IOException ex)
             {
-
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
             }
         }
 
         public void KreirajGrupu(Grupa grupa)
         {
             try 
-            { 
+            {
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
                 Zahtev zahtev = new Zahtev
                 {
                     Operacija = Operacija.KreirajGrupu,
@@ -463,32 +536,50 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da kreira grupu");
+                    throw new Exception("Sistem ne moze da kreira grupu");
                 }
             }
             catch (IOException ex)
             {
-                //OtkacilaSeApp();
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
         public List<Grupa> VratiSveGrupe()
         {
-            Zahtev zahtev = new Zahtev
+            try
             {
-                Operacija = Operacija.VratiSveGrupe
-            };
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev zahtev = new Zahtev
+                {
+                    Operacija = Operacija.VratiSveGrupe
+                };
 
-            posaljilac.Posalji(zahtev);
-            Odgovor odgovor = primalac.Primi<Odgovor>();
-            return odgovor.Grupe;
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                return odgovor.Grupe;
+            }
+            catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public List<Grupa> PretraziGrupe(Grupa g)
         {
             try
             {
-                //if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
 
                 Zahtev zahtev = new Zahtev()
                 {
@@ -508,14 +599,14 @@ namespace Klijent
                 }
                 else
                 {
-                    MessageBox.Show("Sistem ne moze da nadje grupe za slusanje kurseva po zadatoj vrednosti");
+                    throw new Exception("Sistem ne moze da nadje grupe za slusanje kurseva po zadatoj vrednosti");
                 }
 
                 return pronadjeneGrupe;
             }
             catch (IOException ex)
             {
-                //DisconnectedCloseApp();
+                OtkacilaSeApp();
                 throw ex;
             }
             catch (Exception ex)
@@ -526,43 +617,91 @@ namespace Klijent
 
         public Grupa VratiGrupu(Grupa grupa)
         {
-            Zahtev zahtev = new Zahtev
+            try
             {
-                Grupa = grupa,
-                Operacija = Operacija.VratiGrupu
-            };
-            posaljilac.Posalji(zahtev);
-            Odgovor odgovor = primalac.Primi<Odgovor>();
-            if(odgovor.Operacija == Operacija.GrupaUspesnoNadjena)
-            {
-                MessageBox.Show("Sistem je ucitao grupu za slusanje kursa");
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev zahtev = new Zahtev
+                {
+                    Grupa = grupa,
+                    Operacija = Operacija.VratiGrupu
+                };
+                posaljilac.Posalji(zahtev);
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.GrupaUspesnoNadjena)
+                {
+                    MessageBox.Show("Sistem je ucitao grupu za slusanje kursa");
+                }
+                else
+                {
+                    throw new Exception("Sistem ne moze da ucita grupu za slusanje kursa");
+                }
+
+                return odgovor.Grupa;
             }
-            else
-            {
-                MessageBox.Show("Sistem ne moze da ucita grupu za slusanje kursa");
+            catch(IOException ex){
+                OtkacilaSeApp();
+                throw ex;
             }
-            return odgovor.Grupa;
+            catch (Exception ex) {
+                throw ex;
+            }
         }
 
         public void IzmeniGrupu(Grupa grupa)
         {
-            Zahtev zahtev = new Zahtev { 
-                
-               Grupa = grupa,
-               Operacija= Operacija.IzmeniGrupu
-            };
-            posaljilac.Posalji(zahtev);
-
-            Odgovor odgovor = primalac.Primi<Odgovor>();
-            if(odgovor.Operacija== Operacija.GrupaUspesnoIzmenjena)
+            try
             {
-                MessageBox.Show("Sistem je izmenio podatke o grupi za slusanje kursa");
+                if (!SocketPovezan()) throw new IOException("Niste konektovani na server");
+                Zahtev zahtev = new Zahtev
+                {
+
+                    Grupa = grupa,
+                    Operacija = Operacija.IzmeniGrupu
+                };
+                posaljilac.Posalji(zahtev);
+
+                Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.GrupaUspesnoIzmenjena)
+                {
+                    MessageBox.Show("Sistem je izmenio podatke o grupi za slusanje kursa");
+                }
+                else
+                {
+                    throw new Exception("Sistem ne moze da izmeni grupu za slusanje kursa");
+                }
             }
+            catch (IOException ex)
+            {
+                OtkacilaSeApp();
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public bool SocketPovezan()
+        {
+            if (!konektovanNaServer) return false;
+            if (socket == null) return false;
+            if (socket.Connected == false) return false;
+            bool part1 = socket.Poll(1000, SelectMode.SelectRead);
+            bool part2 = (socket.Available == 0);
+            if (part1 && part2)
+                return false;
             else
-            {
-                MessageBox.Show("Sistem ne moze da izmeni grupu za slusanje kursa");
-            }
+                return true;
+        }
 
+        public void OtkacilaSeApp()
+        {
+            if (!SocketPovezan())
+            {
+                MessageBox.Show("Niste konektovani na server. Restartovanje aplikacije.");
+                GlavniKoordinator.Instance.frmPrijavljivanje.Close();
+            }
         }
     }
 }
