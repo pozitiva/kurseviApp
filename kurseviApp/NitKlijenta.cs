@@ -39,14 +39,33 @@ namespace kurseviApp
                     {
                         case Operacija.UlogujSe:
                             bool provera = true;
-                            Zaposleni z =Kontroler.Instance.UlogujSe(zahtev.Zaposleni);
-                            if (odgovor.Zaposleni == null)
+
+                            foreach(Zaposleni zap in Kontroler.ulogovaniZaposleni)
                             {
-                                odgovor.Operacija = Operacija.NeuspesnaPrijava;
-                                provera = false;
+                                if (zap.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme)
+                                {
+                                    odgovor.Operacija = Operacija.NeuspesnaPrijava;
+                                    provera = false;
+                                    posaljilac.Posalji(odgovor);
+                                    break;
+                                }
                             }
-                            odgovor.Operacija = Operacija.UspesnaPrijava;
-                            odgovor.Zaposleni = z;
+                            if (provera)
+                            {
+                                Zaposleni z = Kontroler.Instance.UlogujSe(zahtev.Zaposleni);
+                                if (odgovor.Zaposleni == null)
+                                {
+                                    odgovor.Operacija = Operacija.NeuspesnaPrijava;
+                                    provera = false;
+                                }
+                                odgovor.Operacija = Operacija.UspesnaPrijava;
+                                odgovor.Zaposleni = z;
+                                Kontroler.ulogovaniZaposleni.Add(z);
+                                posaljilac.Posalji(odgovor);
+                            }
+                            break;
+                        case Operacija.OdjaviZaposlenog:
+                            Kontroler.Instance.OdjaviZaposlenog(zahtev.Zaposleni);
                             posaljilac.Posalji(odgovor);
                             break;
                         case Operacija.VratiSvePredavace:

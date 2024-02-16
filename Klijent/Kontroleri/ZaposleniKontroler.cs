@@ -19,10 +19,15 @@ namespace Klijent.Kontroleri
             frmPrijavljivanje.btnPrijaviSe.Click += BtnPrijaviSeNaKlik;
         }
 
+        public void OdjaviZaposlenog(Zaposleni ulogovaniZaposleni)
+        {
+            Komunikacija.Instance.OdjaviZaposlenog(ulogovaniZaposleni);
+        }
+
         private void BtnPrijaviSeNaKlik(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 //prazna polja
                 if (frmPrijavljivanje.txtKorisnickoIme.Text == "" && frmPrijavljivanje.txtSifra.Text == "")
                 {
@@ -47,17 +52,26 @@ namespace Klijent.Kontroleri
 
                 Zaposleni zaposleni = PreuzmiPodatkeZaposlenog();
                 zaposleni = Komunikacija.Instance.UlogujSe(zaposleni);
-                GlavniKoordinator.Instance.ulogovaniZaposleni = zaposleni;
-                GlavniKoordinator.Instance.PrikaziFrmZaposleni();
-            }
-            catch (KorisnickaGreska ex)
-            {
-                Console.WriteLine(ex.Poruka);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                if(zaposleni != null)
+                {
+                    MessageBox.Show("Uspesno ste prijavljeni");
+                    GlavniKoordinator.Instance.ulogovaniZaposleni = zaposleni;
+                    GlavniKoordinator.Instance.PrikaziFrmZaposleni();
+                }
+                else
+                {
+                    MessageBox.Show("Neuspesno prijavljivanje na sistem");
+                    return;
+                }
+            //}
+            //catch (KorisnickaGreska ex)
+            //{
+            //    Console.WriteLine(ex.Poruka);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
 
         }

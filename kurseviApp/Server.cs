@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domen;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
@@ -18,7 +19,6 @@ namespace kurseviApp
         private Socket serverskiSocket;
         public bool pokrenutServer = false;
         static List<NitKlijenta> klijenti = new List<NitKlijenta>();
-
         private static Server instance;
         public static Server Instance
         {

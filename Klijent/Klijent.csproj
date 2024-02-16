@@ -50,6 +50,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forme\FrmKreirajUcenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\FrmKreirajUcenika.Designer.cs">
+      <DependentUpon>FrmKreirajUcenika.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forme\FrmZaposleni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forme\FrmKreirajUcenika.resx">
+      <DependentUpon>FrmKreirajUcenika.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forme\FrmPrijavljivanje.resx">
       <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
     </EmbeddedResource>

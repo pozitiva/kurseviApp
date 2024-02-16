@@ -40,6 +40,7 @@
         VratiGrupu,
         GrupaUspesnoNadjena,
         IzmeniGrupu,
-        GrupaUspesnoIzmenjena
+        GrupaUspesnoIzmenjena,
+        OdjaviZaposlenog
     }
 }

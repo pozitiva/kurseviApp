@@ -11,6 +11,7 @@ namespace Server
 {
     public class Kontroler
     {
+        public static List<Zaposleni> ulogovaniZaposleni = new List<Zaposleni>();
         private static Kontroler instance;
         public static Kontroler Instance { 
             get { 
@@ -133,6 +134,22 @@ namespace Server
         {
             PrijaviSeSO operacija = new PrijaviSeSO();
             return (Zaposleni)operacija.IzvrsiSO(zaposleni);
+        }
+
+        public void OdjaviZaposlenog(Zaposleni zaposleni)
+        {
+            foreach (Zaposleni z in ulogovaniZaposleni)
+            {
+                if(zaposleni.KorisnickoIme== z.KorisnickoIme)
+                {
+                    ulogovaniZaposleni.Remove(z);
+                }
+
+                if(ulogovaniZaposleni.Count == 0)
+                {
+                    return;
+                }
+            }
         }
     }
 }

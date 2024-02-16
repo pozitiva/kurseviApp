@@ -16,6 +16,7 @@ namespace Klijent.Kontroleri
         //forme 
         public FrmPrijavljivanje frmPrijavljivanje;
         public FrmZaposleni frmZaposleni;
+        public FrmKreirajUcenika frmKreirajUcenika;
 
         //kontroleri
         public ZaposleniKontroler zaposleniKontroler;
@@ -103,7 +104,7 @@ namespace Klijent.Kontroleri
 
         public void PrikaziSveUcenike()
         {
-            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Prikazi));
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Izmeni));
         }
 
         public void PrikaziObirsiUcenika()
@@ -140,6 +141,22 @@ namespace Klijent.Kontroleri
         public void PrikaziSveGrupe()
         {
             frmZaposleni.PromeniPanel(grupaKontroler.KreirajUcPrikaziGrupe());
+        }
+
+        public void OdjaviZaposlenog()
+        {
+            zaposleniKontroler.OdjaviZaposlenog(ulogovaniZaposleni);
+        }
+
+        public void PrikaziKreirajUcenikaFormu()
+        {
+            frmKreirajUcenika = new FrmKreirajUcenika();
+            frmKreirajUcenika.ShowDialog();
+        }
+
+        public void PrikaziKreirajUcenikaNaFormi()
+        {
+            frmKreirajUcenika.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Dodaj, null));
         }
     }
 }

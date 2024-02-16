@@ -32,6 +32,7 @@ namespace Klijent.Forme
 
             this.kreirajGrupuToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajGrupu();
             this.izmeniGrupuToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziIzmeniGrupu();
+            this.FormClosing += (s, e) => GlavniKoordinator.Instance.OdjaviZaposlenog();
         }
 
         public void PromeniPanel(Control control)

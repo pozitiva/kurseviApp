@@ -64,6 +64,10 @@ namespace Klijent
                 posaljilac.Posalji(zahtev);
 
                 Odgovor odgovor = primalac.Primi<Odgovor>();
+                if (odgovor.Operacija == Operacija.NeuspesnaPrijava)
+                {
+                    return null;
+                }
 
                 return odgovor.Zaposleni;
             }catch (IOException ex)
@@ -682,6 +686,20 @@ namespace Klijent
 
         }
 
+        public void OdjaviZaposlenog(Zaposleni ulogovaniZaposleni)
+        {
+            Zahtev z = new Zahtev
+            {
+                Zaposleni = ulogovaniZaposleni,
+                Operacija = Operacija.OdjaviZaposlenog
+            };
+
+            posaljilac.Posalji(z);
+            Odgovor odgovor = primalac.Primi<Odgovor>();
+            
+
+        }
+
         public bool SocketPovezan()
         {
             if (!konektovanNaServer) return false;
@@ -703,5 +721,6 @@ namespace Klijent
                 GlavniKoordinator.Instance.frmPrijavljivanje.Close();
             }
         }
+
     }
 }

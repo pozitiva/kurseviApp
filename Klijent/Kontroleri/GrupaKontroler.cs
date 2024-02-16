@@ -33,6 +33,7 @@ namespace Klijent.Kontroleri
             ucUpravljajGrupom.cmbUcenici.DataSource = Komunikacija.Instance.VratiSveUcenike();
             ucUpravljajGrupom.cmbUcenici.SelectedIndex = -1;
             ucUpravljajGrupom.dgvUcenici.ReadOnly = true;
+            ucUpravljajGrupom.dgvUcenici.Columns["Grupa"].Visible = false;
             ucUpravljajGrupom.cmbUcenici.DropDownStyle = ComboBoxStyle.DropDownList;
 
             if (mode == FormMode.Dodaj)
@@ -41,7 +42,7 @@ namespace Klijent.Kontroleri
                 this.grupa.Pripadanja = new BindingList<PripadanjeGrupi>();  
                 ucUpravljajGrupom.lblIzmeniGrupu.Visible = false;
                 ucUpravljajGrupom.btnIzmeni.Visible = false;
-                ucUpravljajGrupom.dgvUcenici.Columns["Grupa"].Visible=false;
+                ucUpravljajGrupom.btnKreirajUcenika.Visible = false;
             }
 
             if (mode == FormMode.Izmeni)
@@ -64,7 +65,14 @@ namespace Klijent.Kontroleri
             ucUpravljajGrupom.btnIzmeni.Click += IzmeniGrupu;
             ucUpravljajGrupom.btnDodaj.Click += DodajUcenika;
             ucUpravljajGrupom.btnIzbaci.Click += IzbaciUcenika;
+            ucUpravljajGrupom.btnKreirajUcenika.Click += KreirajUcenika;
             return ucUpravljajGrupom;
+        }
+
+        private void KreirajUcenika(object sender, EventArgs e)
+        {
+            GlavniKoordinator.Instance.PrikaziKreirajUcenikaFormu();
+            ucUpravljajGrupom.cmbUcenici.DataSource = Komunikacija.Instance.VratiSveUcenike();
         }
 
         private void IzbaciUcenika(object sender, EventArgs e)

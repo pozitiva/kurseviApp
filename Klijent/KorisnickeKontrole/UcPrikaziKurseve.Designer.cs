@@ -208,6 +208,7 @@
             // 
             // lblFilter
             // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.lblFilter.ForeColor = System.Drawing.Color.Firebrick;

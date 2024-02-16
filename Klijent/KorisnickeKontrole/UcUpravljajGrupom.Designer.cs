@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblKursGreska = new System.Windows.Forms.Label();
             this.lblDatumGreska = new System.Windows.Forms.Label();
             this.lblNazivGreska = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.btnIzbaci = new System.Windows.Forms.Button();
             this.dgvKurs = new System.Windows.Forms.DataGridView();
             this.dgvUcenici = new System.Windows.Forms.DataGridView();
+            this.btnKreirajUcenika = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKurs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUcenici)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +106,7 @@
             this.btnIzmeni.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.btnIzmeni.FlatAppearance.BorderSize = 0;
             this.btnIzmeni.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIzmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnIzmeni.Font = new System.Drawing.Font("Bahnschrift Light", 16F);
             this.btnIzmeni.ForeColor = System.Drawing.Color.Firebrick;
             this.btnIzmeni.Location = new System.Drawing.Point(642, 191);
             this.btnIzmeni.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -123,7 +124,7 @@
             this.btnKreiraj.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(15)))), ((int)(((byte)(50)))));
             this.btnKreiraj.FlatAppearance.BorderSize = 0;
             this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnKreiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnKreiraj.Font = new System.Drawing.Font("Bahnschrift Light", 16F);
             this.btnKreiraj.ForeColor = System.Drawing.Color.Firebrick;
             this.btnKreiraj.Location = new System.Drawing.Point(642, 191);
             this.btnKreiraj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -206,7 +207,7 @@
             this.lblIzmeniGrupu.BackColor = System.Drawing.Color.MistyRose;
             this.lblIzmeniGrupu.Font = new System.Drawing.Font("Bahnschrift Light", 20F);
             this.lblIzmeniGrupu.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblIzmeniGrupu.Location = new System.Drawing.Point(19, 36);
+            this.lblIzmeniGrupu.Location = new System.Drawing.Point(20, 36);
             this.lblIzmeniGrupu.Name = "lblIzmeniGrupu";
             this.lblIzmeniGrupu.Size = new System.Drawing.Size(254, 48);
             this.lblIzmeniGrupu.TabIndex = 39;
@@ -258,7 +259,7 @@
             this.cmbUcenici.BackColor = System.Drawing.Color.SeaShell;
             this.cmbUcenici.FormattingEnabled = true;
             this.cmbUcenici.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cmbUcenici.Location = new System.Drawing.Point(729, 390);
+            this.cmbUcenici.Location = new System.Drawing.Point(733, 363);
             this.cmbUcenici.Name = "cmbUcenici";
             this.cmbUcenici.Size = new System.Drawing.Size(166, 28);
             this.cmbUcenici.TabIndex = 56;
@@ -267,6 +268,7 @@
             // 
             this.btnDodaj.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDodaj.BackColor = System.Drawing.Color.SeaShell;
+            this.btnDodaj.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.btnDodaj.ForeColor = System.Drawing.Color.Firebrick;
             this.btnDodaj.Location = new System.Drawing.Point(623, 357);
             this.btnDodaj.Name = "btnDodaj";
@@ -279,6 +281,7 @@
             // 
             this.btnIzbaci.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIzbaci.BackColor = System.Drawing.Color.SeaShell;
+            this.btnIzbaci.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
             this.btnIzbaci.ForeColor = System.Drawing.Color.Firebrick;
             this.btnIzbaci.Location = new System.Drawing.Point(623, 407);
             this.btnIzbaci.Name = "btnIzbaci";
@@ -297,25 +300,25 @@
             this.dgvKurs.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvKurs.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvKurs.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKurs.ColumnHeadersHeight = 40;
             this.dgvKurs.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKurs.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKurs.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvKurs.EnableHeadersVisualStyles = false;
             this.dgvKurs.Location = new System.Drawing.Point(28, 129);
             this.dgvKurs.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -339,25 +342,25 @@
             this.dgvUcenici.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUcenici.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvUcenici.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUcenici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUcenici.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvUcenici.ColumnHeadersHeight = 40;
             this.dgvUcenici.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.SeaShell;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUcenici.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.SeaShell;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUcenici.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvUcenici.EnableHeadersVisualStyles = false;
             this.dgvUcenici.Location = new System.Drawing.Point(27, 322);
             this.dgvUcenici.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -371,11 +374,24 @@
             this.dgvUcenici.Size = new System.Drawing.Size(573, 144);
             this.dgvUcenici.TabIndex = 60;
             // 
+            // btnKreirajUcenika
+            // 
+            this.btnKreirajUcenika.BackColor = System.Drawing.Color.SeaShell;
+            this.btnKreirajUcenika.Font = new System.Drawing.Font("Bahnschrift Light", 8F);
+            this.btnKreirajUcenika.ForeColor = System.Drawing.Color.Firebrick;
+            this.btnKreirajUcenika.Location = new System.Drawing.Point(761, 407);
+            this.btnKreirajUcenika.Name = "btnKreirajUcenika";
+            this.btnKreirajUcenika.Size = new System.Drawing.Size(138, 36);
+            this.btnKreirajUcenika.TabIndex = 61;
+            this.btnKreirajUcenika.Text = "Kreiraj ucenika";
+            this.btnKreirajUcenika.UseVisualStyleBackColor = false;
+            // 
             // UcUpravljajGrupom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
+            this.Controls.Add(this.btnKreirajUcenika);
             this.Controls.Add(this.dgvUcenici);
             this.Controls.Add(this.dgvKurs);
             this.Controls.Add(this.btnIzbaci);
@@ -425,5 +441,6 @@
         public System.Windows.Forms.Button btnIzbaci;
         public System.Windows.Forms.DataGridView dgvKurs;
         public System.Windows.Forms.DataGridView dgvUcenici;
+        public System.Windows.Forms.Button btnKreirajUcenika;
     }
 }

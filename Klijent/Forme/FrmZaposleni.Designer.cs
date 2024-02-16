@@ -186,10 +186,10 @@
             this.pnlGlavna.AutoSize = true;
             this.pnlGlavna.BackColor = System.Drawing.Color.MistyRose;
             this.pnlGlavna.ForeColor = System.Drawing.Color.Maroon;
-            this.pnlGlavna.Location = new System.Drawing.Point(0, 31);
+            this.pnlGlavna.Location = new System.Drawing.Point(0, 29);
             this.pnlGlavna.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGlavna.Name = "pnlGlavna";
-            this.pnlGlavna.Size = new System.Drawing.Size(926, 487);
+            this.pnlGlavna.Size = new System.Drawing.Size(926, 489);
             this.pnlGlavna.TabIndex = 2;
             // 
             // label1
