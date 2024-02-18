@@ -24,8 +24,6 @@ namespace Klijent
                 MessageBox.Show("Niste povezani na server!");
             }
 
-            MessageBox.Show("Sistem ne moze da ucita kurs");
-
             txtKorisnickoIme.Text = "iva";
             txtSifra.Text = "iva";
 

@@ -11,7 +11,7 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            return repozitorijum.Pretrazi(domenskiObjekat).Cast<Ucenik>().ToList();
+            return broker.Pretrazi(domenskiObjekat).Cast<Ucenik>().ToList();
 
         }
     }

@@ -11,7 +11,7 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            return (Ucenik)repozitorijum.Vrati(domenskiObjekat);
+            return (Ucenik)broker.Vrati(domenskiObjekat);
 
         }
     }

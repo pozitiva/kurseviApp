@@ -12,9 +12,9 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            bool signal = repozitorijum.Sacuvaj((Grupa)domenskiObjekat)>0;
+            bool signal = broker.Sacuvaj((Grupa)domenskiObjekat)>0;
 
-            List<Grupa> grupe = repozitorijum.VratiSve(domenskiObjekat).OfType<Grupa>().ToList();
+            List<Grupa> grupe = broker.VratiSve(domenskiObjekat).OfType<Grupa>().ToList();
             Grupa grupa = grupe[grupe.Count - 1];
 
             BindingList<PripadanjeGrupi> pripadanja = ((Grupa)domenskiObjekat).Pripadanja;
@@ -22,7 +22,7 @@ namespace SistemskeOperacije
             {
                 pg.Grupa = grupa;
 
-                signal = signal && repozitorijum.Sacuvaj(pg)>0;
+                signal = signal && broker.Sacuvaj(pg)>0;
             }
 
             return signal;

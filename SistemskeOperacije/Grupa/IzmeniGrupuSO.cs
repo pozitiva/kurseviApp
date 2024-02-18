@@ -13,14 +13,14 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            bool signal= repozitorijum.Izmeni(domenskiObjekat)>0;
+            bool signal= broker.Izmeni(domenskiObjekat)>0;
             
             Grupa grupa = (Grupa)domenskiObjekat;
 
             foreach(PripadanjeGrupi pg in grupa.IzbacenaPripadanja)
             {
                 pg.Grupa = grupa;
-                signal = signal && repozitorijum.Obrisi(pg)>0;
+                signal = signal && broker.Obrisi(pg)>0;
             }
 
             PripadanjeGrupi pripadanje = new PripadanjeGrupi
@@ -29,14 +29,14 @@ namespace SistemskeOperacije
                 Grupa = grupa,
 
             };
-            BindingList<PripadanjeGrupi> staraPripadanja = new BindingList<PripadanjeGrupi>(repozitorijum.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
+            BindingList<PripadanjeGrupi> staraPripadanja = new BindingList<PripadanjeGrupi>(broker.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
 
             BindingList<PripadanjeGrupi> novaPripadanja = ((Grupa)domenskiObjekat).Pripadanja;
             for (int i = staraPripadanja.Count;i<novaPripadanja.Count ;i++)
             {
                 novaPripadanja[i].Grupa = grupa;
 
-                signal = signal && repozitorijum.Sacuvaj(novaPripadanja[i]) > 0;
+                signal = signal && broker.Sacuvaj(novaPripadanja[i]) > 0;
             }
 
             return signal;

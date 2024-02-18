@@ -536,11 +536,11 @@ namespace Klijent
 
                 if (odgovor.Operacija == Operacija.GrupaUspesnoKreirana)
                 {
-                    MessageBox.Show("Uspesno ste kreirali grupu");
+                    MessageBox.Show("Sistem je zapamtio grupu za slusanje kursa");
                 }
                 else
                 {
-                    throw new Exception("Sistem ne moze da kreira grupu");
+                    throw new Exception("Sistem ne moze da zapamti grupu za slusanje kursa");
                 }
             }
             catch (IOException ex)

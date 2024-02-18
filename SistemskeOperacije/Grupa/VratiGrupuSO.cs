@@ -12,14 +12,14 @@ namespace SistemskeOperacije
     {
         protected override object Izvrsavanje(DomenskiObjekat domenskiObjekat)
         {
-            Grupa grupa = (Grupa)repozitorijum.Vrati(domenskiObjekat);
+            Grupa grupa = (Grupa)broker.Vrati(domenskiObjekat);
             PripadanjeGrupi pripadanje = new PripadanjeGrupi
             {
                 KriterijumPretrage = $"pripadanjegrupi.idgrupe='{grupa.IDGrupe}'",
                 Grupa = grupa,
                
             };
-            BindingList<PripadanjeGrupi> pripadanja = new BindingList<PripadanjeGrupi>(repozitorijum.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
+            BindingList<PripadanjeGrupi> pripadanja = new BindingList<PripadanjeGrupi>(broker.Pretrazi(pripadanje).Cast<PripadanjeGrupi>().ToList());
 
             grupa.Pripadanja = pripadanja;
 

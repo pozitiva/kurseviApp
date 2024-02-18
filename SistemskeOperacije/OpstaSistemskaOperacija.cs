@@ -11,7 +11,7 @@ namespace SistemskeOperacije
     public abstract class OpstaSistemskaOperacija
     {
         protected abstract object Izvrsavanje(DomenskiObjekat domenskiObjekat);
-        protected GenerickiDbRepozitorijum repozitorijum = new GenerickiDbRepozitorijum();
+        protected GenerickiDbRepozitorijum broker = new GenerickiDbRepozitorijum();
         protected DbKonekcija konekcija = new DbKonekcija();
         public object IzvrsiSO(DomenskiObjekat domenskiObjekat)
         {
@@ -21,15 +21,15 @@ namespace SistemskeOperacije
                 konekcija.OtvoriKonekciju();
                 konekcija.PokreniTransakciju();
                 rezultat = Izvrsavanje(domenskiObjekat);
-                repozitorijum.Commit();
+                broker.Commit();
             }
             catch (Exception e)
             {
-                repozitorijum.Rollback();
+                broker.Rollback();
             }
             finally
             {
-                repozitorijum.ZatvoriKonekciju();
+                broker.ZatvoriKonekciju();
             }
             return rezultat;
         }
