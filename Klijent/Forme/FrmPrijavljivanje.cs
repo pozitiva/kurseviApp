@@ -24,8 +24,8 @@ namespace Klijent
                 MessageBox.Show("Niste povezani na server!");
             }
 
-            txtKorisnickoIme.Text = "iva";
-            txtSifra.Text = "iva";
+            //txtKorisnickoIme.Text = "iva";
+            //txtSifra.Text = "iva";
 
         }
     }

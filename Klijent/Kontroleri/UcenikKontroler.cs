@@ -92,14 +92,14 @@ namespace Klijent.Kontroleri
             //dogadjaji
             ucUpravljajUcenikom.btnKreiraj.Click += KreirajUcenika;
             ucUpravljajUcenikom.btnIzmeni.Click += IzmeniUcenika;
-            ucUpravljajUcenikom.btnObrisi.Click += ObrisiKurs;
+            ucUpravljajUcenikom.btnObrisi.Click += ObrisiUcenika;
             ucUpravljajUcenikom.btnPrikaziSve.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Prikazi);
 
             return ucUpravljajUcenikom;
 
         }
 
-        private void ObrisiKurs(object sender, EventArgs e)
+        private void ObrisiUcenika(object sender, EventArgs e)
         {
             try
             {
@@ -116,10 +116,14 @@ namespace Klijent.Kontroleri
             catch (KorisnickaGreska ex)
             {
                 Console.WriteLine(ex.Poruka);
+                GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Obrisi);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Obrisi);
+
             }
         }
 
@@ -154,8 +158,10 @@ namespace Klijent.Kontroleri
                 PreuzmiPodatkeOUceniku();
 
                 Komunikacija.Instance.KreirajUcenika(ucenik);
+                ucUpravljajUcenikom.Dispose();
 
-                if(mode == FormMode.Kreiraj)
+
+                if (mode == FormMode.Kreiraj)
                 {
                     GlavniKoordinator.Instance.ZatvoriKreirajUcenikaFormu();
 

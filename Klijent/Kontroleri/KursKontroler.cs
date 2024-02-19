@@ -134,10 +134,12 @@ namespace Klijent.Kontroleri
             catch (KorisnickaGreska ex)
             {
                 Console.WriteLine(ex.Poruka);
+                GlavniKoordinator.Instance.PrikaziSveKurseve(FormMode.Obrisi);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                GlavniKoordinator.Instance.PrikaziSveKurseve(FormMode.Obrisi);
             }
         }
 
