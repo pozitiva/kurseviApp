@@ -1,4 +1,5 @@
 ﻿using Domen;
+using Server;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -85,6 +86,7 @@ namespace kurseviApp
                 }
 
                 klijenti.Clear();
+                Kontroler.ulogovaniZaposleni = new List<Zaposleni>();
             }catch (Exception ex)
             {
                 throw ex;

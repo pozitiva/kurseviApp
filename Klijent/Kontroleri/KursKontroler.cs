@@ -224,15 +224,15 @@ namespace Klijent.Kontroleri
             }
 
             //max karaktera
-            if (ucUpravljajKursem.txtNazivKursa.Text.Length > 40)
+            if (ucUpravljajKursem.txtNazivKursa.Text.Length > 50)
             {
-                ucUpravljajKursem.lblNazivGreska.Text = "Naziv ne sme da ima više od 40 karaktera";
+                ucUpravljajKursem.lblNazivGreska.Text = "Naziv ne sme da ima više od 50 karaktera";
                 ucUpravljajKursem.lblNazivGreska.Visible = true;
                 throw new KorisnickaGreska("greska >> naziv kursa karakteri");
             }
-            if (ucUpravljajKursem.txtOpis.Text.Length > 300)
+            if (ucUpravljajKursem.txtOpis.Text.Length > 50)
             {
-                ucUpravljajKursem.lblOpisGreska.Text = "Opis ne sme da ima više od 300 karaktera";
+                ucUpravljajKursem.lblOpisGreska.Text = "Opis ne sme da ima više od 50 karaktera";
                 ucUpravljajKursem.lblOpisGreska.Visible = true;
                 throw new KorisnickaGreska("greska >> opis kursa karakteri");
             }
@@ -369,7 +369,7 @@ namespace Klijent.Kontroleri
                 {
                     Kurs k = new Kurs()
                     {
-                        KriterijumPretrage = $" lower(Kurs.nazivkursa) like '%{filter}%' or lower(p.prezime) like '{filter}%' or lower(p.ime) like '{filter}%'"
+                        KriterijumPretrage = $" lower(Kurs.nazivkursa) like '%{filter}%' or lower(p.prezime) like '{filter}%' or lower(p.ime) like '{filter}%' or lower(Kurs.korisnickoime) like lower('{filter}%')"
                     };
                     List<Kurs> filtriraniKursevi = Komunikacija.Instance.PretraziKurseve(k);
                     ucPrikaziKurseve.dgvKursevi.DataSource = filtriraniKursevi;

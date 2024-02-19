@@ -5,6 +5,7 @@
         Dodaj,
         Izmeni,
         Prikazi,
-        Obrisi
+        Obrisi,
+        Kreiraj
     }
 }

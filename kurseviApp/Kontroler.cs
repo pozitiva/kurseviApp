@@ -138,11 +138,11 @@ namespace Server
 
         public void OdjaviZaposlenog(Zaposleni zaposleni)
         {
-            foreach (Zaposleni z in ulogovaniZaposleni)
+            for (int i=0; i< ulogovaniZaposleni.Count; i++)
             {
-                if(zaposleni.KorisnickoIme== z.KorisnickoIme)
+                if(ulogovaniZaposleni[i]!= null && zaposleni.KorisnickoIme== ulogovaniZaposleni[i].KorisnickoIme)
                 {
-                    ulogovaniZaposleni.Remove(z);
+                    ulogovaniZaposleni.Remove(ulogovaniZaposleni[i]);
                 }
 
                 if(ulogovaniZaposleni.Count == 0)

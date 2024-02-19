@@ -74,6 +74,20 @@ namespace Klijent.Kontroleri
                 ucUpravljajUcenikom.txtDatum.ReadOnly = true;
             }
 
+            if(mode== FormMode.Kreiraj)
+            {
+                this.ucenik = new Ucenik();
+
+                ucUpravljajUcenikom.lblIzmeniUcenika.Visible = false;
+                ucUpravljajUcenikom.lblObrisiUcenika.Visible = false;
+
+                ucUpravljajUcenikom.btnIzmeni.Visible = false;
+                ucUpravljajUcenikom.btnPrikaziSve.Visible = false;
+                ucUpravljajUcenikom.btnObrisi.Visible = false;
+
+                ucUpravljajUcenikom.txtDatum.Visible = false;
+            }
+
 
             //dogadjaji
             ucUpravljajUcenikom.btnKreiraj.Click += KreirajUcenika;
@@ -141,7 +155,11 @@ namespace Klijent.Kontroleri
 
                 Komunikacija.Instance.KreirajUcenika(ucenik);
 
-                ucUpravljajUcenikom.Dispose();
+                if(mode == FormMode.Kreiraj)
+                {
+                    GlavniKoordinator.Instance.ZatvoriKreirajUcenikaFormu();
+
+                }
 
             }catch(KorisnickaGreska ex)
             {
@@ -301,7 +319,7 @@ namespace Klijent.Kontroleri
                 {
                     Ucenik u = new Ucenik
                     {
-                        KriterijumPretrage = $" lower(Ucenik.ime) like '%{filter}%' or lower(Ucenik.prezime) like '{filter}%'"
+                        KriterijumPretrage = $" lower(Ucenik.ime) like '%{filter}%' or lower(Ucenik.prezime) like '{filter}%' or lower(Ucenik.korisnickoime) like lower('{filter}%')"
                     };
                     List<Ucenik> filtriraniUcenici = Komunikacija.Instance.PretraziUcenike(u);
                     ucPrikaziUcenike.dgvUcenici.DataSource = filtriraniUcenici;

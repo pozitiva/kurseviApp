@@ -42,7 +42,7 @@ namespace kurseviApp
 
                             foreach(Zaposleni zap in Kontroler.ulogovaniZaposleni)
                             {
-                                if (zap.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme)
+                                if (zap!=null && zap.KorisnickoIme == zahtev.Zaposleni.KorisnickoIme)
                                 {
                                     odgovor.Operacija = Operacija.NeuspesnaPrijava;
                                     provera = false;
@@ -53,14 +53,17 @@ namespace kurseviApp
                             if (provera)
                             {
                                 Zaposleni z = Kontroler.Instance.UlogujSe(zahtev.Zaposleni);
-                                if (odgovor.Zaposleni == null)
+                                if (z == null)
                                 {
                                     odgovor.Operacija = Operacija.NeuspesnaPrijava;
                                     provera = false;
                                 }
-                                odgovor.Operacija = Operacija.UspesnaPrijava;
-                                odgovor.Zaposleni = z;
-                                Kontroler.ulogovaniZaposleni.Add(z);
+                                else
+                                {
+                                    odgovor.Operacija = Operacija.UspesnaPrijava;
+                                    odgovor.Zaposleni = z;
+                                    Kontroler.ulogovaniZaposleni.Add(z);
+                                }
                                 posaljilac.Posalji(odgovor);
                             }
                             break;

@@ -73,11 +73,11 @@ namespace Klijent
             }catch (IOException ex)
             {
                 OtkacilaSeApp();
-                throw ex;
+                return null;
             }
             catch (Exception ex)
             {
-                throw ex;
+                return null;
             }
     
         }
@@ -100,11 +100,11 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
-                throw ex;
+                return new List<Predavac>();
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new List<Predavac>();
             }
         }
 
@@ -140,6 +140,7 @@ namespace Klijent
             catch (Exception ex)
             {
                 throw ex;
+
             }
 
         }
@@ -163,11 +164,15 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
-                throw ex;
+                return new List<Kurs>();
+                //throw ex;
+
             }
             catch (Exception ex)
             {
-                throw ex;
+                return new List<Kurs>();
+                //throw ex;
+
             }
         }
 
@@ -202,11 +207,15 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
+                //return new List<Kurs>();
                 throw ex;
+
             }
             catch (Exception ex)
             {
+                //return new List<Kurs>();
                 throw ex;
+
             }
         }
 
@@ -240,11 +249,15 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
+                //return null;
                 throw ex;
+
             }
             catch (Exception ex)
             {
+                //return null;
                 throw ex;
+
             }
         }
 
@@ -368,11 +381,15 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
-                throw ex;
+                //throw ex;
+                return new List<Ucenik>();
+
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                return new List<Ucenik>();
+
             }
         }
 
@@ -571,11 +588,14 @@ namespace Klijent
             catch (IOException ex)
             {
                 OtkacilaSeApp();
-                throw ex;
+                return new List<Grupa>();
+                //throw ex;
             }
             catch (Exception ex)
             {
-                throw ex;
+                //throw ex;
+                return new List<Grupa>();
+
             }
         }
 
@@ -708,7 +728,10 @@ namespace Klijent
             bool part1 = socket.Poll(1000, SelectMode.SelectRead);
             bool part2 = (socket.Available == 0);
             if (part1 && part2)
+            {
+                //Komunikacija.Instance.OdjaviZaposlenog(GlavniKoordinator.Instance.ulogovaniZaposleni);
                 return false;
+            }
             else
                 return true;
         }

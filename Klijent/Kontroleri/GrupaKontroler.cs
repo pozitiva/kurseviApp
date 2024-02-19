@@ -89,9 +89,10 @@ namespace Klijent.Kontroleri
                 PripadanjeGrupi pripadanje = (PripadanjeGrupi)ucUpravljajGrupom.dgvUcenici.SelectedRows[0].DataBoundItem;
                 grupa.Pripadanja.Remove(pripadanje);
                 if (grupa.IzbacenaPripadanja == null)
+                {
                     grupa.IzbacenaPripadanja = new List<PripadanjeGrupi>();
+                }
                 grupa.IzbacenaPripadanja.Add(pripadanje);
-                //izbacena.Add(pripadanje);
                 ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
                 ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
             }catch(KorisnickaGreska ex)
@@ -169,6 +170,7 @@ namespace Klijent.Kontroleri
             try
             {
                 ucPrikaziGrupe.dgvGrupe.DataSource = Komunikacija.Instance.VratiSveGrupe();
+                ucPrikaziGrupe.txtFilter.Text = "";
             }
             catch(Exception ex) {
 
@@ -211,7 +213,7 @@ namespace Klijent.Kontroleri
                 {
                     Grupa grupa = new Grupa
                     {
-                        KriterijumPretrage = $" lower(Grupa.nazivgrupe) like '%{filter}%' or lower(Grupa.korisnickoime) like '{filter}%' or lower(Grupa.idkursa) like '{filter}%'"
+                        KriterijumPretrage = $" lower(Grupa.nazivgrupe) like lower('%{filter}%') or lower(Grupa.korisnickoime) like lower('{filter}%') or lower(k.nazivKursa) like lower('{filter}%')"
                     };
                     List<Grupa> filtriraneGrupe = Komunikacija.Instance.PretraziGrupe(grupa);
                     ucPrikaziGrupe.dgvGrupe.DataSource = filtriraneGrupe;

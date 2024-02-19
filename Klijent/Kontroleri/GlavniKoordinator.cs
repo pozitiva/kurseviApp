@@ -54,7 +54,10 @@ namespace Klijent.Kontroleri
             frmPrijavljivanje.Visible = false;
             frmZaposleni = new FrmZaposleni(ulogovaniZaposleni);
             frmZaposleni.ShowDialog();
-            frmPrijavljivanje.Visible = true;
+            if (!frmPrijavljivanje.IsDisposed)
+            {
+                frmPrijavljivanje.Visible = true;
+            }
         }
 
         #endregion
@@ -156,7 +159,12 @@ namespace Klijent.Kontroleri
 
         public void PrikaziKreirajUcenikaNaFormi()
         {
-            frmKreirajUcenika.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Dodaj, null));
+            frmKreirajUcenika.PromeniPanel(ucenikKontroler.KreirajUcUpravljajUcenikom(FormMode.Kreiraj, null));
+        }
+
+        public void ZatvoriKreirajUcenikaFormu()
+        {
+            frmKreirajUcenika.Dispose();
         }
     }
 }
