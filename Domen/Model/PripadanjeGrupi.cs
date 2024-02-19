@@ -34,7 +34,7 @@ namespace Domen
         public string VrednostiZaIzmenu => $" idgrupe='{Grupa.IDGrupe}', iducenika = '{Ucenik.IDUcenika}', datumprijave = '{DatumPrijave.ToString("yyyy-MM-dd HH:mm:ss")}'";
 
         [Browsable(false)]
-        public string UslovObrade => $"idGrupe = '{Grupa.IDGrupe}'";
+        public string UslovObrade => $"idGrupe = '{Grupa.IDGrupe}' and idUcenika ='{Ucenik.IDUcenika}'";
 
         [Browsable(false)]
         public List<DomenskiObjekat> VratiListu(SqlDataReader reader)

@@ -22,7 +22,7 @@ namespace Klijent.Forme
             lblZaposleni.Text = ulogovaniZaposleni.KorisnickoIme;
 
             this.kreirajKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziKreirajKurs();
-            this.pretragaKursevaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveKurseve();
+            this.pretragaKursevaToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveKurseve(FormMode.Prikazi);
             this.izmeniKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziIzmeniKurs();
             this.obrisiKursToolStripMenuItem.Click += (s, e) => GlavniKoordinator.Instance.PrikaziObrisiKurs();
 

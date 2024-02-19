@@ -63,9 +63,9 @@ namespace Klijent.Kontroleri
             frmZaposleni.PromeniPanel(kursKontroler.KreirajUcUpravljajKurs(FormMode.Dodaj, null));
         }
 
-        public void PrikaziSveKurseve()
+        public void PrikaziSveKurseve(FormMode mode)
         {
-            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve(FormMode.Prikazi));
+            frmZaposleni.PromeniPanel(kursKontroler.KreirajUcPrikaziKurseve(mode));
         }
 
         public void PrikaziPodatkeOKursu(Kurs k)
@@ -102,9 +102,9 @@ namespace Klijent.Kontroleri
             frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Izmeni));
         }
 
-        public void PrikaziSveUcenike()
+        public void PrikaziSveUcenike(FormMode mode)
         {
-            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(FormMode.Izmeni));
+            frmZaposleni.PromeniPanel(ucenikKontroler.KreirajUcPrikaziUcenike(mode));
         }
 
         public void PrikaziObirsiUcenika()

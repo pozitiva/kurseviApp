@@ -33,7 +33,7 @@ namespace kurseviApp
             try
             {
                 serverskiSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), int.Parse(ConfigurationManager.AppSettings["port"]));
                 serverskiSocket.Bind(endPoint);
                 serverskiSocket.Listen(10);
 

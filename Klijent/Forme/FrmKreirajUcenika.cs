@@ -31,7 +31,6 @@ namespace Klijent.Forme
         private void FrmKreirajUcenika_Load(object sender, EventArgs e)
         {
             GlavniKoordinator.Instance.PrikaziKreirajUcenikaNaFormi();
-
         }
     }
 }

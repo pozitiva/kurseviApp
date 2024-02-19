@@ -79,7 +79,7 @@ namespace Klijent.Kontroleri
             ucUpravljajUcenikom.btnKreiraj.Click += KreirajUcenika;
             ucUpravljajUcenikom.btnIzmeni.Click += IzmeniUcenika;
             ucUpravljajUcenikom.btnObrisi.Click += ObrisiKurs;
-            ucUpravljajUcenikom.btnPrikaziSve.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveUcenike();
+            ucUpravljajUcenikom.btnPrikaziSve.Click += (s, e) => GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Prikazi);
 
             return ucUpravljajUcenikom;
 
@@ -96,7 +96,7 @@ namespace Klijent.Kontroleri
                 PreuzmiPodatkeOUceniku();
 
                 Komunikacija.Instance.ObrisiUcenika(ucenik);
-                GlavniKoordinator.Instance.PrikaziSveUcenike();
+                GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Obrisi);
 
             }
             catch (KorisnickaGreska ex)
@@ -120,7 +120,7 @@ namespace Klijent.Kontroleri
                 PreuzmiPodatkeOUceniku();
 
                 Komunikacija.Instance.IzmeniUcenika(ucenik);
-                GlavniKoordinator.Instance.PrikaziSveUcenike();
+                GlavniKoordinator.Instance.PrikaziSveUcenike(FormMode.Izmeni);
 
             }
             catch (KorisnickaGreska ex)
@@ -233,6 +233,7 @@ namespace Klijent.Kontroleri
             try
             {
                 ucPrikaziUcenike.dgvUcenici.DataSource = new BindingList<Ucenik>(Komunikacija.Instance.VratiSveUcenike());
+                ucPrikaziUcenike.txtFilter.Text = "";
             }
             catch (Exception ex)
             {

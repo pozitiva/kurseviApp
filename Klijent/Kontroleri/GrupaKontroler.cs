@@ -1,4 +1,5 @@
 ﻿using Domen;
+using Klijent.Forme;
 using Klijent.KorisnickeKontrole;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,6 @@ namespace Klijent.Kontroleri
         UcPrikaziGrupe ucPrikaziGrupe;
         FormMode mode;
         Grupa grupa;
-        public List<PripadanjeGrupi> izbacena = new List<PripadanjeGrupi>();
 
 
         public UcUpravljajGrupom KreirajUcUpravljajGrupom(FormMode mode, Grupa grupa)
@@ -42,7 +42,7 @@ namespace Klijent.Kontroleri
                 this.grupa.Pripadanja = new BindingList<PripadanjeGrupi>();  
                 ucUpravljajGrupom.lblIzmeniGrupu.Visible = false;
                 ucUpravljajGrupom.btnIzmeni.Visible = false;
-                ucUpravljajGrupom.btnKreirajUcenika.Visible = false;
+                //ucUpravljajGrupom.btnKreirajUcenika.Visible = false;
             }
 
             if (mode == FormMode.Izmeni)
@@ -88,7 +88,11 @@ namespace Klijent.Kontroleri
 
                 PripadanjeGrupi pripadanje = (PripadanjeGrupi)ucUpravljajGrupom.dgvUcenici.SelectedRows[0].DataBoundItem;
                 grupa.Pripadanja.Remove(pripadanje);
-                izbacena.Add(pripadanje);
+                if (grupa.IzbacenaPripadanja == null)
+                    grupa.IzbacenaPripadanja = new List<PripadanjeGrupi>();
+                grupa.IzbacenaPripadanja.Add(pripadanje);
+                //izbacena.Add(pripadanje);
+                ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
                 ucUpravljajGrupom.dgvUcenici.DataSource = grupa.Pripadanja;
             }catch(KorisnickaGreska ex)
             {
@@ -304,8 +308,6 @@ namespace Klijent.Kontroleri
             grupa.DatumPocetkaKursa = ucUpravljajGrupom.dtpDatumPocetka.Value;
             grupa.Kurs = (Kurs)ucUpravljajGrupom.dgvKurs.SelectedRows[0].DataBoundItem;
             grupa.Zaposleni = GlavniKoordinator.Instance.ulogovaniZaposleni;
-            grupa.IzbacenaPripadanja = izbacena;
-
         }
     }
 }
